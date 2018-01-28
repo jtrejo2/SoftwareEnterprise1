@@ -2,10 +2,9 @@ package assignment1;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,12 +20,11 @@ public class controller implements Initializable{
 	@FXML
     private ListView<String> listView;
 	
+	ObservableList <String> list = FXCollections.observableArrayList("Mark");
+	
+	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		List<String> list = new ArrayList<String>();
-		list.add("Item A");
-        list.add("Item B");
-        list.add("Item C");
-		//listView.setItems(FXCollections.observableList(list));
+		//listView.setItems(list);
 	}
 	
 	public void changeToMain(ActionEvent event) throws IOException {
