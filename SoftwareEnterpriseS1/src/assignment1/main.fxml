@@ -5,11 +5,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment1.controller">
    <children>
       <Button layoutX="14.0" layoutY="359.0" mnemonicParsing="false" onAction="#exit" text="Exit" />
-      <Button layoutX="245.0" layoutY="187.0" mnemonicParsing="false" onAction="#changeToList" text="AuthorListView" />
+      <Button fx:id="ListController" layoutX="245.0" layoutY="187.0" mnemonicParsing="false" onAction="#changeToList" text="AuthorListView" />
       <Text layoutX="104.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Inventory System">
          <font>
             <Font name="System Font" size="36.0" />
