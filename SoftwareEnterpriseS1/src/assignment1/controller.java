@@ -17,16 +17,20 @@ import javafx.stage.Stage;
 
 public class controller implements Initializable{
 	
+	private static controller controller;
+	
 	@FXML
     private ListView<String> listView;
 	
 	ObservableList <String> list = FXCollections.observableArrayList("Mark");
 	
-	@Override
-	public void initialize(URL url, ResourceBundle rb) {
-		//listView.setItems(list);
+	public static controller getInstance() {
+		if (controller == null) {
+			controller = new controller();
+		}
+		return controller;
 	}
-	
+	 
 	public void changeToMain(ActionEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("main.fxml"));
         Scene tableViewScene = new Scene(tableViewParent);
@@ -50,7 +54,11 @@ public class controller implements Initializable{
     public void exit(ActionEvent event) throws IOException {
         System.exit(0);
     }
-        
+    
+    @Override
+	public void initialize(URL url, ResourceBundle rb) {
+		//listView.setItems(list);
+	}    
 }
 
 /*
