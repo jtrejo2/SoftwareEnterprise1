@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,16 +22,13 @@ public class ListController implements Initializable{
 	@FXML
     private ListView<String> listView;
 	ObservableList <String> list = FXCollections.observableArrayList("Ernest Hemingway","Mark Twain","Stephen King","George Orwell");
+	private static menuController mController;
 	
-	public void changeToMain(ActionEvent event) throws IOException {
-        Parent tableViewParent = FXMLLoader.load(getClass().getResource("main.fxml"));
-        Scene tableViewScene = new Scene(tableViewParent);
-
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        
-        window.setScene(tableViewScene);
-        window.show();
-    }
+	
+	
+	public ListController() {
+		mController = menuController.getInstanceofmenuContoller();		
+	}
 
 	@FXML 
 	void onAuthorListClicked(MouseEvent event){
@@ -45,5 +43,6 @@ public class ListController implements Initializable{
     @Override
 	public void initialize(URL url, ResourceBundle rb) {
     	listView.setItems(list);
-	}   
+    		
+    }
 }

@@ -13,7 +13,6 @@
       <menus>
         <Menu mnemonicParsing="false" text="Menu">
           <items>
-            <MenuItem fx:id="MenuHome" mnemonicParsing="false" onAction="#MenuAction" text="Home" />
             <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem fx:id="AuthorList" mnemonicParsing="false" onAction="#MenuAction" text="Author List" />
             <SeparatorMenuItem mnemonicParsing="false" />

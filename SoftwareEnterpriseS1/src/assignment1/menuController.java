@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
 
@@ -20,8 +21,7 @@ public class menuController implements Initializable {
 	private ResourceBundle resources;
 	@FXML
 	private URL location;
-	@FXML
-	private MenuItem MenuHome;
+	
 	@FXML
 	private MenuItem AuthorList;
 	@FXML
@@ -37,20 +37,15 @@ public class menuController implements Initializable {
 		return menuSingleton;
 	}
 	    @FXML void MenuAction(ActionEvent event) throws IOException {
-	    		if(event.getSource() == MenuHome) {
-	    			loadmain();
-	    		}
-	    		else if(event.getSource() == AuthorList) {
+	    
+	    		if(event.getSource() == AuthorList) {
 	    			loadAList();
 	    		}
 	    		else
 	    			Platform.exit();
 	    }
 
-	    private void loadmain() {
-			// TODO Auto-generated method stub
-			
-		}
+	  
 		private void loadAList() {
 			// TODO Auto-generated method stub
 			Parent tableViewParent = null;
