@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 public class GUI extends Application {
      //small change to launch menu.fxml
+	//second sample comment
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("menu.fxml"));
