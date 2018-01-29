@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class ListController implements Initializable{
@@ -20,8 +21,6 @@ public class ListController implements Initializable{
 	@FXML
     private ListView<String> listView;
 	ObservableList <String> list = FXCollections.observableArrayList("Ernest Hemingway","Mark Twain","Stephen King","George Orwell");
-	
-	private ListController listController;
 	
 	public void changeToMain(ActionEvent event) throws IOException {
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("main.fxml"));
@@ -31,6 +30,16 @@ public class ListController implements Initializable{
         
         window.setScene(tableViewScene);
         window.show();
+    }
+
+	@FXML 
+	void onAuthorListClicked(MouseEvent event){
+    	String author = listView.getSelectionModel().getSelectedItem();
+		if (event.getClickCount() == 2){
+			if (author != null) {
+				System.out.print("Author Clicked!");
+			}
+		}
     }
 	
     @Override
