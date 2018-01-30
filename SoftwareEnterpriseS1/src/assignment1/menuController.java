@@ -13,6 +13,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.BorderPane;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class menuController implements Initializable {
 	private static menuController menuSingleton;
@@ -28,8 +30,10 @@ public class menuController implements Initializable {
 	private MenuItem Quit;
 	@FXML
 	private BorderPane mainLocation;
+	private static Logger logger = LogManager.getLogger(GUI.class);
 	
 	public static menuController getInstanceofmenuContoller() {
+		logger.info("in menuController");
 		
 		if (menuSingleton == null) {
 			menuSingleton = new menuController();
@@ -37,7 +41,7 @@ public class menuController implements Initializable {
 		return menuSingleton;
 	}
 	    @FXML void MenuAction(ActionEvent event) throws IOException {
-	    
+	    		logger.info("in MenuAction");
 	    		if(event.getSource() == AuthorList) {
 	    			loadAList();
 	    		}
@@ -49,7 +53,7 @@ public class menuController implements Initializable {
 		private void loadAList() {
 			// TODO Auto-generated method stub
 			Parent tableViewParent = null;
-			System.out.println("we are here");
+			logger.info("in loadAList");
 			try {
 				tableViewParent = FXMLLoader.load(getClass().getResource("AuthorListView.fxml"));
 				System.out.println("we are here2");
@@ -57,7 +61,8 @@ public class menuController implements Initializable {
 				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				logger.info("there was an error in the try/catch in loadAlist");
+				
 			}
 	        //Scene tableViewScene = new Scene(tableViewParent);
 
