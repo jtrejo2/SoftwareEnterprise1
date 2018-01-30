@@ -378,3 +378,15 @@
 23:02:33.060 INFO  assignment1.GUI : hello
 23:02:33.061 ERROR assignment1.GUI : This is an error log message24
 23:02:36.717 INFO  assignment1.menuController : hello
+23:56:33.746 INFO  assignment1.GUI : starting program
+23:56:43.728 INFO  assignment1.menuController : in MenuAction
+23:56:43.730 INFO  assignment1.menuController : in loadAList
+23:56:43.733 INFO  assignment1.menuController : in menuController
+00:02:46.322 INFO  assignment1.GUI : starting program
+00:02:49.915 INFO  assignment1.menuController : in MenuAction
+00:02:49.916 INFO  assignment1.menuController : in loadAList
+00:02:49.918 INFO  assignment1.menuController : in menuController
+00:04:36.787 INFO  assignment1.GUI : starting program
+00:04:39.247 INFO  assignment1.menuController : in MenuAction
+00:04:39.248 INFO  assignment1.menuController : in loadAList
+00:04:39.250 INFO  assignment1.menuController : in menuController
