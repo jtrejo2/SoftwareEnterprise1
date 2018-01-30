@@ -1,5 +1,6 @@
 package assignment1;
 
+import java.awt.TextField;
 import java.awt.event.ActionEvent;
 
 import org.apache.logging.log4j.LogManager;
@@ -14,18 +15,18 @@ public class DetailController {
 
     @FXML private Button Save;
     
-    /*
+
     @FXML private TextField textFieldAuthorFirstName;
 	@FXML private TextField textFieldAuthorLastName;
 	@FXML private TextField textFieldAuthorDOB;
 	@FXML private TextField textFieldAuthorGender;
 	@FXML private TextField textFieldAuthorWebsite;
-	*/
+
 	private Author author;
 	
     public DetailController(Author author) {
 		menuController = menuController.getInstanceofmenuContoller();
-		//this.author = author;
+		this.author = author;
 	}
     
     @FXML void saveAuthorDetail(ActionEvent event) {
