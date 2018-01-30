@@ -390,3 +390,14 @@
 00:04:39.247 INFO  assignment1.menuController : in MenuAction
 00:04:39.248 INFO  assignment1.menuController : in loadAList
 00:04:39.250 INFO  assignment1.menuController : in menuController
+13:02:42.273 INFO  assignment1.GUI : starting program
+13:02:45.157 INFO  assignment1.menuController : in MenuAction
+13:02:45.157 INFO  assignment1.menuController : in loadAList
+13:02:45.162 INFO  assignment1.menuController : in menuController
+13:02:48.191 INFO  assignment1.menuController : in MenuAction
+13:08:25.037 INFO  assignment1.GUI : starting program
+13:08:41.273 INFO  assignment1.GUI : starting program
+13:08:43.841 INFO  assignment1.menuController : in MenuAction
+13:08:43.842 INFO  assignment1.menuController : in loadAList
+13:08:43.845 INFO  assignment1.menuController : in menuController
+13:09:06.507 INFO  assignment1.menuController : in MenuAction
