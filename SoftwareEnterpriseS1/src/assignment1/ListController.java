@@ -17,32 +17,34 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class ListController implements Initializable{
 	
 	@FXML
     private ListView<String> listView;
 	ObservableList <String> list = FXCollections.observableArrayList("Ernest Hemingway","Mark Twain","Stephen King","George Orwell");
 	private static menuController mController;
-	
-	
-	
+
 	public ListController() {
 		mController = menuController.getInstanceofmenuContoller();		
 	}
 
-	@FXML 
-	void onAuthorListClicked(MouseEvent event){
-    	String author = listView.getSelectionModel().getSelectedItem();
-		if (event.getClickCount() == 2){
-			if (author != null) {
-				System.out.print("Author Clicked!");
-			}
-		}
-    }
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		listView.setItems(list);
+		listView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+		@Override
+		public void handle(MouseEvent click) {
+			if (click.getClickCount() == 2) {
+				//logger.info("double-click on " + listView.getSelectionModel().getSelectedItem());
+		        System.out.print("Something was double-clicked");   
+		        	//loadAuthorDetail(listView.getSelectionModel().getSelectedItem());
+		        
+		        }
+		    }
+		});
+	}
 	
-    @Override
-	public void initialize(URL url, ResourceBundle rb) {
-    	listView.setItems(list);
-    		
-    }
 }
