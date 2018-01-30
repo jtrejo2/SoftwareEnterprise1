@@ -1,0 +1,2 @@
+12 Jan 2018 09:43:02,221 DEBUG logdemo.LogDemo5 LogDemo5.java:18 [main] : This is a debug log message
+12 Jan 2018 09:43:02,223 ERROR logdemo.LogDemo5 LogDemo5.java:21 [main] : This is an error log message

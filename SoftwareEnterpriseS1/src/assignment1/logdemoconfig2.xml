@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+  <Appenders>
+    <Console name="STDOUT" target="SYSTEM_OUT">
+    	<!-- 	%d is date
+    			%p is event level (DEBUG, INFO, ERROR, etc.) 
+    			%C is caller class (expensive operation)
+    			%F is caller class file name (expensive operation)
+    			%L is caller line # in the class file (expensive operation) 
+    			%t is thread name that generated the log entry
+    			%m is message argument passed to log call
+    			%n is platform-specific line separator \n or \r\n -->
+      <PatternLayout pattern="%d{dd MMM yyyy HH:mm:ss,SSS} %p %C{2} %F:%L [%t] : %m%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root level="debug">
+      <AppenderRef ref="STDOUT"/>
+    </Root>
+  </Loggers>
+</Configuration>
