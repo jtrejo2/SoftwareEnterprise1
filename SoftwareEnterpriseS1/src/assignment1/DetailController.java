@@ -1,26 +1,25 @@
 package assignment1;
 
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
+
 public class DetailController implements Initializable {
 	private static menuController mController;
 	private Author author;
+	private static Logger logger = LogManager.getLogger();
 
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
     private Button AuthorList;
 
-    @FXML
     private Button Save;
 
     public DetailController(Author author){
@@ -33,12 +32,16 @@ public class DetailController implements Initializable {
 
     }
 
-    @FXML
+    
+    @FXML void saveAuthorDetail(ActionEvent event) {
+		logger.info("author saved");		
+		mController.loadAList();
+	}
+    
     void initialize() {
-        assert AuthorList != null : "fx:id=\"AuthorList\" was not injected: check your FXML file 'AuthorDetailView.fxml'.";
-        assert Save != null : "fx:id=\"Save\" was not injected: check your FXML file 'AuthorDetailView.fxml'.";
-
+    	
     }
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub

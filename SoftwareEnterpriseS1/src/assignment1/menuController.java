@@ -51,7 +51,7 @@ public class menuController implements Initializable {
 	    }
 
 	  
-		private void loadAList() {
+		void loadAList() {
 			// TODO Auto-generated method stub
 			//Parent tableViewParent = null;
 			logger.info("in loadAList");

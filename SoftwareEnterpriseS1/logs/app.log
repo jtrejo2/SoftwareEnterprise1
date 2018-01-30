@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 01:45:57.012 INFO  assignment1.GUI : starting program
 01:45:59.568 INFO  assignment1.menuController : in MenuAction
 01:45:59.569 INFO  assignment1.menuController : in loadAList
@@ -279,3 +280,412 @@
 15:05:21.163 INFO  assignment1.menuController : in MenuAction
 15:05:21.164 INFO  assignment1.menuController : in loadAList
 15:05:21.165 INFO  assignment1.menuController : in menuController
+=======
+10:31:25.766 INFO  panedemo.Launcher : Entered main()...
+10:31:25.823 INFO  panedemo.Launcher : Entered start()...
+10:31:26.406 INFO  panedemo.Launcher : Exiting start()...
+10:31:40.177 INFO  panedemo.Launcher : Exiting main()...
+10:56:03.056 INFO  panedemo.Launcher : Entered main()...
+10:56:03.119 INFO  panedemo.Launcher : Entered start()...
+10:56:03.880 INFO  panedemo.Launcher : Exiting start()...
+10:56:11.404 INFO  panedemo.Launcher : Exiting main()...
+10:58:11.518 INFO  core.Launcher : Entered main()...
+10:58:11.586 INFO  core.Launcher : Entered start()...
+10:58:12.193 INFO  core.Launcher : Exiting start()...
+10:58:40.431 INFO  core.Launcher : Exiting main()...
+11:37:33.629 INFO  core.Launcher : Entered main()...
+11:37:33.684 INFO  core.Launcher : Entered start()...
+11:37:34.295 INFO  core.Launcher : Exiting start()...
+11:39:27.739 INFO  core.Launcher : Entered main()...
+11:39:27.794 INFO  core.Launcher : Entered start()...
+11:39:28.395 INFO  core.Launcher : Exiting start()...
+11:40:14.109 INFO  core.Launcher : Exiting main()...
+11:41:30.315 INFO  core.Launcher : Entered main()...
+11:41:30.368 INFO  core.Launcher : Entered start()...
+11:41:30.972 INFO  core.Launcher : Exiting start()...
+11:41:35.776 INFO  core.Launcher : Entered stop()...
+11:41:35.777 INFO  core.Launcher : Exiting start()...
+11:41:35.779 INFO  core.Launcher : Exiting main()...
+11:42:11.347 INFO  core.Launcher : Entered main()...
+11:42:11.402 INFO  core.Launcher : Entered start()...
+11:42:11.558 INFO  screen1.TestController : Entered initialize()...
+11:42:11.558 INFO  screen1.TestController : Exiting initialize()...
+11:42:12.037 INFO  core.Launcher : Exiting start()...
+11:42:23.952 INFO  core.Launcher : Entered stop()...
+11:42:23.952 INFO  core.Launcher : Exiting start()...
+11:42:23.955 INFO  core.Launcher : Exiting main()...
+11:42:59.995 INFO  core.Launcher : Entered main()...
+11:43:00.044 INFO  core.Launcher : Entered start()...
+11:43:00.200 INFO  screen1.TestController : Entered initialize()...
+11:43:00.201 INFO  screen1.TestController : Exiting initialize()...
+11:43:00.659 INFO  core.Launcher : Exiting start()...
+11:43:01.790 INFO  core.Launcher : Entered stop()...
+11:43:01.790 INFO  core.Launcher : Exiting stop()...
+11:43:01.793 INFO  core.Launcher : Exiting main()...
+11:44:32.048 INFO  core.Launcher : Entered main()...
+11:44:32.096 INFO  core.Launcher : Entered start()...
+11:44:32.254 INFO  screen1.TestController : Entered initialize()...
+11:44:32.254 INFO  screen1.TestController : Exiting initialize()...
+11:44:32.707 INFO  core.Launcher : Exiting start()...
+11:44:43.357 INFO  core.Launcher : Entered stop()...
+11:44:43.357 INFO  core.Launcher : Exiting stop()...
+11:44:48.362 INFO  core.Launcher : Exiting main()...
+11:46:00.513 INFO  core.Launcher : Entered main()...
+11:46:00.566 INFO  core.Launcher : Entered start()...
+11:46:00.708 INFO  screen1.TestController : Entered initialize()...
+11:46:00.708 INFO  screen1.TestController : Exiting initialize()...
+11:46:01.167 INFO  core.Launcher : Exiting start()...
+11:49:31.536 INFO  core.Launcher : Entered stop()...
+11:49:31.536 INFO  core.Launcher : Exiting stop()...
+11:49:31.538 INFO  core.Launcher : Exiting main()...
+09:32:10.255 DEBUG logdemo.LogDemo1 : This is a debug log message
+09:32:10.259 ERROR logdemo.LogDemo1 : This is an error log message
+09:32:52.897 DEBUG logdemo.LogDemo2 : This is a debug log message
+09:32:52.899 ERROR logdemo.LogDemo2 : This is an error log message
+09:35:50.694 DEBUG logdemo.LogDemo2 : This is a debug log message
+09:35:50.698 ERROR logdemo.LogDemo2 : This is an error log message
+09:38:29.473 DEBUG logdemo.LogDemo3 : This is a debug log message
+09:38:29.474 ERROR logdemo.LogDemo3 : This is an error log message
+09:39:13.792 DEBUG logdemo.LogDemo4 : 0 - This is a debug log message
+09:39:13.794 ERROR logdemo.LogDemo4 : 0 - This is an error log message
+09:39:14.794 DEBUG logdemo.LogDemo4 : 1 - This is a debug log message
+09:39:14.795 ERROR logdemo.LogDemo4 : 1 - This is an error log message
+09:39:15.800 DEBUG logdemo.LogDemo4 : 2 - This is a debug log message
+09:39:15.800 ERROR logdemo.LogDemo4 : 2 - This is an error log message
+09:39:16.801 DEBUG logdemo.LogDemo4 : 3 - This is a debug log message
+09:39:16.801 ERROR logdemo.LogDemo4 : 3 - This is an error log message
+09:39:17.802 DEBUG logdemo.LogDemo4 : 4 - This is a debug log message
+09:39:17.802 ERROR logdemo.LogDemo4 : 4 - This is an error log message
+09:39:18.805 DEBUG logdemo.LogDemo4 : 5 - This is a debug log message
+09:39:18.806 ERROR logdemo.LogDemo4 : 5 - This is an error log message
+09:39:19.809 DEBUG logdemo.LogDemo4 : 6 - This is a debug log message
+09:39:19.809 ERROR logdemo.LogDemo4 : 6 - This is an error log message
+09:39:20.812 DEBUG logdemo.LogDemo4 : 7 - This is a debug log message
+09:39:20.812 ERROR logdemo.LogDemo4 : 7 - This is an error log message
+09:39:21.817 DEBUG logdemo.LogDemo4 : 8 - This is a debug log message
+09:39:21.818 ERROR logdemo.LogDemo4 : 8 - This is an error log message
+09:39:22.823 DEBUG logdemo.LogDemo4 : 9 - This is a debug log message
+09:39:22.824 ERROR logdemo.LogDemo4 : 9 - This is an error log message
+09:39:34.141 DEBUG logdemo.LogDemo5 : This is a debug log message
+09:39:34.143 ERROR logdemo.LogDemo5 : This is an error log message
+09:43:43.097 DEBUG logdemo.LogDemo1 : This is a debug log message
+09:43:43.099 ERROR logdemo.LogDemo1 : This is an error log message
+17:24:13.217 DEBUG logdemo.LogDemo1 : This is a debug log message
+17:24:13.220 ERROR logdemo.LogDemo1 : This is an error log message
+17:29:18.004 ERROR logdemo.LogDemo1 : This is an error log message
+17:04:02.850 INFO  core.Launcher : Entered main()...
+17:04:03.155 INFO  core.Launcher : Entered start()...
+17:04:03.404 INFO  screen1.TestController : Entered initialize()...
+17:04:03.404 INFO  screen1.TestController : Exiting initialize()...
+17:04:03.986 INFO  core.Launcher : Exiting start()...
+17:04:14.011 INFO  core.Launcher : Entered stop()...
+17:04:14.011 INFO  core.Launcher : Exiting stop()...
+17:04:14.014 INFO  core.Launcher : Exiting main()...
+12:10:54.920 INFO  core.Launcher : Entered main()...
+12:10:55.059 INFO  core.Launcher : Entered start()...
+12:10:55.281 INFO  screen1.TestController : Entered initialize()...
+12:10:55.282 INFO  screen1.TestController : Exiting initialize()...
+12:10:55.858 INFO  core.Launcher : Exiting start()...
+12:11:08.841 INFO  core.Launcher : Entered stop()...
+12:11:08.842 INFO  core.Launcher : Exiting stop()...
+12:11:08.844 INFO  core.Launcher : Exiting main()...
+12:23:16.356 INFO  doglist.Launcher : calling start()
+12:28:01.257 INFO  doglist.Launcher : calling start()
+12:28:05.092 INFO  doglist.Launcher : calling stop()
+12:28:30.671 INFO  doglist.Launcher : calling init()
+12:28:30.688 INFO  doglist.Launcher : calling start()
+12:28:37.047 INFO  doglist.Launcher : calling stop()
+12:42:51.757 INFO  core.Launcher : Entered main()...
+12:42:51.804 INFO  core.Launcher : Entered start()...
+12:42:51.950 INFO  screen1.TestController : Entered initialize()...
+12:42:51.951 INFO  screen1.TestController : Exiting initialize()...
+12:42:52.410 INFO  core.Launcher : Exiting start()...
+12:42:53.811 INFO  core.Launcher : Entered stop()...
+12:42:53.812 INFO  core.Launcher : Exiting stop()...
+12:42:53.814 INFO  core.Launcher : Exiting main()...
+12:42:57.831 INFO  doglist.Launcher : calling init()
+12:42:57.847 INFO  doglist.Launcher : calling start()
+12:43:00.797 INFO  doglist.Launcher : calling stop()
+12:43:16.267 INFO  doglist.Launcher : calling init()
+12:43:16.283 INFO  doglist.Launcher : calling start()
+12:43:19.460 INFO  doglist.Launcher : calling stop()
+12:43:41.835 INFO  doglist.Launcher : calling init()
+12:43:41.852 INFO  doglist.Launcher : calling start()
+12:43:41.974 INFO  doglist.Launcher : calling stop()
+12:47:53.749 INFO  doglist.Launcher : calling init()
+12:47:53.768 INFO  doglist.Launcher : calling start()
+12:47:57.271 INFO  doglist.Launcher : calling stop()
+12:48:09.674 INFO  doglist.Launcher : calling init()
+12:48:09.690 INFO  doglist.Launcher : calling start()
+12:48:14.942 INFO  doglist.Launcher : calling stop()
+12:48:25.309 INFO  doglist.Launcher : calling init()
+12:48:25.325 INFO  doglist.Launcher : calling start()
+12:48:31.100 INFO  doglist.Launcher : calling stop()
+13:06:30.047 INFO  doglist.Launcher : calling init()
+13:06:30.069 INFO  doglist.Launcher : calling start()
+13:06:30.186 INFO  doglist.DogListController : calling initialize()
+13:06:39.131 INFO  doglist.Launcher : calling stop()
+13:08:09.524 INFO  doglist.Launcher : calling init()
+13:08:09.546 INFO  doglist.Launcher : calling start()
+13:08:09.671 INFO  doglist.DogListController : calling initialize()
+13:08:14.312 INFO  doglist.Launcher : calling stop()
+13:47:40.032 INFO  doglist.Launcher : calling init()
+13:47:40.052 INFO  doglist.Launcher : calling start()
+13:47:40.166 INFO  doglist.DogListController : calling initialize()
+13:47:40.670 INFO  dogdetail.DogDetailController : calling initialize()
+13:48:16.049 INFO  doglist.Launcher : calling stop()
+13:58:35.188 INFO  doglist.Launcher : calling init()
+13:58:35.209 INFO  doglist.Launcher : calling start()
+13:58:35.345 INFO  doglist.DogListController : calling initialize()
+13:58:35.862 INFO  dogdetail.DogDetailController : calling initialize()
+13:58:41.435 INFO  doglist.Launcher : calling stop()
+13:58:49.209 INFO  doglist.Launcher : calling init()
+13:58:49.229 INFO  doglist.Launcher : calling start()
+13:58:49.346 INFO  doglist.DogListController : calling initialize()
+13:58:49.855 INFO  dogdetail.DogDetailController : calling initialize()
+13:58:55.587 INFO  doglist.Launcher : calling stop()
+13:59:09.344 INFO  doglist.Launcher : calling init()
+13:59:09.388 INFO  doglist.Launcher : calling start()
+13:59:09.510 INFO  doglist.DogListController : calling initialize()
+13:59:10.025 INFO  dogdetail.DogDetailController : calling initialize()
+13:59:15.143 INFO  doglist.Launcher : calling stop()
+14:08:03.290 INFO  doglist.Launcher : calling init()
+14:08:03.310 INFO  doglist.Launcher : calling start()
+14:08:03.429 INFO  doglist.DogListController : calling initialize()
+14:08:03.949 INFO  dogdetail.DogDetailController : calling initialize()
+14:08:07.314 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:08:10.146 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:08:13.646 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:08:15.316 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:08:19.716 INFO  doglist.Launcher : calling stop()
+14:09:15.513 INFO  doglist.Launcher : calling init()
+14:09:15.573 INFO  doglist.Launcher : calling start()
+14:09:15.692 INFO  doglist.DogListController : calling initialize()
+14:09:16.209 INFO  dogdetail.DogDetailController : calling initialize()
+14:09:18.571 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:09:18.571 ERROR dogdetail.DogDetailController : Ragnerxxxx
+14:09:26.522 INFO  doglist.Launcher : calling stop()
+14:10:35.663 INFO  doglist.Launcher : calling init()
+14:10:35.683 INFO  doglist.Launcher : calling start()
+14:10:35.801 INFO  doglist.DogListController : calling initialize()
+14:10:36.304 INFO  dogdetail.DogDetailController : calling initialize()
+14:10:38.683 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:10:38.684 ERROR dogdetail.DogDetailController : Ragnerxxxxx
+14:10:38.684 ERROR dogdetail.DogDetailController : Ragnerxxxxx
+14:10:42.697 INFO  doglist.Launcher : calling stop()
+14:14:49.681 INFO  doglist.Launcher : calling init()
+14:14:49.701 INFO  doglist.Launcher : calling start()
+14:14:49.817 INFO  doglist.DogListController : calling initialize()
+14:14:50.322 INFO  dogdetail.DogDetailController : calling initialize()
+14:14:53.849 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:14:55.471 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:14:56.120 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:15:00.393 INFO  doglist.Launcher : calling stop()
+14:15:51.889 INFO  doglist.Launcher : calling init()
+14:15:51.908 INFO  doglist.Launcher : calling start()
+14:15:52.029 INFO  doglist.DogListController : calling initialize()
+14:15:52.531 INFO  dogdetail.DogDetailController : calling initialize()
+14:15:57.713 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:16:24.545 INFO  doglist.Launcher : calling stop()
+14:17:01.863 INFO  doglist.Launcher : calling init()
+14:17:01.884 INFO  doglist.Launcher : calling start()
+14:17:02.001 INFO  doglist.DogListController : calling initialize()
+14:17:02.507 INFO  dogdetail.DogDetailController : calling initialize()
+14:17:17.466 INFO  doglist.Launcher : calling stop()
+14:22:55.347 INFO  doglist.Launcher : calling init()
+14:22:55.368 INFO  doglist.Launcher : calling start()
+14:22:55.488 INFO  doglist.DogListController : calling initialize()
+14:22:56.012 INFO  dogdetail.DogDetailController : calling initialize()
+14:23:00.913 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:23:22.136 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:23:22.285 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:23:22.444 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:23:22.604 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:23:30.543 INFO  doglist.Launcher : calling stop()
+14:36:36.883 INFO  doglist.Launcher : calling init()
+14:36:36.903 INFO  doglist.Launcher : calling start()
+14:36:37.021 INFO  doglist.DogListController : calling initialize()
+14:36:37.527 INFO  dogdetail.DogDetailController : calling initialize()
+14:36:42.290 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:36:46.646 INFO  dogdetail.DogDetailController : calling saveDogClicked
+14:36:50.989 INFO  doglist.Launcher : calling stop()
+15:12:37.919 INFO  detail.Launcher : calling init()
+15:12:37.937 INFO  detail.Launcher : calling start()
+15:12:37.948 INFO  detail.Launcher : calling stop()
+15:17:18.137 INFO  detail.Launcher : calling init()
+15:17:18.157 INFO  detail.Launcher : calling start()
+15:17:18.170 INFO  detail.Launcher : calling stop()
+15:18:31.889 INFO  detail.Launcher : calling init()
+15:18:31.934 INFO  detail.Launcher : calling start()
+15:18:32.075 INFO  detail.DogDetailController : calling initialize()
+15:18:40.290 INFO  detail.DogDetailController : calling saveDogClicked
+15:18:42.611 INFO  detail.Launcher : calling stop()
+15:19:21.481 INFO  detail.Launcher : calling init()
+15:19:21.496 INFO  detail.Launcher : calling start()
+15:19:21.637 INFO  detail.DogDetailController : calling initialize()
+15:19:24.876 INFO  detail.DogDetailController : calling saveDogClicked
+15:19:24.876 INFO  detail.DogDetailController : dog model values are: SpotXXX    age: 3
+15:19:29.160 INFO  detail.Launcher : calling stop()
+15:25:18.538 INFO  list.Launcher : calling init()
+15:25:18.559 INFO  list.Launcher : calling start()
+15:25:18.677 INFO  list.DogListController : calling initialize()
+15:25:23.403 INFO  list.Launcher : calling stop()
+15:25:33.625 INFO  mdi_dogdemo.Launcher : calling init()
+15:25:33.645 INFO  mdi_dogdemo.Launcher : calling start()
+15:25:33.765 INFO  mdi_dogdemo.DogListController : calling initialize()
+15:25:34.269 INFO  mdi_dogdemo.DogDetailController : calling initialize()
+15:25:39.229 INFO  mdi_dogdemo.DogDetailController : calling saveDogClicked
+15:25:44.368 INFO  mdi_dogdemo.Launcher : calling stop()
+15:32:28.207 INFO  list.Launcher : calling init()
+15:32:28.265 INFO  list.Launcher : calling start()
+15:32:28.380 INFO  list.DogListController : calling initialize()
+15:32:30.053 INFO  list.DogListController$1 : listViewDogs was clicked
+15:32:30.511 INFO  list.DogListController$1 : listViewDogs was clicked
+15:32:31.747 INFO  list.DogListController$1 : listViewDogs was clicked
+15:32:32.346 INFO  list.DogListController$1 : listViewDogs was clicked
+15:32:33.718 INFO  list.DogListController$1 : listViewDogs was clicked
+15:32:34.304 INFO  list.DogListController$1 : listViewDogs was clicked
+15:32:34.802 INFO  list.DogListController$1 : listViewDogs was clicked
+15:32:35.298 INFO  list.DogListController$1 : listViewDogs was clicked
+15:32:36.287 INFO  list.DogListController$1 : listViewDogs was clicked
+15:32:37.147 INFO  list.DogListController$1 : listViewDogs was clicked
+15:32:37.797 INFO  list.DogListController$1 : listViewDogs was clicked
+15:32:38.367 INFO  list.DogListController$1 : listViewDogs was clicked
+15:32:38.895 INFO  list.DogListController$1 : listViewDogs was clicked
+15:32:39.432 INFO  list.DogListController$1 : listViewDogs was clicked
+15:32:40.482 INFO  list.Launcher : calling stop()
+15:33:28.599 INFO  list.Launcher : calling init()
+15:33:28.619 INFO  list.Launcher : calling start()
+15:33:28.738 INFO  list.DogListController : calling initialize()
+15:33:30.790 INFO  list.DogListController$1 : Ragner was clicked
+15:33:31.794 INFO  list.DogListController$1 : Ragner was clicked
+15:33:32.524 INFO  list.DogListController$1 : Ragner was clicked
+15:33:34.186 INFO  list.DogListController$1 : Sweetie was clicked
+15:33:35.589 INFO  list.DogListController$1 : Ragner was clicked
+15:33:36.487 INFO  list.DogListController$1 : Sweetie was clicked
+15:33:37.201 INFO  list.DogListController$1 : Sweetie was clicked
+15:33:37.907 INFO  list.DogListController$1 : Sweetie was clicked
+15:33:39.345 INFO  list.DogListController$1 : Sweetie was clicked
+15:33:40.267 INFO  list.DogListController$1 : Ragner was clicked
+15:33:41.005 INFO  list.DogListController$1 : Ragner was clicked
+15:33:41.599 INFO  list.DogListController$1 : Ragner was clicked
+15:33:42.491 INFO  list.Launcher : calling stop()
+15:34:17.472 INFO  list.Launcher : calling init()
+15:34:17.494 INFO  list.Launcher : calling start()
+15:34:17.611 INFO  list.DogListController : calling initialize()
+15:34:19.299 INFO  list.DogListController$1 : Ragner was clicked
+15:34:20.100 INFO  list.DogListController$1 : Ragner was clicked
+15:34:20.702 INFO  list.DogListController$1 : Ragner was clicked
+15:34:26.492 INFO  list.Launcher : calling stop()
+15:40:07.194 INFO  list.Launcher : calling init()
+15:40:07.216 INFO  list.Launcher : calling start()
+15:40:07.340 INFO  list.DogListController : calling initialize()
+15:40:11.982 INFO  list.DogListController : Ragner was clicked
+15:40:12.513 INFO  list.DogListController : Ragner was clicked
+15:40:13.082 INFO  list.DogListController : Ragner was clicked
+15:40:13.996 INFO  list.DogListController : Ragner was clicked
+15:40:14.760 INFO  list.DogListController : Sweetie was clicked
+15:40:15.594 INFO  list.DogListController : Ragner was clicked
+15:40:16.132 INFO  list.DogListController : Ragner was clicked
+15:40:16.324 INFO  list.DogListController : Ragner was clicked
+15:40:16.516 INFO  list.DogListController : Ragner was clicked
+15:40:16.704 INFO  list.DogListController : Ragner was clicked
+15:40:16.888 INFO  list.DogListController : Ragner was clicked
+15:40:17.082 INFO  list.DogListController : Ragner was clicked
+15:40:17.555 INFO  list.Launcher : calling stop()
+16:47:28.666 INFO  detail.Launcher : calling init()
+16:47:28.744 INFO  detail.Launcher : calling start()
+16:47:29.083 INFO  detail.DogDetailController : calling initialize()
+16:47:31.543 INFO  detail.Launcher : calling stop()
+17:04:56.137 INFO  list.Launcher : calling init()
+17:04:56.174 INFO  list.Launcher : calling start()
+17:04:56.337 INFO  list.DogListController : calling initialize()
+17:08:36.072 INFO  list.DogListController : Sweetie was clicked
+17:08:37.898 INFO  list.DogListController : Ragner was clicked
+17:08:39.457 INFO  list.Launcher : calling stop()
+17:14:10.222 INFO  core.Launcher : Entered main()...
+17:14:10.320 INFO  core.Launcher : Entered start()...
+17:14:10.495 INFO  screen1.TestController : Entered initialize()...
+17:14:10.496 INFO  screen1.TestController : Exiting initialize()...
+17:14:10.964 INFO  core.Launcher : Exiting start()...
+17:14:28.046 INFO  core.Launcher : Entered stop()...
+17:14:28.046 INFO  core.Launcher : Exiting stop()...
+17:14:28.049 INFO  core.Launcher : Exiting main()...
+17:16:37.250 INFO  detail.Launcher : calling init()
+17:16:37.290 INFO  detail.Launcher : calling start()
+17:16:37.483 INFO  detail.DogDetailController : calling initialize()
+17:16:39.945 INFO  detail.Launcher : calling stop()
+17:23:53.700 INFO  detail.Launcher : calling init()
+17:23:53.735 INFO  detail.Launcher : calling start()
+17:23:53.898 INFO  detail.DogDetailController : calling initialize()
+17:23:57.527 INFO  detail.DogDetailController : calling saveDogClicked
+17:23:57.528 INFO  detail.DogDetailController : dog model values are: Spot    age: 3
+17:24:03.293 INFO  detail.DogDetailController : calling saveDogClicked
+17:24:03.293 INFO  detail.DogDetailController : dog model values are: Spot    age: 5
+17:24:04.920 INFO  detail.Launcher : calling stop()
+17:31:39.166 INFO  detail.Launcher : calling init()
+17:31:39.197 INFO  detail.Launcher : calling start()
+17:31:39.369 INFO  detail.DogDetailController : calling initialize()
+17:31:44.096 INFO  detail.Launcher : calling stop()
+17:32:48.573 INFO  list.Launcher : calling init()
+17:32:48.609 INFO  list.Launcher : calling start()
+17:32:48.750 INFO  list.DogListController : calling initialize()
+17:32:50.349 INFO  list.DogListController : Ragner was clicked
+17:32:50.519 INFO  list.DogListController : Ragner was clicked
+17:32:51.770 INFO  list.DogListController : Sweetie was clicked
+17:32:51.955 INFO  list.DogListController : Sweetie was clicked
+17:32:53.144 INFO  list.DogListController : Ragner was clicked
+17:33:18.065 INFO  list.Launcher : calling stop()
+13:05:29.983 INFO  core.Launcher : Entered main()...
+13:05:30.135 INFO  core.Launcher : Entered start()...
+13:05:30.365 INFO  screen1.TestController : Entered initialize()...
+13:05:30.365 INFO  screen1.TestController : Exiting initialize()...
+13:05:30.920 INFO  core.Launcher : Exiting start()...
+13:06:09.597 INFO  core.Launcher : Entered stop()...
+13:06:09.597 INFO  core.Launcher : Exiting stop()...
+13:06:09.601 INFO  core.Launcher : Exiting main()...
+13:06:23.405 INFO  core.Launcher : Entered main()...
+13:06:23.519 INFO  core.Launcher : Entered start()...
+13:06:23.688 INFO  screen1.TestController : Entered initialize()...
+13:06:23.689 INFO  screen1.TestController : Exiting initialize()...
+13:06:24.159 INFO  core.Launcher : Exiting start()...
+18:35:20.973 INFO  detail.Launcher : calling init()
+18:35:21.009 INFO  detail.Launcher : calling start()
+18:35:21.206 INFO  detail.DogDetailController : calling initialize()
+18:35:24.062 INFO  detail.DogDetailController : calling saveDogClicked
+18:35:24.063 INFO  detail.DogDetailController : dog model values are: Spot    age: 3
+18:35:24.938 INFO  detail.DogDetailController : calling saveDogClicked
+18:35:24.939 INFO  detail.DogDetailController : dog model values are: Spot    age: 3
+18:35:26.284 INFO  detail.Launcher : calling stop()
+23:02:33.054 DEBUG assignment1.GUI : This is a debug log message23
+23:02:33.060 INFO  assignment1.GUI : hello
+23:02:33.061 ERROR assignment1.GUI : This is an error log message24
+23:02:36.717 INFO  assignment1.menuController : hello
+23:56:33.746 INFO  assignment1.GUI : starting program
+23:56:43.728 INFO  assignment1.menuController : in MenuAction
+23:56:43.730 INFO  assignment1.menuController : in loadAList
+23:56:43.733 INFO  assignment1.menuController : in menuController
+00:02:46.322 INFO  assignment1.GUI : starting program
+00:02:49.915 INFO  assignment1.menuController : in MenuAction
+00:02:49.916 INFO  assignment1.menuController : in loadAList
+00:02:49.918 INFO  assignment1.menuController : in menuController
+00:04:36.787 INFO  assignment1.GUI : starting program
+00:04:39.247 INFO  assignment1.menuController : in MenuAction
+00:04:39.248 INFO  assignment1.menuController : in loadAList
+00:04:39.250 INFO  assignment1.menuController : in menuController
+13:02:42.273 INFO  assignment1.GUI : starting program
+13:02:45.157 INFO  assignment1.menuController : in MenuAction
+13:02:45.157 INFO  assignment1.menuController : in loadAList
+13:02:45.162 INFO  assignment1.menuController : in menuController
+13:02:48.191 INFO  assignment1.menuController : in MenuAction
+13:08:25.037 INFO  assignment1.GUI : starting program
+13:08:41.273 INFO  assignment1.GUI : starting program
+13:08:43.841 INFO  assignment1.menuController : in MenuAction
+13:08:43.842 INFO  assignment1.menuController : in loadAList
+13:08:43.845 INFO  assignment1.menuController : in menuController
+13:09:06.507 INFO  assignment1.menuController : in MenuAction
+13:25:43.460 INFO  assignment1.GUI : starting program
+13:25:46.285 INFO  assignment1.menuController : in MenuAction
+13:25:46.286 INFO  assignment1.menuController : in loadAList
+13:25:46.290 INFO  assignment1.menuController : in menuController
+>>>>>>> branch 'master' of https://github.com/jtrejo2/SoftwareEnterprise1.git
