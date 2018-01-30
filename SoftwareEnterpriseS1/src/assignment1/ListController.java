@@ -27,29 +27,42 @@ import org.apache.logging.log4j.Logger;
 public class ListController implements Initializable{
 	
 	@FXML
-    private ListView<String> listView;
-	ObservableList <String> list = FXCollections.observableArrayList("Ernest Hemingway","Mark Twain","Stephen King","George Orwell");
+    private ListView<Author> listView;
+	private ObservableList<Author> list;
 	private static menuController mController;
-	private static Logger logger = LogManager.getLogger(GUI.class);
+	//private static Logger logger = LogManager.getLogger(GUI.class);
 	
 	
 	
 
 	public ListController() {
-		mController = menuController.getInstanceofmenuContoller();		
+		mController = menuController.getInstanceofmenuContoller();
+		listView = new ListView<Author>();
+		list = FXCollections.observableArrayList(
+				new Author("Billy", "2/22/1984", "www.billybob.com","Bob","Male"),
+			    new Author("Vince", "10/2/1964", "www.vincebrown.com","Brown","Male"),
+			    new Author("Anthony", "11/04/1989", "www.anthonyreynolds.com","Reynolds","Male"));
+			    
 	}
 
 
 	@FXML 
 	void onAuthorListClicked(MouseEvent event){
-	logger.info("in AuthorListClicked");
-    	String author = listView.getSelectionModel().getSelectedItem();
-		if (event.getClickCount() == 2){
-			if (author != null) {
+	//logger.info("in AuthorListClicked");
+    	//Author author = listView.getSelectionModel().getSelectedItem();
+		//if (event.getClickCount() == 2){
+		//	if (author != null) {
 				System.out.print("Author Clicked!");
-			}
-		}
+		//	}
+		//}
     }
+
+
+	//@Override
+	//public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+	//}
 
 	public void initialize(URL location, ResourceBundle resources) {
 		listView.setItems(list);
@@ -57,9 +70,8 @@ public class ListController implements Initializable{
 		@Override
 		public void handle(MouseEvent click) {
 			if (click.getClickCount() == 2) {
-				//logger.info("double-click on " + listView.getSelectionModel().getSelectedItem());
-		        System.out.print("Something was double-clicked");   
-		        	//loadAuthorDetail(listView.getSelectionModel().getSelectedItem());
+				//logger.info(" " + listView.getSelectionModel().getSelectedItem()+ " double clicked");
+		          System.out.println("helloooooooooo");
 		        
 		        }
 		    }

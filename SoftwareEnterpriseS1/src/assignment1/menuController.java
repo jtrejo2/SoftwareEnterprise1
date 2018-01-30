@@ -43,6 +43,7 @@ public class menuController implements Initializable {
 	    @FXML void MenuAction(ActionEvent event) throws IOException {
 	    		logger.info("in MenuAction");
 	    		if(event.getSource() == AuthorList) {
+	    			System.out.println( event.getSource());
 	    			loadAList();
 	    		}
 	    		else
@@ -52,18 +53,22 @@ public class menuController implements Initializable {
 	  
 		private void loadAList() {
 			// TODO Auto-generated method stub
-			Parent tableViewParent = null;
+			//Parent tableViewParent = null;
 			logger.info("in loadAList");
-			try {
-				tableViewParent = FXMLLoader.load(getClass().getResource("AuthorListView.fxml"));
+			
+				//ListController listController = new ListController();
 				System.out.println("we are here2");
-				mainLocation.setCenter(tableViewParent);
+				try {
+					Parent tableViewParent = FXMLLoader.load(getClass().getResource("AuthorListView.fxml"));
+					//mainLocation.setCenter(tableViewParent);
+					mainLocation.setCenter(tableViewParent);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				System.out.println("we are here2");
+				//mainLocation.setCenter(tableViewParent);
 				
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				logger.info("there was an error in the try/catch in loadAlist");
-				
-			}
 	        //Scene tableViewScene = new Scene(tableViewParent);
 
 	        //Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
