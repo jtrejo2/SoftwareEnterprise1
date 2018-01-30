@@ -21,6 +21,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class ListController implements Initializable{
 	
 	@FXML
@@ -31,9 +34,11 @@ public class ListController implements Initializable{
 	
 	
 	
+
 	public ListController() {
 		mController = menuController.getInstanceofmenuContoller();		
 	}
+
 
 	@FXML 
 	void onAuthorListClicked(MouseEvent event){
@@ -45,11 +50,19 @@ public class ListController implements Initializable{
 			}
 		}
     }
-	
-    @Override
-	public void initialize(URL url, ResourceBundle rb) {
-    	logger.info("In initialize");
-    	listView.setItems(list);
-    		
-    }
+
+	public void initialize(URL location, ResourceBundle resources) {
+		listView.setItems(list);
+		listView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+		@Override
+		public void handle(MouseEvent click) {
+			if (click.getClickCount() == 2) {
+				//logger.info("double-click on " + listView.getSelectionModel().getSelectedItem());
+		        System.out.print("Something was double-clicked");   
+		        	//loadAuthorDetail(listView.getSelectionModel().getSelectedItem());
+		        
+		        }
+		    }
+		});
+	}
 }
