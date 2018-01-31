@@ -63,9 +63,6 @@ public class Author {
 		
 		
 	}
-	
-
-
 	public String getAuthorFirst() {
 		// TODO Auto-generated method stub
 		return this.authorFirst.get();

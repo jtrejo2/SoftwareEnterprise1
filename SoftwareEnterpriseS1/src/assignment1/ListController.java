@@ -30,18 +30,18 @@ public class ListController implements Initializable{
     private ListView<Author> listView;
 	private ObservableList<Author> list;
 	private static menuController mController;
-	//private static Logger logger = LogManager.getLogger(GUI.class);
+	private static Logger logger = LogManager.getLogger(GUI.class);
 	
 	
 	
 
 	public ListController() {
-		mController = menuController.getInstanceofmenuContoller();
-		listView = new ListView<Author>();
 		list = FXCollections.observableArrayList(
 				new Author("Billy", "2/22/1984", "www.billybob.com","Bob","Male"),
 			    new Author("Vince", "10/2/1964", "www.vincebrown.com","Brown","Male"),
 			    new Author("Anthony", "11/04/1989", "www.anthonyreynolds.com","Reynolds","Male"));
+		mController = menuController.getInstanceofmenuContoller();
+		listView = new ListView<Author>();
 			    
 	}
 
@@ -52,26 +52,19 @@ public class ListController implements Initializable{
     	//Author author = listView.getSelectionModel().getSelectedItem();
 		//if (event.getClickCount() == 2){
 		//	if (author != null) {
-				System.out.print("Author Clicked!");
+				//System.out.print("Author Clicked!");
 		//	}
 		//}
     }
 
-
-	//@Override
-	//public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		
-	//}
-
 	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
 		listView.setItems(list);
 		listView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 		@Override
 		public void handle(MouseEvent click) {
 			if (click.getClickCount() == 2) {
-				//logger.info(" " + listView.getSelectionModel().getSelectedItem()+ " double clicked");
-		          System.out.println("helloooooooooo");
+				logger.info("double click occured in AuthorListView");
 		        
 		        }
 		    }

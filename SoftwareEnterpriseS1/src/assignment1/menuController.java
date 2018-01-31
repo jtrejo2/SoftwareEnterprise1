@@ -56,17 +56,16 @@ public class menuController implements Initializable {
 			//Parent tableViewParent = null;
 			logger.info("in loadAList");
 			
-				//ListController listController = new ListController();
-				System.out.println("we are here2");
+			//ListController listController = new ListController();
 				try {
 					Parent tableViewParent = FXMLLoader.load(getClass().getResource("AuthorListView.fxml"));
 					//mainLocation.setCenter(tableViewParent);
 					mainLocation.setCenter(tableViewParent);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
+					logger.info("Therre was an issue in the try/catch of loadAlist");
 					e.printStackTrace();
 				}
-				System.out.println("we are here2");
 				//mainLocation.setCenter(tableViewParent);
 				
 	        //Scene tableViewScene = new Scene(tableViewParent);
@@ -81,6 +80,7 @@ public class menuController implements Initializable {
 		@Override
 		public void initialize(URL location, ResourceBundle resources) {
 			// TODO Auto-generated method stub
+			logger.info("in menu controller intialize");
 			
 		}
 }

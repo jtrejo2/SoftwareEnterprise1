@@ -16,15 +16,16 @@ import javafx.scene.control.Button;
 public class DetailController implements Initializable {
 	private static menuController mController;
 	private Author author;
-	private static Logger logger = LogManager.getLogger();
 
     private Button AuthorList;
 
     private Button Save;
+	private static Logger logger = LogManager.getLogger();
 
     public DetailController(Author author){
+    		this.author = author;
+    		logger.info("In Detail Controller");
 		mController = menuController.getInstanceofmenuContoller();
-		this.author = author;
 		
 		
 	}
@@ -38,9 +39,6 @@ public class DetailController implements Initializable {
 		mController.loadAList();
 	}
     
-    void initialize() {
-    	
-    }
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

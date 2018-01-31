@@ -26,6 +26,7 @@ public class GUI extends Application {
     public static void main(String[] args) {
     	//won't show because of the default logger config
   		logger.info("starting program");
+  		//CS 4743 Assignment 1 by <Jonathon Trejo>
   		
   		//but this will
   		//logger.error("This is an error log message24");
