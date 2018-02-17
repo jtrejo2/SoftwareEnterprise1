@@ -113,3 +113,39 @@
 17:20:37.287 ERROR model.AuthorTableGateway : The delete button was clicked
 17:20:40.498 ERROR model.AuthorTableGateway : The delete button was clicked
 17:20:43.493 ERROR views.AppMain : AppMain stop called
+13:42:11.510 ERROR views.AppMain : AppMain init called
+13:42:12.388 ERROR controllers.MenuController : Controller init has been called
+13:42:26.567 ERROR views.AppMain : AppMain stop called
+13:45:42.441 ERROR views.GUI : AppMain init called
+13:45:43.131 ERROR controllers.MenuController : Controller init has been called
+13:45:57.702 ERROR controllers.MenuController : Add author was called
+13:45:57.728 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+13:46:15.638 ERROR model.AuthorTableGateway : 1996/06/20
+13:46:15.658 ERROR model.AuthorTableGateway : The insert has failed
+13:46:15.660 ERROR controllers.AuthorDetailedController : Save button was clicked!
+13:46:38.821 ERROR controllers.MenuController : Add author was called
+13:46:38.830 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+13:46:56.709 ERROR model.AuthorTableGateway : 1996/06/20
+13:46:56.723 ERROR model.AuthorTableGateway : The insert has failed
+13:46:56.725 ERROR controllers.AuthorDetailedController : Save button was clicked!
+13:47:05.406 INFO  controllers.AuthorListController$2 : double-clicked null
+13:47:05.414 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+13:49:01.697 ERROR views.GUI : AppMain stop called
+13:50:41.069 ERROR views.GUI : AppMain init called
+13:50:41.764 ERROR controllers.MenuController : Controller init has been called
+13:50:45.068 ERROR controllers.MenuController : Add author was called
+13:50:45.085 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+13:50:46.869 ERROR views.GUI : AppMain stop called
+13:52:45.436 ERROR views.AppMain : AppMain init called
+13:52:46.060 ERROR controllers.MenuController : Controller init has been called
+13:52:50.438 ERROR controllers.MenuController : Add author was called
+13:52:50.457 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+13:53:06.560 ERROR model.AuthorTableGateway : 1996/06/20
+13:53:06.601 ERROR controllers.AuthorDetailedController : Save button was clicked!
+13:53:32.063 ERROR views.AppMain : AppMain stop called
+13:57:27.496 ERROR views.AppMain : AppMain init called
+13:57:28.228 ERROR controllers.MenuController : Controller init has been called
+13:57:38.297 ERROR controllers.MenuController : Add author was called
+13:57:38.318 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+13:58:14.096 ERROR model.AuthorTableGateway : 1996/09/09
+13:58:14.134 ERROR controllers.AuthorDetailedController : Save button was clicked!

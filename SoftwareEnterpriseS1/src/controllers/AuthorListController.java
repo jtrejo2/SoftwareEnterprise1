@@ -35,20 +35,12 @@ public class AuthorListController {
 	
 	@FXML private void handleButtonAction(ActionEvent action) throws Exception{
 		Object source = action.getSource();
-		//THIS DELETE WORKS BY FIRST CLICKING THE
-		//DELETE BUTTON AND THEN CLICKING THE ITEM IN THE LIST
-		//TO DELETE THE SELECTED ITEM.
-		//TO SEE THE NEW LIST YOU MUST REFRESH BY CHOOSING AUTHOR LIST AGAIN.
-		
-		
+			
 		ListAuthor.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent click){
-				if(click.getClickCount() == 1){
-					//Use ListView's getSelected Item
-					
-					
-					try{
+				if (click.getClickCount() == 1){				
+					try {
 						if(source == Delete){
 							Author selected = ListAuthor.getSelectionModel().getSelectedItem();
 							AppMain.authorGateway.authorDelete(selected);
@@ -58,11 +50,7 @@ public class AuthorListController {
 					}
 				}
 			}
-		});
-		
-		
-		
-		
+		});	
 	}
 	
 	public void initialize(){
@@ -75,7 +63,6 @@ public class AuthorListController {
 			@Override
 			public void handle(MouseEvent click){
 				if(click.getClickCount() == 2){
-					//Use ListView's getSelected Item
 					Author selected = ListAuthor.getSelectionModel().getSelectedItem();
 					
 					logger.info("double-clicked " + selected);
@@ -84,7 +71,6 @@ public class AuthorListController {
 						FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AuthorDetailedView.fxml"));
 						loader.setController(new AuthorDetailedController(selected));
 						Parent view = loader.load();
-						//attach view to application center of border pane
 						AppMain.rootPane.setCenter(view);
 					} catch (IOException e) {
 						e.printStackTrace();

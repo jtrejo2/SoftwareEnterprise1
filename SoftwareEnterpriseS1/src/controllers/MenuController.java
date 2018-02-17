@@ -34,14 +34,11 @@ public class MenuController {
 			
 			List<Author> authors = AppMain.authorGateway.getAuthor();
 			
-			
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AuthorListView.fxml"));
-			
-			//add the controller
+
 			loader.setController(new AuthorListController(authors));
 			
 			Parent view = loader.load();
-			//plug into APPMain's border pane
 			AppMain.rootPane.setCenter(view);
 			return;
 		}

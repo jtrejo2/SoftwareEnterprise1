@@ -37,14 +37,12 @@ public class AuthorDetailedController {
 		
 		if(source == Save){
 			author.Save(author);
-		//logger.error("The save method has failed!");
 		logger.error("Save button was clicked!");
 		}
 	}
 	
 	public void initialize(){
 		logger.error("Detailed View init has been called");
-		//load field data
 		tfid.setText(author.getId() + "");
 		tffirst_name.setText(author.getFirst_name());
 		tflast_name.setText(author.getLast_name());

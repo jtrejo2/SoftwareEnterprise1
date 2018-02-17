@@ -20,8 +20,6 @@ public class AuthorTableGateway {
 	private Connection conn;
 	private static Logger logger = LogManager.getLogger();
 	
-	//return a collection of authors from the database
-	
 	public List<Author> getAuthor(){
 		List<Author> authors = new ArrayList<Author>();
 		PreparedStatement st = null;
@@ -32,7 +30,6 @@ public class AuthorTableGateway {
 			rs = st.executeQuery();
 			
 			while(rs.next()){
-				//create an author object from the record
 				Author author = new Author(rs.getInt("id"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("dob"), rs.getString("gender"), rs.getString("web_site"));
 				authors.add(author);
 			}
@@ -55,9 +52,6 @@ public class AuthorTableGateway {
 	public AuthorTableGateway() throws GatewayException{
 		conn = null;
 		
-		//create a connection to the cars database
-		//create datasource
-		//read db credentials from properties file
 		Properties props = new Properties();
 		FileInputStream fis = null;
 		try{
@@ -65,13 +59,11 @@ public class AuthorTableGateway {
 			props.load(fis);
 			fis.close();
 			
-			//create the datasource
 			MysqlDataSource ds = new MysqlDataSource();
 			ds.setURL(props.getProperty("MYSQL_DB_URL"));
 			ds.setUser(props.getProperty("MYSQL_DB_USERNAME"));
 			ds.setPassword(props.getProperty("MYSQL_DB_PASSWORD"));
 			
-			//create the connection
 			conn = ds.getConnection();
 		} catch (IOException | SQLException e) {
 			e.printStackTrace();
@@ -81,10 +73,8 @@ public class AuthorTableGateway {
 	
 	public void updateAuthor(Author modelauthor){
 		PreparedStatement st = null;
-		//ResultSet rs = null;
 		
 		try{
-			//st = conn.prepareStatement("update author set first_name =" + modelauthor.getFirst_name() + "where id =" + modelauthor.getId() + " );"+ "
 			st = conn.prepareStatement("update author set first_name = '" + modelauthor.getFirst_name() + "',"
 					+ "last_name = '" + modelauthor.getLast_name() + "',"
 					+ "dob = '" + modelauthor.getDob() + "',"
@@ -94,17 +84,10 @@ public class AuthorTableGateway {
 			
 			st.executeUpdate();
 			
-			
-//			UPDATE  `ipp807`.`author` SET  `first_name` =  'Wendigo',
-//					`last_name` =  'Bugaloo',
-//					`dob` =  '1200-12-12', `gender` =  'Female', `web_site` =  'worldoftrucks.com' WHERE  `author`.`id` =9;
-//			
 		} catch (SQLException e){
 			e.printStackTrace();
 		} finally {
 			try{
-//				if(rs != null)
-//					rs.close();
 				if(st != null)
 					st.close();
 			} catch (SQLException e){
@@ -143,9 +126,6 @@ public class AuthorTableGateway {
 		}
 	}
 	
-	
-	
-	//"DELETE FROM `ipp807`.`author` WHERE `author`.`id` = 10"
 	public void authorDelete(Author badauthor){
 		PreparedStatement st = null;
 		try{
@@ -157,7 +137,6 @@ public class AuthorTableGateway {
 		}
 	}
 	
-	//close the connection
 	public void close(){
 		if(conn != null){
 			try{
