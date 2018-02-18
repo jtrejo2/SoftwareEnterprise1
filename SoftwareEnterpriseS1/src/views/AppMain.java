@@ -16,21 +16,20 @@ public class AppMain extends Application{
 
 	private static Logger logger = LogManager.getLogger();
 	public static BorderPane rootPane;
-	public static AuthorTableGateway authorGateway;
+	public static Gateway authorGateway;
 	
 	@Override
 	public void init() throws Exception{
 		super.init();
 		
 		logger.error("AppMain init called");
-		authorGateway = new AuthorTableGateway();
+		authorGateway = new Gateway();
 	}
 	
 	@Override
 	public void stop() throws Exception{
 		super.stop();
-		
-		logger.error("AppMain stop called");
+		logger.error("stop called");
 		authorGateway.close();
 	}
 	

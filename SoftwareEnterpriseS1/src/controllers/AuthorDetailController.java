@@ -1,9 +1,7 @@
 package controllers;
-import java.io.IOException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import model.*;
 import views.*;
-public class AuthorDetailedController {
+
+public class AuthorDetailController {
 	private static Logger logger = LogManager.getLogger();
 	
 	@FXML private TextField first_name, last_name, dob, gender, web_site;
@@ -20,7 +19,7 @@ public class AuthorDetailedController {
 	
 	private Author author;
 	
-	public AuthorDetailedController(Author author){
+	public AuthorDetailController(Author author){
 		this.author = author;
 		
 	}
@@ -41,7 +40,7 @@ public class AuthorDetailedController {
 	}
 	
 	public void initialize(){
-		logger.error("Detailed View init has been called");
+		logger.error("Detail View init called");
 		first_name.setText(author.getFirst_name());
 		last_name.setText(author.getLast_name());
 		dob.setText(author.getDob());

@@ -74,8 +74,8 @@ public class AuthorListController {
 					logger.info("double-clicked " + selected);
 					
 					try{
-						FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AuthorDetailedView.fxml"));
-						loader.setController(new AuthorDetailedController(selected));
+						FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AuthorDetailView.fxml"));
+						loader.setController(new AuthorDetailController(selected));
 						Parent view = loader.load();
 						AppMain.rootPane.setCenter(view);
 						

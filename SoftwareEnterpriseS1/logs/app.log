@@ -194,3 +194,175 @@
 14:15:11.119 ERROR controllers.MenuController : Add author was called
 14:15:11.137 ERROR controllers.AuthorDetailedController : Detailed View init has been called
 14:15:24.273 ERROR views.AppMain : AppMain stop called
+16:05:27.987 ERROR views.AppMain : AppMain init called
+16:05:28.880 ERROR controllers.MenuController : Controller init has been called
+16:05:32.948 INFO  controllers.AuthorListController$2 : double-clicked 4 : Noah Zook : 1996-06-20 : M : google.com
+16:05:32.966 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:05:39.919 ERROR controllers.AuthorDetailedController : Save button was clicked!
+16:05:43.990 INFO  controllers.AuthorListController$2 : double-clicked 4 : Ethan Zook : 1996-06-20 : M : google.com
+16:05:43.999 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:05:46.530 ERROR controllers.MenuController : Add author was called
+16:05:46.536 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:05:48.509 ERROR views.AppMain : AppMain stop called
+16:08:02.746 ERROR views.AppMain : AppMain init called
+16:08:03.603 ERROR controllers.MenuController : Controller init has been called
+16:08:08.076 ERROR controllers.MenuController : Add author was called
+16:08:08.094 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:08:14.180 ERROR views.AppMain : AppMain stop called
+16:08:21.520 ERROR views.AppMain : AppMain init called
+16:08:22.223 ERROR controllers.MenuController : Controller init has been called
+16:08:25.455 ERROR controllers.MenuController : Add author was called
+16:08:25.474 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:08:35.410 ERROR views.AppMain : AppMain stop called
+16:09:49.669 ERROR views.AppMain : AppMain init called
+16:09:50.372 ERROR controllers.MenuController : Controller init has been called
+16:09:53.503 ERROR controllers.MenuController : Add author was called
+16:09:53.524 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:10:02.499 INFO  controllers.AuthorListController$2 : double-clicked 4 : Ethan Zook : 1996-06-20 : M : google.com
+16:10:02.510 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:10:04.071 ERROR views.AppMain : AppMain stop called
+16:10:17.161 ERROR views.AppMain : AppMain init called
+16:10:17.893 ERROR controllers.MenuController : Controller init has been called
+16:10:20.055 ERROR controllers.MenuController : Add author was called
+16:10:20.077 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:10:25.232 INFO  controllers.AuthorListController$2 : double-clicked 4 : Ethan Zook : 1996-06-20 : M : google.com
+16:10:25.244 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:10:27.325 ERROR views.AppMain : AppMain stop called
+16:11:39.271 ERROR views.AppMain : AppMain init called
+16:11:40.129 ERROR controllers.MenuController : Controller init has been called
+16:11:44.895 INFO  controllers.AuthorListController$2 : double-clicked 4 : Ethan Zook : 1996-06-20 : M : google.com
+16:11:44.911 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:11:48.655 ERROR views.AppMain : AppMain stop called
+16:13:11.944 ERROR views.AppMain : AppMain init called
+16:13:12.667 ERROR controllers.MenuController : Controller init has been called
+16:13:14.717 ERROR controllers.MenuController : Add author was called
+16:13:14.738 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:13:22.929 ERROR views.AppMain : AppMain stop called
+16:13:39.829 ERROR views.AppMain : AppMain init called
+16:13:40.467 ERROR controllers.MenuController : Controller init has been called
+16:13:51.588 ERROR views.AppMain : AppMain stop called
+16:18:58.438 ERROR views.AppMain : AppMain init called
+16:18:59.252 ERROR controllers.MenuController : Controller init has been called
+16:19:02.621 ERROR views.AppMain : AppMain stop called
+16:19:26.350 ERROR views.AppMain : AppMain init called
+16:19:27.039 ERROR controllers.MenuController : Controller init has been called
+16:19:32.319 ERROR model.AuthorTableGateway : The delete button was clicked
+16:19:43.170 ERROR views.AppMain : AppMain stop called
+16:21:30.176 ERROR views.AppMain : AppMain init called
+16:21:31.090 ERROR controllers.MenuController : Controller init has been called
+16:21:36.715 ERROR model.AuthorTableGateway : The delete button was clicked
+16:21:41.616 ERROR views.AppMain : AppMain stop called
+16:25:58.345 ERROR views.AppMain : AppMain init called
+16:25:59.053 ERROR controllers.MenuController : Controller init has been called
+16:26:03.168 ERROR views.AppMain : AppMain stop called
+16:26:11.450 ERROR views.AppMain : AppMain init called
+16:26:12.095 ERROR controllers.MenuController : Controller init has been called
+16:26:14.680 ERROR views.AppMain : AppMain stop called
+16:26:41.884 ERROR views.AppMain : AppMain init called
+16:26:42.562 ERROR controllers.MenuController : Controller init has been called
+16:26:44.728 ERROR views.AppMain : AppMain stop called
+16:26:48.641 ERROR views.AppMain : AppMain init called
+16:26:49.305 ERROR controllers.MenuController : Controller init has been called
+16:26:52.335 ERROR controllers.MenuController : Add author was called
+16:26:52.355 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:27:04.065 ERROR controllers.MenuController : Add author was called
+16:27:04.073 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:27:05.429 ERROR views.AppMain : AppMain stop called
+16:27:48.854 ERROR views.AppMain : AppMain init called
+16:27:49.710 ERROR controllers.MenuController : Controller init has been called
+16:27:53.020 ERROR controllers.MenuController : Add author was called
+16:27:53.039 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:27:58.721 ERROR views.AppMain : AppMain stop called
+16:31:36.348 ERROR views.AppMain : AppMain init called
+16:31:37.102 ERROR controllers.MenuController : Controller init has been called
+16:31:39.571 ERROR views.AppMain : AppMain stop called
+16:31:43.140 ERROR views.AppMain : AppMain init called
+16:31:43.842 ERROR controllers.MenuController : Controller init has been called
+16:31:47.305 ERROR controllers.MenuController : Add author was called
+16:31:47.325 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:31:48.526 ERROR views.AppMain : AppMain stop called
+16:31:54.787 ERROR views.AppMain : AppMain init called
+16:31:55.501 ERROR controllers.MenuController : Controller init has been called
+16:32:43.125 ERROR views.AppMain : AppMain stop called
+16:43:07.124 ERROR views.AppMain : AppMain init called
+16:43:07.878 ERROR controllers.MenuController : Controller init has been called
+16:45:07.789 ERROR views.AppMain : AppMain stop called
+16:45:21.362 ERROR views.AppMain : AppMain init called
+16:45:22.124 ERROR controllers.MenuController : Controller init has been called
+16:45:36.064 ERROR views.AppMain : AppMain stop called
+16:48:02.726 ERROR views.AppMain : AppMain init called
+16:48:03.410 ERROR views.AppMain : AppMain stop called
+16:48:22.438 ERROR views.AppMain : AppMain init called
+16:48:22.977 ERROR views.AppMain : AppMain stop called
+16:49:11.393 ERROR views.AppMain : AppMain init called
+16:49:12.479 ERROR views.AppMain : AppMain stop called
+16:49:27.115 ERROR views.AppMain : AppMain init called
+16:49:28.005 ERROR controllers.MenuController : Controller init has been called
+16:49:29.940 ERROR views.AppMain : AppMain stop called
+16:50:04.498 ERROR views.AppMain : AppMain init called
+16:50:05.190 ERROR controllers.MenuController : Controller init has been called
+16:50:08.634 ERROR controllers.MenuController : Add author was called
+16:50:08.657 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:50:10.610 ERROR views.AppMain : AppMain stop called
+16:50:57.620 ERROR views.AppMain : AppMain init called
+16:50:58.342 ERROR controllers.MenuController : Controller init has been called
+16:51:03.724 ERROR views.AppMain : AppMain stop called
+16:52:43.652 ERROR views.AppMain : AppMain init called
+16:52:44.511 ERROR controllers.MenuController : Controller init has been called
+16:57:15.115 ERROR views.AppMain : AppMain init called
+16:57:15.901 ERROR controllers.MenuController : Controller init has been called
+16:57:19.973 ERROR controllers.MenuController : Add author was called
+16:57:19.989 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+16:57:23.905 ERROR views.AppMain : AppMain stop called
+17:00:21.065 ERROR views.AppMain : AppMain stop called
+17:01:34.480 ERROR views.AppMain : AppMain init called
+17:01:35.181 ERROR controllers.MenuController : Controller init has been called
+17:01:39.517 ERROR controllers.MenuController : Add author was called
+17:01:39.532 ERROR controllers.AuthorDetailedController : Detailed View init has been called
+17:01:55.471 ERROR model.AuthorTableGateway : 1996/06/20
+17:01:55.507 ERROR controllers.AuthorDetailedController : Save button was clicked!
+17:02:04.881 ERROR views.AppMain : AppMain stop called
+17:07:17.733 ERROR views.AppMain : AppMain init called
+17:07:18.567 ERROR controllers.MenuController : Controller init has been called
+17:07:23.991 ERROR controllers.MenuController : Add author was called
+17:07:24.006 ERROR controllers.AuthorDetailController : Detailed View init has been called
+17:07:44.907 ERROR model.AuthorTableGateway : 1999/12/12
+17:07:44.951 ERROR controllers.AuthorDetailController : Save button was clicked!
+17:07:51.641 ERROR views.AppMain : AppMain stop called
+17:12:53.890 ERROR views.AppMain : AppMain init called
+17:12:54.494 ERROR controllers.MenuController : Controller init has been called
+17:12:58.863 INFO  controllers.AuthorListController$2 : double-clicked 6 : Noah Zook : 1996-06-20 : M : google.com
+17:13:00.443 INFO  controllers.AuthorListController$2 : double-clicked 7 : A B : 1999-12-12 : F : facebook.com
+17:13:01.220 INFO  controllers.AuthorListController$2 : double-clicked 6 : Noah Zook : 1996-06-20 : M : google.com
+17:13:01.772 INFO  controllers.AuthorListController$2 : double-clicked 7 : A B : 1999-12-12 : F : facebook.com
+17:13:02.372 INFO  controllers.AuthorListController$2 : double-clicked 6 : Noah Zook : 1996-06-20 : M : google.com
+17:13:04.259 ERROR controllers.MenuController : Add author was called
+17:13:06.689 ERROR controllers.MenuController : Add author was called
+17:13:07.707 ERROR views.AppMain : stop called
+17:13:51.564 ERROR views.AppMain : AppMain init called
+17:13:52.264 ERROR controllers.MenuController : Controller init has been called
+17:13:54.957 INFO  controllers.AuthorListController$2 : double-clicked 7 : A B : 1999-12-12 : F : facebook.com
+17:14:00.107 INFO  controllers.AuthorListController$2 : double-clicked 6 : Noah Zook : 1996-06-20 : M : google.com
+17:14:01.270 ERROR controllers.MenuController : Add author was called
+17:14:24.157 ERROR views.AppMain : AppMain init called
+17:14:24.882 ERROR controllers.MenuController : Controller init has been called
+17:14:25.808 ERROR views.AppMain : stop called
+17:14:26.371 ERROR views.AppMain : stop called
+17:14:29.711 ERROR views.AppMain : AppMain init called
+17:14:30.386 ERROR controllers.MenuController : Controller init has been called
+17:14:36.418 INFO  controllers.AuthorListController$2 : double-clicked 7 : A B : 1999-12-12 : F : facebook.com
+17:14:36.433 ERROR controllers.AuthorDetailController : Detailed View init has been called
+17:14:40.428 ERROR controllers.MenuController : Add author was called
+17:14:40.436 ERROR controllers.AuthorDetailController : Detailed View init has been called
+17:14:41.478 ERROR views.AppMain : stop called
+17:15:00.124 ERROR views.AppMain : AppMain init called
+17:15:00.770 ERROR controllers.MenuController : Controller init has been called
+17:15:03.301 INFO  controllers.AuthorListController$2 : double-clicked 7 : A B : 1999-12-12 : F : facebook.com
+17:15:03.317 ERROR controllers.AuthorDetailController : Detailed View init has been called
+17:15:05.090 ERROR views.AppMain : stop called
+17:18:55.452 ERROR views.AppMain : AppMain init called
+17:18:56.229 ERROR controllers.MenuController : Controller init has been called
+17:18:59.576 INFO  controllers.AuthorListController$2 : double-clicked 6 : Noah Zook : 1996-06-20 : M : google.com
+17:18:59.592 ERROR controllers.AuthorDetailController : Detail View init called
+17:19:01.743 ERROR controllers.MenuController : Add author called
+17:19:01.753 ERROR controllers.AuthorDetailController : Detail View init called

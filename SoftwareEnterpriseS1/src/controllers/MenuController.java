@@ -44,9 +44,9 @@ public class MenuController {
 		}
 		
 		if(source == addAuthor){
-			logger.error("Add author was called");
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AuthorDetailedView.fxml"));
-			loader.setController(new AuthorDetailedController(new Author()));
+			logger.error("Add author called");
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AuthorDetailView.fxml"));
+			loader.setController(new AuthorDetailController(new Author()));
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view);
 			

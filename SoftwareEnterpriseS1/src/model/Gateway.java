@@ -14,9 +14,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
-
-
-public class AuthorTableGateway {
+public class Gateway {
 	private Connection conn;
 	private static Logger logger = LogManager.getLogger();
 	
@@ -49,7 +47,7 @@ public class AuthorTableGateway {
 		return authors;
 	}
 	
-	public AuthorTableGateway() throws GatewayException{
+	public Gateway() throws GatewayException{
 		conn = null;
 		
 		Properties props = new Properties();
@@ -147,3 +145,4 @@ public class AuthorTableGateway {
 		}
 	}
 }
+
