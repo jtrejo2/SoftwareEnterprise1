@@ -21,16 +21,14 @@ import views.*;
 public class AuthorListController {
 	private static Logger logger = LogManager.getLogger();
 	@FXML private Button Delete;
-	
+	@FXML private Button Refresh;
 	@FXML private ListView<Author> ListAuthor;
 	
 	private Author author;
 	private List<Author> authors;
 	
-	
 	public AuthorListController(List<Author> authors){
-		this.authors = authors;
-		
+		this.authors = authors;	
 	}
 	
 	@FXML private void handleButtonAction(ActionEvent action) throws Exception{
@@ -44,6 +42,14 @@ public class AuthorListController {
 						if(source == Delete){
 							Author selected = ListAuthor.getSelectionModel().getSelectedItem();
 							AppMain.authorGateway.authorDelete(selected);
+						}
+						if(source == Refresh){
+							List<Author> authors = AppMain.authorGateway.getAuthor();
+							FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AuthorListView.fxml"));
+							loader.setController(new AuthorListController(authors));
+							Parent view = loader.load();
+							AppMain.rootPane.setCenter(view);
+							return;
 						}
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -72,6 +78,7 @@ public class AuthorListController {
 						loader.setController(new AuthorDetailedController(selected));
 						Parent view = loader.load();
 						AppMain.rootPane.setCenter(view);
+						
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
