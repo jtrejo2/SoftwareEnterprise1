@@ -3,24 +3,30 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment1.menuController"> 
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment1.AppController"> 
   <children>
-    <MenuBar VBox.vgrow="NEVER">
-      <menus>
-        <Menu mnemonicParsing="false" text="Menu">
-          <items>
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem fx:id="AuthorList" mnemonicParsing="false" onAction="#MenuAction" text="Author List" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem fx:id="Quit" mnemonicParsing="false" onAction="#MenuAction" text="Quit" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
-      <BorderPane fx:id="mainLocation" prefHeight="341.0" prefWidth="640.0" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+          <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+              <Menu mnemonicParsing="false" text="File">
+                <items>
+                  <MenuItem fx:id="Quit" mnemonicParsing="false" onAction="#clickMenuQuit" text="Quit" />
+                </items>
+              </Menu>
+                  <Menu mnemonicParsing="false" text="Author List">
+                    <items>
+                  <MenuItem fx:id="AuthorList" mnemonicParsing="false" onAction="#clickMenuAuthorList" text="Author List View" />
+                    </items>
+                  </Menu>
+            </menus>
+          </MenuBar>
+         </top>
+      </BorderPane>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0" />
   </children>
 </VBox>

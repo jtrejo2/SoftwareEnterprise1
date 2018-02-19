@@ -29,7 +29,7 @@ public class ListController implements Initializable{
 	@FXML
     private ListView<Author> listView;
 	private ObservableList<Author> list;
-	private static menuController mController;
+	private static AppController mController;
 	private static Logger logger = LogManager.getLogger(GUI.class);
 	
 	
@@ -40,7 +40,7 @@ public class ListController implements Initializable{
 				new Author("Billy", "2/22/1984", "www.billybob.com","Bob","Male"),
 			    new Author("Vince", "10/2/1964", "www.vincebrown.com","Brown","Male"),
 			    new Author("Anthony", "11/04/1989", "www.anthonyreynolds.com","Reynolds","Male"));
-		mController = menuController.getInstanceofmenuContoller();
+		mController = AppController.getInstanceofmenuContoller();
 		listView = new ListView<Author>();
 			    
 	}
@@ -57,17 +57,34 @@ public class ListController implements Initializable{
 		//}
     }
 
+	
 	public void initialize(URL location, ResourceBundle resources) {
+
+	
 		// TODO Auto-generated method stub
+		
 		listView.setItems(list);
 		listView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 		@Override
 		public void handle(MouseEvent click) {
 			if (click.getClickCount() == 2) {
 				logger.info("double click occured in AuthorListView");
+				try {
+					Parent tableViewParent = FXMLLoader.load(getClass().getResource("AuthorListView.fxml"));
+					//mainLocation.setCenter(tableViewParent);
+					//mainLocation.setCenter(tableViewParent);
+					//mController.changeView(DOG_LIST, 1);
+					//mController.loadAList();
+					
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					logger.info("Therre was an issue in the try/catch of loadAlist");
+					e.printStackTrace();
+				}
 		        
 		        }
 		    }
 		});
-	}
+	
+}
 }
