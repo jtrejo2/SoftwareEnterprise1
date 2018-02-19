@@ -56,7 +56,7 @@ public class Gateway {
 			fis = new FileInputStream("db.properties");
 			props.load(fis);
 			fis.close();
-			
+			//connect to the db
 			MysqlDataSource ds = new MysqlDataSource();
 			ds.setURL(props.getProperty("MYSQL_DB_URL"));
 			ds.setUser(props.getProperty("MYSQL_DB_USERNAME"));
@@ -68,7 +68,7 @@ public class Gateway {
 			throw new GatewayException(e);
 		}
 	}
-	
+	//update the author in the db
 	public void updateAuthor(Author modelauthor){
 		PreparedStatement st = null;
 		
@@ -93,7 +93,7 @@ public class Gateway {
 			}
 		}
 	}
-	
+	//insert an author in the db
 	public void insertAuthor(Author newguy) throws SQLException{
 		PreparedStatement st = null;
 		ResultSet rs = null;
@@ -123,7 +123,7 @@ public class Gateway {
 			}
 		}
 	}
-	
+	//delete an author from the db
 	public void authorDelete(Author badauthor){
 		PreparedStatement st = null;
 		try{
@@ -134,7 +134,7 @@ public class Gateway {
 			e.printStackTrace();
 		}
 	}
-	
+	//close the conenction to the db
 	public void close(){
 		if(conn != null){
 			try{

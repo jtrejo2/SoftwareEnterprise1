@@ -14,7 +14,7 @@ public class Author {
 	private String gender;
 	private String webSite;
 	private String firstName;
-	
+	//assign initial values
 	public Author(){
 		this.id = 0;
 		this.firstName = "";
@@ -23,7 +23,7 @@ public class Author {
 		this.gender = "";
 		this.webSite = "";
 	}
-	
+	//assign Author values
 	public Author(int id, String first_name, String last_name, String dob, String gender, String web_site){
 		this.id = id;
 		this.idValidate(id);
@@ -45,15 +45,15 @@ public class Author {
 	}
 
 	
-	
+	//return Id
 	public int getId() {
 		return id;
 	}
-	
+	//set Id
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+	//make sure Id is valid
 	public boolean idValidate(int id){
 		if(this.id < 0){
 			return false;
@@ -61,53 +61,53 @@ public class Author {
 		else
 			return true;
 	}
-	
+	//return Author first name
 	public String getFirst_name() {
 		return firstName;
 	}
-
+	//set Author first name
 	public void setFirst_name(String first_name) {
 		this.firstName = first_name;
 	}
-	
+	//validate author first name
 	public boolean fnameValidate(String first_name){
 		if(this.firstName == "" || this.firstName.length() > 100)
 			return false;
 		else 
 			return true;
 	}
-
+	//retun author last name
 	public String getLast_name() {
 		return lastName;
 	}
-
+	//set author last name
 	public void setLast_name(String last_name) {
 		this.lastName = last_name;
 	}
-	
+	//validate author last name
 	public boolean lnameValidate(String last_name){
 		if(this.lastName == "" || this.lastName.length() > 100)
 			return false;
 		else
 			return true;
 	}
-
+	//return author dob
 	public String getDob() {
 		return dob;
 	}
-
+	//set author dob
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
-
+	//return gender
 	public String getGender() {
 		return gender;
 	}
-
+	//set author gender
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
+	//validate author gender
 	public boolean genderValidate(String gender){
 		if(this.gender.equals("M") || this.gender.equals("Male") || this.gender.equals("F") || this.gender.equals("Female") || this.gender.equals("Unknown"))
 			return true;
@@ -129,7 +129,7 @@ public class Author {
 		else
 			return true;
 	}
-	
+	//save author information after it is validated
 	public void Save(Author author) throws Exception {
 			
 			

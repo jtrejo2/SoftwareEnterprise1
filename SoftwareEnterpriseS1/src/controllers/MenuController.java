@@ -14,7 +14,7 @@ import views.*;
 
 
 import java.util.List;
-
+//Menu Controller
 public class MenuController {
 	private static Logger logger = LogManager.getLogger();
 	@FXML private MenuItem menuExit;
@@ -24,31 +24,31 @@ public class MenuController {
 	public MenuController(){
 		
 	}
-	
+	//Handle when menu item is clicked
 	@FXML private void handleMenuItem(ActionEvent action) throws IOException {
 		Object source = action.getSource();
-		if(source == menuExit) {
+		if(source == menuExit) {//exit if exit is selected
 			Platform.exit();
 		}
-		if(source == menuAuthorList) {
+		if(source == menuAuthorList) {//load the listView if menuAuthorList was selected
 			
 			List<Author> authors = AppMain.authorGateway.getAuthor();
 			
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AuthorListView.fxml"));
 
-			loader.setController(new AuthorListController(authors));
+			loader.setController(new AuthorListController(authors));//set controller
 			
 			Parent view = loader.load();
-			AppMain.rootPane.setCenter(view);
+			AppMain.rootPane.setCenter(view);//display
 			return;
 		}
 		
-		if(source == addAuthor){
+		if(source == addAuthor){//load DetailView if addAuthor is selected
 			logger.info("Add author called");
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AuthorDetailView.fxml"));
-			loader.setController(new AuthorDetailController(new Author()));
+			loader.setController(new AuthorDetailController(new Author()));//set Detail Controller
 			Parent view = loader.load();
-			AppMain.rootPane.setCenter(view);
+			AppMain.rootPane.setCenter(view); //Display
 			
 		}
 	}

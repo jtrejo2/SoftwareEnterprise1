@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import model.*;
 import views.*;
+//AuthorDetailList Controller 
 public class AuthorDetailController {
 	private static Logger logger = LogManager.getLogger();
 	
@@ -17,12 +18,12 @@ public class AuthorDetailController {
 	@FXML private Button Save;
 	
 	private Author author;
-	
+	//assign author to this.author
 	public AuthorDetailController(Author author){
 		this.author = author;
 		
 	}
-	
+	//when save button is clicked call the save Author save method with the entered user information
 	@FXML private void handleButtonAction(ActionEvent action) throws Exception {
 		Object source = action.getSource();
 		
@@ -37,7 +38,7 @@ public class AuthorDetailController {
 			logger.error("Save button was clicked!");
 			}
 	}
-	
+	//initialize
 	public void initialize(){
 		logger.info("Detail View init called");
 		first_name.setText(author.getFirst_name());

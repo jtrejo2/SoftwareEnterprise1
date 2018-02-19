@@ -17,7 +17,7 @@ import javafx.scene.input.MouseEvent;
 import model.*;
 import views.*;
 
-
+//AuthorListController
 public class AuthorListController {
 	private static Logger logger = LogManager.getLogger();
 	@FXML private Button Delete;
@@ -26,11 +26,11 @@ public class AuthorListController {
 	
 	private Author author;
 	private List<Author> authors;
-	
+	//assign author to this.author
 	public AuthorListController(List<Author> authors){
 		this.authors = authors;	
 	}
-	
+	//Handle when a button is clicked
 	@FXML private void handleButtonAction(ActionEvent action) throws Exception{
 		Object source = action.getSource();
 			
@@ -38,15 +38,15 @@ public class AuthorListController {
 			@Override
 			public void handle(MouseEvent click){
 				if (click.getClickCount() == 1){				
-					try {
+					try {//if delete was selected delete the author and load the listView again
 						if(source == Delete){
 							Author selected = ListAuthor.getSelectionModel().getSelectedItem();
 							AppMain.authorGateway.authorDelete(selected);
 							List<Author> authors = AppMain.authorGateway.getAuthor();
 							FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AuthorListView.fxml"));
-							loader.setController(new AuthorListController(authors));
+							loader.setController(new AuthorListController(authors));//set controller
 							Parent view = loader.load();
-							AppMain.rootPane.setCenter(view);
+							AppMain.rootPane.setCenter(view); //display
 							return;
 						}
 						/*if(source == Refresh){
@@ -64,7 +64,7 @@ public class AuthorListController {
 			}
 		});	
 	}
-	
+	//initialize
 	public void initialize(){
 		ObservableList<Author> items = ListAuthor.getItems();
 		for(Author a : authors){
@@ -81,9 +81,9 @@ public class AuthorListController {
 					
 					try{
 						FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AuthorDetailView.fxml"));
-						loader.setController(new AuthorDetailController(selected));
+						loader.setController(new AuthorDetailController(selected));//set controller
 						Parent view = loader.load();
-						AppMain.rootPane.setCenter(view);
+						AppMain.rootPane.setCenter(view);//display
 						
 					} catch (IOException e) {
 						e.printStackTrace();
