@@ -366,3 +366,16 @@
 17:18:59.592 ERROR controllers.AuthorDetailController : Detail View init called
 17:19:01.743 ERROR controllers.MenuController : Add author called
 17:19:01.753 ERROR controllers.AuthorDetailController : Detail View init called
+18:30:06.117 ERROR views.AppMain : AppMain init called
+18:30:06.871 ERROR controllers.MenuController : Controller init has been called
+18:30:20.972 ERROR model.Gateway : The delete button was clicked
+18:30:41.331 ERROR controllers.MenuController : Add author called
+18:30:41.349 ERROR controllers.AuthorDetailController : Detail View init called
+18:30:57.527 ERROR controllers.MenuController : Add author called
+18:30:57.539 ERROR controllers.AuthorDetailController : Detail View init called
+18:31:00.416 ERROR views.AppMain : stop called
+18:32:52.982 ERROR views.AppMain : AppMain init called
+18:32:53.838 ERROR controllers.MenuController : Controller init has been called
+18:32:59.167 ERROR controllers.MenuController : Add author called
+18:32:59.183 ERROR controllers.AuthorDetailController : Detail View init called
+18:33:01.078 ERROR views.AppMain : stop called

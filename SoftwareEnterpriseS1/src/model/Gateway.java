@@ -129,7 +129,7 @@ public class Gateway {
 		try{
 		st = conn.prepareStatement("delete from author where id = '" + badauthor.getId() + "'");
 		st.executeUpdate();
-		logger.error("The delete button was clicked");
+		logger.error("delete button clicked");
 		}catch(SQLException e){
 			e.printStackTrace();
 		}

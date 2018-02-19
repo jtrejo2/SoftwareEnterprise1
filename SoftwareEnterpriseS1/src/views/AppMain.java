@@ -35,7 +35,7 @@ public class AppMain extends Application{
 	
 	@Override
 	public void start(Stage stage) throws Exception{
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/Master_Stage.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/menu.fxml"));
 		MenuController controller = new MenuController();
 		loader.setController(controller);
 				
