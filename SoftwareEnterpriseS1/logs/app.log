@@ -665,3 +665,16 @@
 11:02:02.849 INFO  controllers.MenuController : Add book called
 11:02:02.855 INFO  controllers.BookDetailController : Detail View init called
 11:02:16.823 ERROR views.AppMain : stop called
+11:03:36.340 INFO  views.AppMain : AppMain init called
+11:03:36.990 INFO  controllers.MenuController : Controller init has been called
+11:03:40.622 INFO  controllers.MenuController : Add book called
+11:03:40.645 INFO  controllers.BookDetailController : Detail View init called
+11:03:43.060 INFO  controllers.MenuController : Add author called
+11:03:43.069 INFO  controllers.AuthorDetailController : Detail View init called
+11:03:49.303 INFO  controllers.MenuController : Add book called
+11:03:49.310 INFO  controllers.BookDetailController : Detail View init called
+11:04:07.602 INFO  controllers.MenuController : Add book called
+11:04:07.608 INFO  controllers.BookDetailController : Detail View init called
+11:04:11.960 INFO  controllers.MenuController : Add author called
+11:04:11.968 INFO  controllers.AuthorDetailController : Detail View init called
+11:04:16.758 ERROR views.AppMain : stop called
