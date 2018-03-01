@@ -11,25 +11,43 @@ import views.AppMain;
 public class Book{
 	
 	int id;
-	private SimpleStringProperty title;
-	private SimpleStringProperty summary;
-	private SimpleIntegerProperty yearPublished;	
-	private SimpleStringProperty isbn;
-	private SimpleObjectProperty<Publisher> publisher;
-	private SimpleObjectProperty<LocalDate> dateAdded;
-	
-	
-	public Book(String title) {
-		this.title = new SimpleStringProperty(title);
-		this.summary = new SimpleStringProperty(null);
-		this.yearPublished = new SimpleIntegerProperty(2018); 
-		this.isbn = new SimpleStringProperty("un-assigned");
-		this.publisher = new SimpleObjectProperty<Publisher>(new Publisher());
-	}
+	private String title;
+	private String summary;
+	private int yearPublished;	
+	private String isbn;
+	private Publisher publisher;
+	private LocalDate dateAdded;
 	
 	public Book() {
-		this("Untitled Book");
+		this.id = 0;
+		this.title = null;
+		this.summary = null;
+		this.yearPublished = 0;
+		this.isbn= null;
+		this.publisher = null;
+		this.dateAdded = null;
 	}	
+	
+	public Book(String title, String summary, int yearPublished, String isbn, LocalDate dateAdded) {
+		this.id = 0;
+		this.idValidate(id);
+		
+		this.title = title;
+		this.titleValidate(title);
+		
+		this.summary = null;
+		this.summaryValidate();
+		
+		this.yearPublished = 2018; 
+		this.yearValidate();
+		
+		this.isbn = "unassigned";
+		this.isbnValidate();
+		
+		this.publisher = publisher;
+	}
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -37,14 +55,22 @@ public class Book{
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	
+	public boolean idValidate(int id){
+		if(this.id < 0){
+			return false;
+		}
+		else
+			return true;
+	}
+	
 	public String getTitle() {
-		return title.get();
+		return title;
 	}
 
 	
 	public void setTitle(String title) {
-		this.title.set(title);;
+		this.title = title;
 	}
 	public boolean titleValidate(String titleEntered) {
 		boolean result = true;
@@ -56,15 +82,15 @@ public class Book{
 	
 	
 	public String getSummary() {
-		return summary.get();
+		return summary;
 	}
 
 	public void setSummary(String summary) {
-		this.summary.set(summary);;
+		this.summary = summary;
 	}
 	public boolean summaryValidate() {
 		boolean result = true;
-		if(this.summary.get().length() < 65536) {
+		if(this.summary.length() < 65536) {
 			result = false;
 		}
 		return result;
@@ -72,16 +98,16 @@ public class Book{
 	
 	
 	public int getYearPublished() {
-		return yearPublished.get();
+		return yearPublished;
 	}
 
 	public void setYearPublished(int yearPublished) {
-		this.yearPublished.set(yearPublished);
+		this.yearPublished = yearPublished;
 	}
 	public boolean yearValidate() {
 		boolean result = true;
 		int yearCurr = Calendar.getInstance().get(Calendar.YEAR);
-		if(this.yearPublished.get() > yearCurr) {
+		if(this.yearPublished > yearCurr) {
 			result = false;
 		}
 		return result;
@@ -89,15 +115,15 @@ public class Book{
 	
 	
 	public String getIsbn() {
-		return isbn.get();
+		return isbn;
 	}
 
 	public void setIsbn(String isbn) {
-		this.isbn.set(isbn);
+		this.isbn = isbn;
 	}
 	public boolean isbnValidate() {
 		boolean result = true;
-		if(this.isbn.get().length() > 13) {
+		if(this.isbn.length() > 13) {
 			result = false;
 		}
 		return result;
@@ -105,31 +131,32 @@ public class Book{
 	
 	
 	public Publisher getPublisher() {
-		return publisher.getValue();
+		return publisher;
 	}
 
 	public void setPublisher(Publisher publisher) {
-		this.publisher.setValue(publisher);
+		this.publisher = publisher;
 	}
+	
 
 	public LocalDate getDateAdded() {
-		return dateAdded.get();
+		return dateAdded;
 	}
 
 	public void setDateAdded(LocalDate dateAdded) {
-		this.dateAdded.setValue(dateAdded);
+		this.dateAdded = dateAdded;
 	}
-	/*
+	
 	public void Save(Book book) throws Exception {
 		
 		
 		if(this.titleValidate(title) == false)
 			throw new Exception("Validation failed");
-		if(this.summaryValidate(summary) == false)
+		if(this.summaryValidate() == false)
 			throw new Exception("Validation failed");
-		if(this.yearValidate(year) == false)
+		if(this.yearValidate() == false)
 			throw new Exception("Validation failed");
-		if(this.isbnValidate(isbn) == false)
+		if(this.isbnValidate() == false)
 			throw new Exception("Validation failed");
 		
 		if(id != 0){
@@ -139,24 +166,11 @@ public class Book{
 			AppMain.bookGateway.insertBook(this);
 	    
 	}
-	*/
+	
+	@Override
 	public String toString() {
-		return this.title.get();
-	}
-
-	public SimpleStringProperty titleproperty() {
 		return this.title;
 	}
 
-	public SimpleStringProperty isbnproperty() {
-		return this.isbn;
-	}
-
-	public SimpleIntegerProperty yearPublishedProperty() {
-		return this.yearPublished ;
-	}
-	public SimpleObjectProperty<LocalDate> dateAddedProperty() {
-		return this.dateAdded;
-	}
 
 }

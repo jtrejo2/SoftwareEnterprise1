@@ -17,24 +17,24 @@ import javafx.scene.control.Alert.AlertType;
 public class BookDetailController {
 	private static Logger logger = LogManager.getLogger();
 	
-	@FXML private TextField title, summary, year_published, isbn, publisher, date_added;
+	@FXML private TextField title, summary, yearPublished, isbn, publisher, dateAdded;
 	@FXML private Button Save;
 	
-	private Book book;
+	//private Book book;
+	
 	//assign book to this.book
 	public BookDetailController(Book book){
-		this.book = book;
-		
+		//this.book = book;
 	}
 	
 	//when save button is clicked call the save book save method with the entered user information
 	@FXML private void handleButtonAction(ActionEvent action) throws Exception {
 		Object source = action.getSource();
 		
-		book.setTitle(title.getText());
-		book.setSummary(summary.getText());
+		//book.setTitle(title.getText());
+		//book.setSummary(summary.getText());
 		//book.setYearPublished(year_published.getText());
-		book.setIsbn(isbn.getText());
+		//book.setIsbn(isbn.getText());
 		//book.setPublisher(publisher.getText());
 		//book.setDateAdded(date_added.getText());
 	
@@ -54,10 +54,10 @@ public class BookDetailController {
 	//initialize
 	public void initialize(){
 		logger.info("Detail View init called");
-		//first_name.setText(book.getFirst_name());
-		//last_name.setText(book.getLast_name());
-		//dob.setText(book.getDob());
-		//gender.setText(book.getGender());
-		//web_site.setText(book.getWeb_site());
+		//title.setText(book.getTitle());
+		//summary.setText(book.getSummary());
+		//yearPublished.setText(book.getYearPublished());
+		//isbn.setText(book.getIsbn());
+		//dateAdded.setText(book.getDateAdded());
 	}
 }

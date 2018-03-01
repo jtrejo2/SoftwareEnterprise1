@@ -10,6 +10,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import model.*;
 import controllers.*;
+
 //“CS 4743 Assignment 2 by <Noah Zook and Jonathan Trejo>
 
 public class AppMain extends Application{
@@ -25,6 +26,7 @@ public class AppMain extends Application{
 		
 		logger.info("AppMain init called");
 		authorGateway = new Gateway();
+		bookGateway = new BookGateway();
 	}
 	
 	@Override
@@ -32,6 +34,7 @@ public class AppMain extends Application{
 		super.stop();
 		logger.error("stop called");
 		authorGateway.close();
+		bookGateway.close();
 	}
 	
 	@Override
@@ -45,7 +48,7 @@ public class AppMain extends Application{
 	
 		Scene scene = new Scene(view);
 		stage.setScene(scene);
-		stage.setTitle("Assignment 2");
+		stage.setTitle("Assignment 3");
 		stage.show();
 		
 	}

@@ -564,3 +564,104 @@
 00:23:18.678 INFO  controllers.MenuController : Add author called
 00:23:18.689 INFO  controllers.AuthorDetailController : Detail View init called
 00:23:20.902 ERROR views.AppMain : stop called
+10:15:08.330 INFO  views.AppMain : AppMain init called
+10:15:09.113 INFO  controllers.MenuController : Controller init has been called
+10:15:16.352 INFO  controllers.MenuController : Add book called
+10:15:23.448 ERROR views.AppMain : stop called
+10:18:41.171 INFO  views.AppMain : AppMain init called
+10:18:41.765 INFO  controllers.MenuController : Controller init has been called
+10:18:44.402 INFO  controllers.MenuController : Add book called
+10:18:45.480 ERROR views.AppMain : stop called
+10:20:18.865 INFO  views.AppMain : AppMain init called
+10:20:19.502 INFO  controllers.MenuController : Controller init has been called
+10:20:22.255 INFO  controllers.MenuController : Add book called
+10:20:42.210 ERROR views.AppMain : stop called
+10:29:32.862 INFO  views.AppMain : AppMain init called
+10:29:33.516 INFO  controllers.MenuController : Controller init has been called
+10:29:35.615 INFO  controllers.MenuController : Add book called
+10:29:36.865 ERROR views.AppMain : stop called
+10:31:28.930 INFO  views.AppMain : AppMain init called
+10:31:29.584 INFO  controllers.MenuController : Controller init has been called
+10:31:31.556 INFO  controllers.MenuController : Add book called
+10:31:33.796 ERROR views.AppMain : stop called
+10:35:41.374 INFO  views.AppMain : AppMain init called
+10:35:42.250 INFO  controllers.MenuController : Controller init has been called
+10:35:44.307 INFO  controllers.MenuController : Add book called
+10:35:51.514 ERROR views.AppMain : stop called
+10:36:19.604 INFO  views.AppMain : AppMain init called
+10:36:20.306 INFO  controllers.MenuController : Controller init has been called
+10:36:22.736 INFO  controllers.MenuController : Add book called
+10:36:27.546 INFO  controllers.MenuController : Add author called
+10:36:27.568 INFO  controllers.AuthorDetailController : Detail View init called
+10:36:28.764 ERROR views.AppMain : stop called
+10:37:06.959 INFO  views.AppMain : AppMain init called
+10:37:07.607 INFO  controllers.MenuController : Controller init has been called
+10:37:10.874 INFO  controllers.MenuController : Add book called
+10:37:12.005 ERROR views.AppMain : stop called
+10:38:33.652 INFO  views.AppMain : AppMain init called
+10:38:34.413 INFO  controllers.MenuController : Controller init has been called
+10:38:36.667 INFO  controllers.MenuController : Add book called
+10:38:38.207 ERROR views.AppMain : stop called
+10:40:50.764 INFO  views.AppMain : AppMain init called
+10:40:51.371 INFO  controllers.MenuController : Controller init has been called
+10:40:55.988 INFO  controllers.MenuController : Add book called
+10:40:56.917 ERROR views.AppMain : stop called
+10:46:02.638 INFO  views.AppMain : AppMain init called
+10:46:03.257 INFO  controllers.MenuController : Controller init has been called
+10:46:05.807 INFO  controllers.MenuController : Add book called
+10:50:50.592 ERROR views.AppMain : stop called
+10:54:57.556 INFO  views.AppMain : AppMain init called
+10:54:58.316 INFO  controllers.MenuController : Controller init has been called
+10:55:00.501 INFO  controllers.MenuController : Add book called
+10:55:00.531 INFO  controllers.BookDetailController : Detail View init called
+10:55:08.496 ERROR views.AppMain : stop called
+10:55:43.237 INFO  views.AppMain : AppMain init called
+10:55:43.807 INFO  controllers.MenuController : Controller init has been called
+10:55:46.602 INFO  controllers.MenuController : Add book called
+10:55:46.630 INFO  controllers.BookDetailController : Detail View init called
+10:55:52.704 INFO  controllers.MenuController : Add book called
+10:55:52.711 INFO  controllers.BookDetailController : Detail View init called
+10:55:54.693 INFO  controllers.MenuController : Add author called
+10:55:54.702 INFO  controllers.AuthorDetailController : Detail View init called
+10:56:00.436 ERROR views.AppMain : stop called
+10:56:13.908 INFO  views.AppMain : AppMain init called
+10:56:14.529 INFO  controllers.MenuController : Controller init has been called
+10:56:16.981 INFO  controllers.MenuController : Add book called
+10:56:17.003 INFO  controllers.BookDetailController : Detail View init called
+10:56:24.284 ERROR views.AppMain : stop called
+10:56:41.889 INFO  views.AppMain : AppMain init called
+10:56:42.549 INFO  controllers.MenuController : Controller init has been called
+10:56:50.792 INFO  controllers.MenuController : Add author called
+10:56:50.808 INFO  controllers.AuthorDetailController : Detail View init called
+10:56:57.650 INFO  controllers.MenuController : Add book called
+10:56:57.664 INFO  controllers.BookDetailController : Detail View init called
+10:56:59.190 INFO  controllers.MenuController : Add author called
+10:56:59.198 INFO  controllers.AuthorDetailController : Detail View init called
+10:57:01.495 INFO  controllers.MenuController : Add book called
+10:57:01.503 INFO  controllers.BookDetailController : Detail View init called
+10:57:05.437 INFO  controllers.MenuController : Add author called
+10:57:05.443 INFO  controllers.AuthorDetailController : Detail View init called
+10:57:09.990 ERROR views.AppMain : stop called
+10:58:21.887 INFO  views.AppMain : AppMain init called
+10:58:22.506 INFO  controllers.MenuController : Controller init has been called
+10:58:24.441 INFO  controllers.MenuController : Add book called
+10:58:24.464 INFO  controllers.BookDetailController : Detail View init called
+10:58:36.116 INFO  controllers.MenuController : Add author called
+10:58:36.126 INFO  controllers.AuthorDetailController : Detail View init called
+10:58:39.032 INFO  controllers.MenuController : Add book called
+10:58:39.038 INFO  controllers.BookDetailController : Detail View init called
+10:58:44.176 ERROR views.AppMain : stop called
+11:00:46.615 INFO  views.AppMain : AppMain init called
+11:00:47.386 INFO  controllers.MenuController : Controller init has been called
+11:00:53.996 ERROR views.AppMain : stop called
+11:01:49.918 INFO  views.AppMain : AppMain init called
+11:01:50.736 INFO  controllers.MenuController : Controller init has been called
+11:01:56.038 INFO  controllers.MenuController : Add book called
+11:01:56.064 INFO  controllers.BookDetailController : Detail View init called
+11:01:57.780 INFO  controllers.MenuController : Add book called
+11:01:57.787 INFO  controllers.BookDetailController : Detail View init called
+11:01:59.336 INFO  controllers.MenuController : Add author called
+11:01:59.344 INFO  controllers.AuthorDetailController : Detail View init called
+11:02:02.849 INFO  controllers.MenuController : Add book called
+11:02:02.855 INFO  controllers.BookDetailController : Detail View init called
+11:02:16.823 ERROR views.AppMain : stop called
