@@ -2,11 +2,13 @@ package controllers;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import model.Publisher;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import model.*;
 import views.*;
@@ -15,16 +17,20 @@ import javafx.scene.control.Alert.AlertType;
 
 //bookDetailList Controller 
 public class BookDetailController {
+	
 	private static Logger logger = LogManager.getLogger();
 	
-	@FXML private TextField title, summary, yearPublished, isbn, publisher, dateAdded;
+	@FXML private TextField title, summary, yearPublished, isbn, dateAdded;
 	@FXML private Button Save;
+	@FXML private ComboBox<Publisher> publisher;
 	
-	//private Book book;
+	private Book book;
+	private ObservableList<Publisher> publishers;
 	
 	//assign book to this.book
-	public BookDetailController(Book book){
-		//this.book = book;
+	public BookDetailController(Book book, ObservableList<Publisher> publishers){
+		this.book = book;
+		this.publishers = publishers;
 	}
 	
 	//when save button is clicked call the save book save method with the entered user information
@@ -38,7 +44,7 @@ public class BookDetailController {
 		//book.setPublisher(publisher.getText());
 		//book.setDateAdded(date_added.getText());
 	
-		/*
+		
 		if(source == Save){
 			try {
 				book.Save(book);
@@ -48,7 +54,7 @@ public class BookDetailController {
 				alert.showAndWait();
 			}
 		}
-		*/
+		
 
 	}
 	//initialize
@@ -59,5 +65,7 @@ public class BookDetailController {
 		//yearPublished.setText(book.getYearPublished());
 		//isbn.setText(book.getIsbn());
 		//dateAdded.setText(book.getDateAdded());
+		
+		//publisher.setItems(publishers);
 	}
 }

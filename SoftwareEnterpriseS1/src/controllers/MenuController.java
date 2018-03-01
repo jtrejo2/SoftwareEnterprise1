@@ -70,7 +70,7 @@ public class MenuController {
 		if(source == addBook){//load DetailView if addAuthor is selected
 			logger.info("Add book called");
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookDetailView.fxml"));
-			loader.setController(new BookDetailController(new Book()));//set Detail Controller
+			loader.setController(new BookDetailController(new Book(), null));//set Detail Controller
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view); //Display
 			

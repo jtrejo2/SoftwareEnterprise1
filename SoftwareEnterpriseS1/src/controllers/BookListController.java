@@ -75,7 +75,7 @@ public class BookListController {
 					
 					try{
 						FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookDetailView.fxml"));
-						loader.setController(new BookDetailController(selected));//set controller
+						loader.setController(new BookDetailController(selected, null));//set controller
 						Parent view = loader.load();
 						AppMain.rootPane.setCenter(view);//display
 						

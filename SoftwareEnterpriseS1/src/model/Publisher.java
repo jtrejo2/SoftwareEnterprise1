@@ -6,14 +6,22 @@ public class Publisher {
 	private  int id;
 	private SimpleStringProperty publisherName;
 	
-	public  Publisher(String publisherName){
-		this.publisherName = new SimpleStringProperty(publisherName);
-	}
 	
 	public Publisher() {
-		this("No Name");
+		publisherName = new SimpleStringProperty();
 	}
-
+	
+	public  Publisher(int id, String publisherName){
+		this();
+		setId(id);
+		setPublisherName(publisherName);
+	}
+	
+	@Override
+	public String toString() {
+		return getPublisherName();
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -28,5 +36,9 @@ public class Publisher {
 
 	public void setPublisherName(String publisherName) {
 		this.publisherName.set(publisherName);
+	}
+	
+	public SimpleStringProperty publisherNameProperty() {
+		return publisherName;
 	}
 }

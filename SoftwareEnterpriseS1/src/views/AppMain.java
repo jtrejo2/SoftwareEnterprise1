@@ -19,6 +19,7 @@ public class AppMain extends Application{
 	public static BorderPane rootPane;
 	public static Gateway authorGateway;
 	public static BookGateway bookGateway;
+	public static PublisherGateway publisherGateway;
 	
 	@Override
 	public void init() throws Exception{
@@ -27,6 +28,7 @@ public class AppMain extends Application{
 		logger.info("AppMain init called");
 		authorGateway = new Gateway();
 		bookGateway = new BookGateway();
+		publisherGateway = new PublisherGateway(null);
 	}
 	
 	@Override
@@ -35,6 +37,7 @@ public class AppMain extends Application{
 		logger.error("stop called");
 		authorGateway.close();
 		bookGateway.close();
+
 	}
 	
 	@Override
