@@ -10,13 +10,14 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import model.*;
 import controllers.*;
-
+//“CS 4743 Assignment 2 by <Noah Zook and Jonathan Trejo>
 
 public class AppMain extends Application{
 
 	private static Logger logger = LogManager.getLogger();
 	public static BorderPane rootPane;
 	public static Gateway authorGateway;
+	public static BookGateway bookGateway;
 	
 	@Override
 	public void init() throws Exception{

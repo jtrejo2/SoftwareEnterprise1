@@ -1,12 +1,8 @@
 package model;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import views.AppMain;
 
 public class Author {
-	private static Logger logger = LogManager.getLogger();
 	
 	private int id;
 	private String lastName;
@@ -14,6 +10,7 @@ public class Author {
 	private String gender;
 	private String webSite;
 	private String firstName;
+	
 	//assign initial values
 	public Author(){
 		this.id = 0;

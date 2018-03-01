@@ -20,6 +20,9 @@ public class MenuController {
 	@FXML private MenuItem menuExit;
 	@FXML private MenuItem menuAuthorList;
 	@FXML private MenuItem addAuthor;
+	@FXML private MenuItem menuBookList;
+	@FXML private MenuItem addBook;
+	
 	
 	public MenuController(){
 		
@@ -51,6 +54,28 @@ public class MenuController {
 			AppMain.rootPane.setCenter(view); //Display
 			
 		}
+		
+		if(source == menuBookList) {//load the listView if menuAuthorList was selected
+			
+			List<Book> books = AppMain.bookGateway.getBook();
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookListView.fxml"));
+
+			loader.setController(new BookListController(books));//set controller
+			
+			Parent view = loader.load();
+			AppMain.rootPane.setCenter(view);//display
+			return;
+		}
+		
+		if(source == addBook){//load DetailView if addAuthor is selected
+			logger.info("Add book called");
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookDetailView.fxml"));
+			loader.setController(new BookDetailController(new Book()));//set Detail Controller
+			Parent view = loader.load();
+			AppMain.rootPane.setCenter(view); //Display
+			
+		}
+		
 	}
 	
 	public void initialize(){

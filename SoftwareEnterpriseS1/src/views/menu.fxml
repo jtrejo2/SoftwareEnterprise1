@@ -20,6 +20,12 @@
                   <MenuItem fx:id="addAuthor" mnemonicParsing="false" onAction="#handleMenuItem" text="Add Author" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Books">
+              <items>
+                <MenuItem fx:id="menuBookList" mnemonicParsing="false" onAction="#handleMenuItem" text="Book List" />
+                  <MenuItem fx:id="addBook" mnemonicParsing="false" onAction="#handleMenuItem" text="Add Book" />
+              </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>

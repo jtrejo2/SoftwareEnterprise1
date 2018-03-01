@@ -10,6 +10,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import model.*;
 import views.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 //AuthorDetailList Controller 
 public class AuthorDetailController {
 	private static Logger logger = LogManager.getLogger();
@@ -34,9 +36,14 @@ public class AuthorDetailController {
 		author.setWeb_site(web_site.getText());
 		
 		if(source == Save){
-			author.Save(author);
-			logger.error("Save button was clicked!");
+			try {
+				author.Save(author);
+				logger.error("Save button was clicked!");
+			} catch (Exception e) {
+				Alert alert = new Alert (AlertType.WARNING, "Error saving please try again");
+				alert.showAndWait();
 			}
+	}
 	}
 	//initialize
 	public void initialize(){

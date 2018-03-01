@@ -1,0 +1,160 @@
+package model;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+
+public class BookGateway {
+	private Connection conn;
+	private static Logger logger = LogManager.getLogger();
+	
+	public List<Book> getBook(){
+		List<Book> books = new ArrayList<Book>();
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		
+		try{
+			st = conn.prepareStatement("Select * from book");
+			rs = st.executeQuery();
+			
+			while(rs.next()){
+				Book book = new Book();
+				books.add(book);
+			}
+		} catch (SQLException e){
+			e.printStackTrace();
+		} finally {
+			try{
+				if(rs != null)
+					rs.close();
+				if(st != null)
+					st.close();
+			} catch (SQLException e){
+				e.printStackTrace();
+			}
+		}
+		
+		return books;
+	}
+	
+	public BookGateway() throws GatewayException{
+		conn = null;
+		
+		Properties props = new Properties();
+		FileInputStream fis = null;
+		try{
+			fis = new FileInputStream("db.properties");
+			props.load(fis);
+			fis.close();
+			//connect to the db
+			MysqlDataSource ds = new MysqlDataSource();
+			ds.setURL(props.getProperty("MYSQL_DB_URL"));
+			ds.setUser(props.getProperty("MYSQL_DB_USERNAME"));
+			ds.setPassword(props.getProperty("MYSQL_DB_PASSWORD"));
+			
+			conn = ds.getConnection();
+		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+			throw new GatewayException(e);
+		}
+	}
+	//update the book in the db
+	public void updateBook(Book book) throws GatewayException {
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("update book set title = ?, "
+					+ "summary= ?, year-published=?, isbn = ?, date_added = ? "
+					+ "where id = ? ");
+			st.setString(1, book.getTitle());
+			st.setString(2, book.getSummary());
+			st.setInt(3,book.getYearPublished());
+			st.setString(4, book.getIsbn());
+			st.setObject(5, book.getDateAdded());
+			//st.setInt(6, author.getId());
+			st.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new GatewayException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new GatewayException(e);
+			}
+		}
+	}
+	
+	//insert an book in the db
+	public void insertBook(Book book) throws SQLException{
+		PreparedStatement st = null;
+		ResultSet rs = null;
+			st = conn.prepareStatement("insert into book (title, summary,year_published,isbn) "+ "values (?, ?, ?,?)", Statement.RETURN_GENERATED_KEYS);
+			st.setString(1, book.getTitle());
+			st.setString(2, book.getSummary());
+			st.setInt(3, book.getYearPublished());
+			st.setString(4, book.getIsbn());
+
+			//st.setObject(5, book.getDateAdded());
+			st.executeUpdate();
+			rs = st.getGeneratedKeys();
+			if(rs.first()){
+			   book.setId(rs.getInt(1));
+			}
+			else{
+				logger.error("Didn't get the new key.");
+			}
+			logger.info("New author created. Id = " + book.getId());
+	}
+	
+	//delete an book from the db
+	public void bookDelete(Book book){
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		try {
+			
+			String query = "delete from book "
+					+ "where id = ?";
+			st = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+			st.setInt(1, book.getId());
+			
+			//executeUpdate is used to run insert, update, and delete statements
+			st.executeUpdate();
+			logger.info("Author with id = " + book.getId() + " deleted from database.");
+		} catch (SQLException e) {
+			logger.error("Error deleting from author table in database: " + e.getMessage());
+		} finally {
+			try {
+				if(rs != null)
+					rs.close();
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				logger.error("Statement or Result Set close error: " + e.getMessage());
+			}
+		}
+	}
+	
+	//close the conenction to the db
+	public void close(){
+		if(conn != null){
+			try{
+				conn.close();
+			} catch (SQLException e){
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
