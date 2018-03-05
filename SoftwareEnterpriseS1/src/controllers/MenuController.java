@@ -23,10 +23,13 @@ public class MenuController {
 	@FXML private MenuItem menuBookList;
 	@FXML private MenuItem addBook;
 	
+	List<Publisher> publishers;
+	
 	
 	public MenuController(){
 		
 	}
+	
 	//Handle when menu item is clicked
 	@FXML private void handleMenuItem(ActionEvent action) throws IOException {
 		Object source = action.getSource();
@@ -70,7 +73,8 @@ public class MenuController {
 		if(source == addBook){//load DetailView if addAuthor is selected
 			logger.info("Add book called");
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookDetailView.fxml"));
-			loader.setController(new BookDetailController(new Book(), null));//set Detail Controller
+			publishers = AppMain.publisherGateway.getPublishers();
+			loader.setController(new BookDetailController(publishers));//set Detail Controller
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view); //Display
 			

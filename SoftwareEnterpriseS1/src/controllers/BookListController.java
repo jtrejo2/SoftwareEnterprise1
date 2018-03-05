@@ -26,6 +26,7 @@ public class BookListController {
 	
 	private Book book;
 	private List<Book> books;
+	List<Publisher> publishers;
 	//assign book to this.book
 	public BookListController(List<Book> books){
 		this.books = books;	
@@ -74,10 +75,12 @@ public class BookListController {
 					logger.info("double-clicked " + selected);
 					
 					try{
+						logger.info("Add book called");
 						FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookDetailView.fxml"));
-						loader.setController(new BookDetailController(selected, null));//set controller
+						publishers = AppMain.publisherGateway.getPublishers();
+						loader.setController(new BookDetailController(publishers));//set Detail Controller
 						Parent view = loader.load();
-						AppMain.rootPane.setCenter(view);//display
+						AppMain.rootPane.setCenter(view); //Display
 						
 					} catch (IOException e) {
 						e.printStackTrace();

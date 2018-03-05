@@ -3,42 +3,31 @@ package model;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Publisher {
-	private  int id;
+	private int id;
 	private SimpleStringProperty publisherName;
 	
-	
-	public Publisher() {
-		publisherName = new SimpleStringProperty();
-	}
-	
-	public  Publisher(int id, String publisherName){
-		this();
-		setId(id);
-		setPublisherName(publisherName);
-	}
-	
-	@Override
-	public String toString() {
-		return getPublisherName();
+	public Publisher(int id, SimpleStringProperty string) {
+		this.id = id;
+		this.publisherName = string;
 	}
 	
 	public int getId() {
 		return id;
 	}
-
+	
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public String getPublisherName() {
-		return publisherName.get();
-	}
-
-	public void setPublisherName(String publisherName) {
-		this.publisherName.set(publisherName);
+	
+	public SimpleStringProperty getPublisherName() {
+		return publisherName;
 	}
 	
-	public SimpleStringProperty publisherNameProperty() {
-		return publisherName;
+	public void setPublisherName(SimpleStringProperty publisherName) {
+		this.publisherName = publisherName;
+	}
+	
+	public String toString() {
+		return id + " " + publisherName;
 	}
 }

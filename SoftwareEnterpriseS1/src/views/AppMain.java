@@ -26,9 +26,10 @@ public class AppMain extends Application{
 		super.init();
 		
 		logger.info("AppMain init called");
+		
 		authorGateway = new Gateway();
 		bookGateway = new BookGateway();
-		publisherGateway = new PublisherGateway(null);
+		publisherGateway = new PublisherGateway();
 	}
 	
 	@Override
@@ -37,6 +38,7 @@ public class AppMain extends Application{
 		logger.error("stop called");
 		authorGateway.close();
 		bookGateway.close();
+		publisherGateway.close();
 
 	}
 	
