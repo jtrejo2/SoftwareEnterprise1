@@ -879,3 +879,11 @@
 13:16:37.685 ERROR controllers.AuthorDetailController : Save button was clicked!
 13:16:43.430 ERROR model.Gateway : delete button clicked
 13:16:47.248 ERROR views.AppMain : stop called
+16:41:45.953 INFO  views.AppMain : AppMain init called
+16:41:47.270 INFO  controllers.MenuController : Controller init has been called
+16:41:51.242 INFO  controllers.MenuController : Add book called
+16:42:15.110 ERROR views.AppMain : stop called
+16:43:21.658 INFO  views.AppMain : AppMain init called
+16:43:22.835 INFO  controllers.MenuController : Controller init has been called
+16:43:25.146 INFO  controllers.MenuController : Add book called
+16:44:02.629 ERROR views.AppMain : stop called

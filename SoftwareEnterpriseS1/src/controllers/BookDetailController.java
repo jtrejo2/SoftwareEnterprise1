@@ -35,7 +35,7 @@ public class BookDetailController {
 		
 		book.setTitle (title.getText());
 		book.setSummary(summary.getText());
-		//book.setYearPublished(yearPublished.getText());
+		book.setYearPublished(Integer.parseInt(yearPublished.getText()));
 		book.setIsbn(isbn.getText());
 
 		if(source == Save){
