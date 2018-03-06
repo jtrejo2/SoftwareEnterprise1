@@ -24,8 +24,7 @@ public class MenuController {
 	@FXML private MenuItem addBook;
 	
 	List<Publisher> publishers;
-	
-	
+
 	public MenuController(){
 		
 	}
@@ -74,7 +73,7 @@ public class MenuController {
 			logger.info("Add book called");
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookDetailView.fxml"));
 			publishers = AppMain.publisherGateway.getPublishers();
-			loader.setController(new BookDetailController(publishers));//set Detail Controller
+			loader.setController(new BookDetailController(new Book(), publishers));//set Detail Controller
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view); //Display
 			

@@ -4,14 +4,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import model.*;
-import views.*;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+
 //AuthorDetailList Controller 
 public class AuthorDetailController {
 	private static Logger logger = LogManager.getLogger();
@@ -43,7 +41,7 @@ public class AuthorDetailController {
 				Alert alert = new Alert (AlertType.WARNING, "Error saving please try again");
 				alert.showAndWait();
 			}
-	}
+		}
 	}
 	//initialize
 	public void initialize(){
