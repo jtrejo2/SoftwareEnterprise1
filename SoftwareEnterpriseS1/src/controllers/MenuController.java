@@ -30,7 +30,7 @@ public class MenuController {
 	}
 	
 	//Handle when menu item is clicked
-	@FXML private void handleMenuItem(ActionEvent action) throws IOException {
+	@FXML private void handleMenuItem(ActionEvent action) throws IOException, GatewayException {
 		Object source = action.getSource();
 		if(source == menuExit) {//exit if exit is selected
 			Platform.exit();

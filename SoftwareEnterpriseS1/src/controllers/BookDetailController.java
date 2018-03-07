@@ -43,7 +43,7 @@ public class BookDetailController {
 				book.Save(book);
 				logger.error("Save button was clicked!");
 			} catch (Exception e) {
-				Alert alert = new Alert (AlertType.WARNING, "Error saving please try again");
+				Alert alert = new Alert (AlertType.WARNING, "Error saving book please try again");
 				alert.showAndWait();
 			}
 		}

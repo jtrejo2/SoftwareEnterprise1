@@ -18,7 +18,7 @@ public class BookGateway {
 	private Connection conn;
 	private static Logger logger = LogManager.getLogger();
 	
-	public List<Book> getBook(){
+	public List<Book> getBook() throws GatewayException{
 		List<Book> books = new ArrayList<Book>();
 		PreparedStatement st = null;
 		ResultSet rs = null;
@@ -28,7 +28,13 @@ public class BookGateway {
 			rs = st.executeQuery();
 			
 			while(rs.next()){
-				Book book = new Book();
+				Book book = new Book(//rs.getInt("id"),
+						rs.getString("title"),
+						rs.getString("summary"),
+						rs.getInt("yearPublished"),
+						rs.getString("isbn"), 
+						rs.getDate("dateAdded").toLocalDate(),
+						new PublisherGateway().getPublisherById(rs.getInt("publisherId")));
 				books.add(book);
 			}
 		} catch (SQLException e){
@@ -80,7 +86,6 @@ public class BookGateway {
 			st.setInt(3,book.getYearPublished());
 			st.setString(4, book.getIsbn());
 			st.setObject(5, book.getDateAdded());
-			//st.setInt(6, author.getId());
 			st.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -97,25 +102,28 @@ public class BookGateway {
 	}
 	
 	//insert an book in the db
-	public void insertBook(Book book) throws SQLException{
+	public void insertBook (Book book) throws GatewayException {
 		PreparedStatement st = null;
-		ResultSet rs = null;
-			st = conn.prepareStatement("insert into book (title, summary,year_published,isbn) "+ "values (?, ?, ?,?)", Statement.RETURN_GENERATED_KEYS);
+		try {
+			st = conn.prepareStatement("insert into book( title, summary, year_published, isbn ) values( ?, ?, ?, ? )");
 			st.setString(1, book.getTitle());
 			st.setString(2, book.getSummary());
 			st.setInt(3, book.getYearPublished());
 			st.setString(4, book.getIsbn());
-
-			//st.setObject(5, book.getDateAdded());
+			
 			st.executeUpdate();
-			rs = st.getGeneratedKeys();
-			if(rs.first()){
-			   book.setId(rs.getInt(1));
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new GatewayException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new GatewayException(e);
 			}
-			else{
-				logger.error("Didn't get the new key.");
-			}
-			logger.info("New author created. Id = " + book.getId());
+		}
 	}
 	
 	//delete an book from the db
@@ -145,6 +153,7 @@ public class BookGateway {
 			}
 		}
 	}
+	
 	
 	//close the conenction to the db
 	public void close(){
