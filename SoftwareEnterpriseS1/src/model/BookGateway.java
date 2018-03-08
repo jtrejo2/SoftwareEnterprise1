@@ -28,14 +28,18 @@ public class BookGateway {
 			rs = st.executeQuery();
 			
 			while(rs.next()){
-				Book book = new Book(//rs.getInt("id"),
+				/*
+				 Book book = new Book(
+				 
+						rs.getInt("id"),
 						rs.getString("title"),
 						rs.getString("summary"),
-						rs.getInt("yearPublished"),
+						rs.getInt("year_published"),
 						rs.getString("isbn"), 
-						rs.getDate("dateAdded").toLocalDate(),
-						new PublisherGateway().getPublisherById(rs.getInt("publisherId")));
+						rs.getDate("date_added").toLocalDate(),
+						new PublisherGateway().getPublisherById(rs.getInt("publisher_id")));
 				books.add(book);
+				*/
 			}
 		} catch (SQLException e){
 			e.printStackTrace();

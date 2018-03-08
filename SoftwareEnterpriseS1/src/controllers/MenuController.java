@@ -59,9 +59,8 @@ public class MenuController {
 		
 		if(source == menuBookList) {//load the listView if menuAuthorList was selected
 			
-			List<Book> books = AppMain.bookGateway.getBook();
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookListView.fxml"));
-
+			List<Book> books = AppMain.bookGateway.getBook();
 			loader.setController(new BookListController(books));//set controller
 			
 			Parent view = loader.load();

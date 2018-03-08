@@ -28,7 +28,8 @@ public class Book{
 		this.dateAdded = null;
 	}	
 	
-	public Book(String title, String summary, int yearPublished, String isbn, LocalDate dateAdded, Publisher publisher) {
+	public Book(int id, String title, String summary, int yearPublished, String isbn, LocalDate dateAdded, Publisher publisher) {
+		
 		this.id = 0;
 		this.idValidate(id);
 		
