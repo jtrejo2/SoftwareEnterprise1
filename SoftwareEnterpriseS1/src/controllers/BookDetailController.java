@@ -4,6 +4,7 @@ import java.util.List;
 import model.Author;
 import model.Book;
 import model.Publisher;
+import views.AppMain;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,9 +26,8 @@ public class BookDetailController {
 	
 	private Book book;
 	
-	public BookDetailController(Book book, List<Publisher> publishers) {
+	public BookDetailController(Book book) {
 		this.book = book;
-		this.publishers = publishers;
 	}
 	
 	@FXML private void handleButtonAction(ActionEvent action) throws Exception {
@@ -40,32 +40,42 @@ public class BookDetailController {
 		book.setPublisher(cbPublishers.getValue());
 		
 		if(source == Save){
-			//try {
+			try {
 				book.Save(book);
 				logger.error("Save button was clicked!");
-			//} catch (Exception e) {
-				//Alert alert = new Alert (AlertType.WARNING, "Error saving book please try again");
-				//alert.showAndWait();
-			//}
+			} catch (Exception e) {
+				Alert alert = new Alert (AlertType.WARNING, "Error saving book please try again");
+				alert.showAndWait();
+			}
 		}
 	}
 
 	public void initialize() {
+		publishers = AppMain.publisherGateway.getPublishers(); 
 		ObservableList<Publisher> items = cbPublishers.getItems();
+		
 		for(Publisher a : publishers){
 			items.add(a);
 		}
-		cbPublishers.getSelectionModel().select(0);
+		
+		if (this.book.getId() == 0) {
+			cbPublishers.getSelectionModel().select(0);
+				
+		} else {
+			Publisher publisher = AppMain.publisherGateway.getPublisherById(this.book.getPublisherId());
+			if (publisher == null)
+				cbPublishers.getSelectionModel().select(0);
+			else
+				cbPublishers.getSelectionModel().select(publisher);
+		
 		
 		title.setText(book.getTitle());
 		summary.setText(book.getSummary());
 		yearPublished.setText(String.valueOf(book.getYearPublished()));
 		isbn.setText(book.getIsbn());
-		//cbPublishers.setText(book.getPublisher());
-
+		
+		}	
 	}
-	
-	
 }
 
 

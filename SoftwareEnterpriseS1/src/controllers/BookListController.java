@@ -78,7 +78,7 @@ public class BookListController {
 						logger.info("Add book called");
 						FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookDetailView.fxml"));
 						publishers = AppMain.publisherGateway.getPublishers();
-						loader.setController(new BookDetailController(selected, publishers));//set Detail Controller
+						loader.setController(new BookDetailController(selected));//set Detail Controller
 						Parent view = loader.load();
 						AppMain.rootPane.setCenter(view); //Display
 						

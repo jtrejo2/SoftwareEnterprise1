@@ -91,7 +91,7 @@ public class Book{
 	}
 	public boolean summaryValidate() {
 		boolean result = true;
-		if(this.summary.length() < 65536) {
+		if(this.summary.length() > 65536) {
 			result = false;
 		}
 		return result;
@@ -130,10 +130,14 @@ public class Book{
 		return result;
 	}
 	
+	public int getPublisherId() {
+		return publisher.getId();
+	}
 	
 	public Publisher getPublisher() {
 		return publisher;
 	}
+	
 
 	public void setPublisher(Publisher publisher) {
 		this.publisher = publisher;
@@ -152,13 +156,13 @@ public class Book{
 		
 		
 		if(this.titleValidate(title) == false)
-			throw new Exception("Validation failed");
+			throw new Exception("TITLE Validation failed");
 		if(this.summaryValidate() == false)
-			throw new Exception("Validation failed");
+			throw new Exception("SUMMARY Validation failed");
 		if(this.yearValidate() == false)
-			throw new Exception("Validation failed");
+			throw new Exception("YEAR Validation failed");
 		if(this.isbnValidate() == false)
-			throw new Exception("Validation failed");
+			throw new Exception("ISBN Validation failed");
 		
 		if(id != 0){
 			AppMain.bookGateway.updateBook(this);

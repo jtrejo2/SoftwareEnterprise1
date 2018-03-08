@@ -86,6 +86,7 @@ public class BookGateway {
 			st.setInt(3,book.getYearPublished());
 			st.setString(4, book.getIsbn());
 			st.setObject(5, book.getDateAdded());
+			//st.setInt(6, author.getId());
 			st.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -153,6 +154,7 @@ public class BookGateway {
 			}
 		}
 	}
+	
 	
 	
 	//close the conenction to the db
