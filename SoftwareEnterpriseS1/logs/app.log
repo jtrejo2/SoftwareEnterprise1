@@ -902,3 +902,19 @@
 20:14:46.198 INFO  controllers.MenuController : Add author called
 20:14:46.207 INFO  controllers.AuthorDetailController : Detail View init called
 20:14:47.651 ERROR views.AppMain : stop called
+20:17:54.921 INFO  views.AppMain : AppMain init called
+20:17:56.053 INFO  controllers.MenuController : Controller init has been called
+20:17:58.476 INFO  controllers.MenuController : Add book called
+20:19:08.640 INFO  views.AppMain : AppMain init called
+20:19:08.923 ERROR views.AppMain : stop called
+20:19:09.740 INFO  controllers.MenuController : Controller init has been called
+20:19:12.368 INFO  controllers.MenuController : Add book called
+20:19:59.093 ERROR views.AppMain : stop called
+10:10:48.827 INFO  views.AppMain : AppMain init called
+10:10:49.636 INFO  controllers.MenuController : Controller init has been called
+10:10:54.332 INFO  controllers.MenuController : Add book called
+10:12:27.766 ERROR views.AppMain : stop called
+10:19:03.034 INFO  views.AppMain : AppMain init called
+10:19:03.746 INFO  controllers.MenuController : Controller init has been called
+10:19:29.891 INFO  controllers.MenuController : Add book called
+10:20:05.173 ERROR views.AppMain : stop called

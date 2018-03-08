@@ -37,15 +37,16 @@ public class BookDetailController {
 		book.setSummary(summary.getText());
 		book.setYearPublished(Integer.parseInt(yearPublished.getText()));
 		book.setIsbn(isbn.getText());
-
+		book.setPublisher(cbPublishers.getValue());
+		
 		if(source == Save){
-			try {
+			//try {
 				book.Save(book);
 				logger.error("Save button was clicked!");
-			} catch (Exception e) {
-				Alert alert = new Alert (AlertType.WARNING, "Error saving book please try again");
-				alert.showAndWait();
-			}
+			//} catch (Exception e) {
+				//Alert alert = new Alert (AlertType.WARNING, "Error saving book please try again");
+				//alert.showAndWait();
+			//}
 		}
 	}
 
@@ -55,5 +56,18 @@ public class BookDetailController {
 			items.add(a);
 		}
 		cbPublishers.getSelectionModel().select(0);
+		
+		title.setText(book.getTitle());
+		summary.setText(book.getSummary());
+		yearPublished.setText(String.valueOf(book.getYearPublished()));
+		isbn.setText(book.getIsbn());
+		//cbPublishers.setText(book.getPublisher());
+
 	}
+	
+	
 }
+
+
+
+
