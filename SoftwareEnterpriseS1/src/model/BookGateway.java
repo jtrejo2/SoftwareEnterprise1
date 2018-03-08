@@ -159,6 +159,43 @@ public class BookGateway {
 		}
 	}
 	
+	public List<Book> searchBooks(String searchTitle) throws SQLException, GatewayException {
+		
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		List<Book> books = new ArrayList<Book>();
+		searchTitle = "%" + searchTitle + "%";
+		
+		try {
+			st = conn.prepareStatement("SELECT * FROM bookTable WHERE title LIKE ?");
+			st.setString(1, searchTitle);
+			rs = st.executeQuery();
+			
+			while(rs.next()) {
+				books.add(new Book(
+						rs.getInt("id"),
+						rs.getString("title"),
+						rs.getString("summary"),
+						rs.getInt("year_published"),
+						rs.getString("isbn"),
+						rs.getDate("date_added").toLocalDate(),
+						new PublisherGateway().getPublisherById(rs.getInt("publisher_id"))));
+			}
+		} catch (SQLException e) {
+			logger.info("try/catch SQLException in searchBooks(");
+		} finally {
+			try {
+				if(rs != null)
+					rs.close();
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				logger.info("try/catch/finally SQLException in searchBooks()");
+			}
+		}
+		
+		return books;
+	}
 	
 	
 	//close the conenction to the db
