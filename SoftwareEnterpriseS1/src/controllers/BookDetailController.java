@@ -33,7 +33,7 @@ public class BookDetailController {
 	@FXML private void handleButtonAction(ActionEvent action) throws Exception {
 		Object source = action.getSource();
 		
-		book.setTitle (title.getText());
+		book.setTitle(title.getText());
 		book.setSummary(summary.getText());
 		book.setYearPublished(Integer.parseInt(yearPublished.getText()));
 		book.setIsbn(isbn.getText());

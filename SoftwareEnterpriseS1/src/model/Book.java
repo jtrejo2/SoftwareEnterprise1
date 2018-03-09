@@ -23,26 +23,26 @@ public class Book{
 		this.title = null;
 		this.summary = null;
 		this.yearPublished = 0;
-		this.isbn= null;
-		this.publisher = null;
+		this.isbn = null;
 		this.dateAdded = null;
+		this.publisher = null;
 	}	
 	
 	public Book(int id, String title, String summary, int yearPublished, String isbn, LocalDate dateAdded, Publisher publisher) {
 		
-		this.id = 0;
+		this.id = id;
 		this.idValidate(id);
 		
 		this.title = title;
 		this.titleValidate(title);
 		
-		this.summary = null;
-		this.summaryValidate();
+		this.summary = summary;
+		//this.summaryValidate();
 		
-		this.yearPublished = 2018; 
+		this.yearPublished = yearPublished; 
 		this.yearValidate();
 		
-		this.isbn = "unassigned";
+		this.isbn = isbn;
 		this.isbnValidate();
 		
 		this.publisher = publisher;

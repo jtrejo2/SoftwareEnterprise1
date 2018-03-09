@@ -40,6 +40,7 @@ public class AuthorListController {
 				if (click.getClickCount() == 1){				
 					try {//if delete was selected delete the author and load the listView again
 						if(source == Delete){
+							logger.info("deleting");
 							Author selected = ListAuthor.getSelectionModel().getSelectedItem();
 							AppMain.authorGateway.authorDelete(selected);
 							List<Author> authors = AppMain.authorGateway.getAuthor();

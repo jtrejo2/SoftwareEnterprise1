@@ -28,9 +28,8 @@ public class BookGateway {
 			rs = st.executeQuery();
 			
 			while(rs.next()){
-				/*
+				
 				 Book book = new Book(
-				 
 						rs.getInt("id"),
 						rs.getString("title"),
 						rs.getString("summary"),
@@ -39,7 +38,7 @@ public class BookGateway {
 						rs.getDate("date_added").toLocalDate(),
 						new PublisherGateway().getPublisherById(rs.getInt("publisher_id")));
 				books.add(book);
-				*/
+				
 			}
 		} catch (SQLException e){
 			e.printStackTrace();
@@ -83,14 +82,15 @@ public class BookGateway {
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement("update book set title = ?, "
-					+ "summary= ?, year-published=?, isbn = ?, date_added = ? "
+					+ "summary= ?, year_published=?, isbn = ?,"
 					+ "where id = ? ");
+
 			st.setString(1, book.getTitle());
 			st.setString(2, book.getSummary());
 			st.setInt(3,book.getYearPublished());
 			st.setString(4, book.getIsbn());
-			st.setObject(5, book.getDateAdded());
-			//st.setInt(6, author.getId());
+			st.setInt(5, book.getId());
+			
 			st.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -144,7 +144,7 @@ public class BookGateway {
 			
 			//executeUpdate is used to run insert, update, and delete statements
 			st.executeUpdate();
-			logger.info("Author with id = " + book.getId() + " deleted from database.");
+			logger.info("Book with id = " + book.getId() + " deleted from database.");
 		} catch (SQLException e) {
 			logger.error("Error deleting from author table in database: " + e.getMessage());
 		} finally {

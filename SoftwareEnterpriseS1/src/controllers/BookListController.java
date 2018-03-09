@@ -1,4 +1,5 @@
 package controllers;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import model.*;
 import views.*;
@@ -21,8 +23,10 @@ import views.*;
 public class BookListController {
 	
 	private static Logger logger = LogManager.getLogger();
-	@FXML private Button Delete;
+	@FXML private Button Delete, Search;
+	@FXML private TextField searchText;
 	@FXML private ListView<Book> ListBook;
+	private ObservableList<Book> listData;
 	
 	private Book book;
 	private List<Book> books;
@@ -42,6 +46,8 @@ public class BookListController {
 					//if delete was selected delete the book and load the listView again
 					try {
 						if(source == Delete){
+							logger.info("deleting");
+							
 							Book selected = ListBook.getSelectionModel().getSelectedItem();
 							AppMain.bookGateway.bookDelete(selected);
 							List<Book> books = AppMain.bookGateway.getBook();
@@ -51,6 +57,18 @@ public class BookListController {
 							AppMain.rootPane.setCenter(view); //display
 							return;
 						}
+						
+						if(source == Search) {
+							logger.info("searching");
+							
+							if (searchText.equals(""))
+								listData = (ObservableList<Book>) new BookGateway().getBook();
+							else 
+								listData = (ObservableList<Book>) new BookGateway().searchBooks(searchText.getText());
+		
+							ListBook.setItems(listData);
+						}
+						
 
 					} catch (Exception e) {
 						e.printStackTrace();
