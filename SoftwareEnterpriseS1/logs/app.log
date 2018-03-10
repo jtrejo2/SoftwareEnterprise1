@@ -1394,3 +1394,67 @@
 19:16:57.387 ERROR controllers.BookDetailController : Save button was clicked!
 19:17:03.608 ERROR views.AppMain : stop called
 >>>>>>> branch 'master' of https://github.com/jtrejo2/SoftwareEnterprise1.git
+19:42:07.699 INFO  views.AppMain : AppMain init called
+19:42:09.063 INFO  controllers.MenuController : Controller init has been called
+19:42:23.337 INFO  model.BookGateway : try/catch SQLException in searchBooks(
+19:42:23.337 INFO  controllers.BookListController$1 : Book list clicked
+19:42:23.841 INFO  model.BookGateway : try/catch SQLException in searchBooks(
+19:42:23.842 INFO  controllers.BookListController$1 : Book list clicked
+19:53:15.814 INFO  views.AppMain : AppMain init called
+19:53:17.132 INFO  controllers.MenuController : Controller init has been called
+19:53:54.284 INFO  model.BookGateway : try/catch SQLException in searchBooks(
+19:53:54.284 INFO  controllers.BookListController$1 : Book list clicked
+19:54:32.941 INFO  views.AppMain : AppMain init called
+19:54:34.229 INFO  controllers.MenuController : Controller init has been called
+19:54:39.782 INFO  model.BookGateway : try/catch SQLException in searchBooks(
+19:54:39.783 INFO  controllers.BookListController$1 : Book list clicked
+19:54:53.512 ERROR views.AppMain : stop called
+19:54:57.574 ERROR views.AppMain : stop called
+19:55:00.914 ERROR views.AppMain : stop called
+19:55:21.510 INFO  views.AppMain : AppMain init called
+19:55:22.778 INFO  controllers.MenuController : Controller init has been called
+19:55:28.847 INFO  model.BookGateway : try/catch SQLException in searchBooks(
+19:55:28.847 INFO  controllers.BookListController$1 : Book list clicked
+19:56:43.887 ERROR views.AppMain : stop called
+19:56:55.455 INFO  views.AppMain : AppMain init called
+19:56:56.694 INFO  controllers.MenuController : Controller init has been called
+19:57:06.631 INFO  model.BookGateway : try/catch SQLException in searchBooks(
+19:57:06.635 INFO  controllers.BookListController$1 : Book list clicked
+19:57:19.900 INFO  model.BookGateway : try/catch SQLException in searchBooks(
+19:57:19.901 INFO  controllers.BookListController$1 : Book list clicked
+19:57:22.080 INFO  model.BookGateway : try/catch SQLException in searchBooks(
+19:57:22.081 INFO  controllers.BookListController$1 : Book list clicked
+19:57:38.750 INFO  model.BookGateway : try/catch SQLException in searchBooks(
+19:57:38.754 INFO  controllers.BookListController$1 : Book list clicked
+19:59:13.594 INFO  controllers.MenuController : Add author called
+19:59:13.604 INFO  controllers.AuthorDetailController : Detail View init called
+19:59:16.645 INFO  controllers.MenuController : Add book called
+19:59:39.635 ERROR controllers.BookDetailController : Save button was clicked!
+20:01:43.508 ERROR views.AppMain : stop called
+20:01:48.582 INFO  views.AppMain : AppMain init called
+20:01:49.867 INFO  controllers.MenuController : Controller init has been called
+20:01:52.412 INFO  controllers.MenuController : Add book called
+20:02:05.901 ERROR controllers.BookDetailController : Save button was clicked!
+20:03:49.399 INFO  views.AppMain : AppMain init called
+20:03:50.718 INFO  controllers.MenuController : Controller init has been called
+20:03:57.353 ERROR controllers.BookDetailController : Save button was clicked!
+20:04:40.396 ERROR controllers.BookDetailController : Save button was clicked!
+20:06:05.024 ERROR controllers.BookDetailController : Save button was clicked!
+20:09:46.549 ERROR views.AppMain : stop called
+20:10:48.240 ERROR controllers.BookDetailController : Save button was clicked!
+20:14:05.425 ERROR views.AppMain : stop called
+20:14:09.520 INFO  views.AppMain : AppMain init called
+20:14:10.783 INFO  controllers.MenuController : Controller init has been called
+20:14:13.512 INFO  controllers.MenuController : Add book called
+20:14:42.064 ERROR controllers.BookDetailController : Save button was clicked!
+20:15:16.804 ERROR views.AppMain : stop called
+20:17:19.713 INFO  views.AppMain : AppMain init called
+20:17:20.968 INFO  controllers.MenuController : Controller init has been called
+20:17:30.740 INFO  model.BookGateway : try/catch SQLException in searchBooks(
+20:17:30.741 INFO  controllers.BookListController$1 : Book list clicked
+20:17:43.725 INFO  model.BookGateway : try/catch SQLException in searchBooks(
+20:17:43.726 INFO  controllers.BookListController$1 : Book list clicked
+20:17:44.237 INFO  model.BookGateway : try/catch SQLException in searchBooks(
+20:17:44.238 INFO  controllers.BookListController$1 : Book list clicked
+20:17:45.660 INFO  model.BookGateway : try/catch SQLException in searchBooks(
+20:17:45.661 INFO  controllers.BookListController$1 : Book list clicked
