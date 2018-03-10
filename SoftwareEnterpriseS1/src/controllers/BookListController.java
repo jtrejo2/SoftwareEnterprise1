@@ -57,7 +57,7 @@ public class BookListController {
 							AppMain.rootPane.setCenter(view); //display
 							return;
 						}
-						
+						//changes made here
 						if(source == Search) {
 
 							books = AppMain.bookGateway.searchBooks(searchText.getText());
