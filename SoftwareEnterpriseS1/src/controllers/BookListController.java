@@ -59,7 +59,7 @@ public class BookListController {
 						}
 						//changes made here
 						if(source == Search) {
-
+							System.out.println(searchText.getText());
 							books = AppMain.bookGateway.searchBooks(searchText.getText());
 							logger.info("Book list clicked");
 							FXMLLoader loader = new FXMLLoader(getClass().getResource("/Book/BookListView.fxml"));

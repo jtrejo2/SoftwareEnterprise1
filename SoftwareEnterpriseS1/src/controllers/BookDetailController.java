@@ -41,6 +41,7 @@ public class BookDetailController {
 		
 		if(source == Save){
 			try {
+				System.out.println(book.getPublisherId());
 				book.Save(book);
 				logger.error("Save button was clicked!");
 			} catch (Exception e) {

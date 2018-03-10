@@ -105,11 +105,12 @@ public class BookGateway {
 	public void insertBook (Book book) throws GatewayException {
 		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("insert into book( title, summary, year_published, isbn ) values( ?, ?, ?, ? )");
+			st = conn.prepareStatement("insert into book( title, summary, year_published, isbn, publisher_id ) values( ?, ?, ?, ?, ? )");
 			st.setString(1, book.getTitle());
 			st.setString(2, book.getSummary());
 			st.setInt(3, book.getYearPublished());
 			st.setString(4, book.getIsbn());
+			st.setInt(5, book.getPublisherId());
 			
 			st.executeUpdate();
 		} catch (SQLException e) {
@@ -159,7 +160,9 @@ public class BookGateway {
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		List<Book> books = new ArrayList<Book>();
+		System.out.println("we are here " + searchTitle);
 		searchTitle = "%" + searchTitle + "%";
+		System.out.println("we are here2 " + searchTitle);
 		
 		try {
 			st = conn.prepareStatement("SELECT * FROM bookTable WHERE title LIKE ?");
