@@ -57,17 +57,7 @@ public class BookListController {
 							AppMain.rootPane.setCenter(view); //display
 							return;
 						}
-						//changes made here
-						if(source == Search) {
-							System.out.println(searchText.getText());
-							books = AppMain.bookGateway.searchBooks(searchText.getText());
-							logger.info("Book list clicked");
-							FXMLLoader loader = new FXMLLoader(getClass().getResource("/Book/BookListView.fxml"));
-							loader.setController(new BookListController(books));
-							Parent view = loader.load();
-							AppMain.rootPane.setCenter(view);
 
-						}
 						
 
 					} catch (Exception e) {
@@ -76,6 +66,15 @@ public class BookListController {
 				}
 			}
 		});	
+		if(source == Search) {
+			logger.info("searching");
+			List<Book> books = AppMain.bookGateway.searchBooks(searchText.getText());
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
+			loader.setController(new BookListController(books));
+			Parent view = loader.load();
+			AppMain.rootPane.setCenter(view);
+			return;
+		}
 	}
 	//initialize
 	public void initialize(){
