@@ -60,11 +60,14 @@ public class BookListController {
 						
 						if(source == Search) {
 							logger.info("searching");
+							System.out.println("test search here\n" + searchText.getText());
 							
 							if (searchText.equals(""))
 								listData = (ObservableList<Book>) new BookGateway().getBook();
-							else 
+							else {
 								listData = (ObservableList<Book>) new BookGateway().searchBooks(searchText.getText());
+								System.out.println("test search here\n" + searchText.getText());
+								}
 		
 							ListBook.setItems(listData);
 						}
