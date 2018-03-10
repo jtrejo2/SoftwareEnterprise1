@@ -59,14 +59,12 @@ public class BookListController {
 						}
 						
 						if(source == Search) {
-							logger.info("searching");
-							
-							if (searchText.equals(""))
-								listData = (ObservableList<Book>) new BookGateway().getBook();
-							else 
-								listData = (ObservableList<Book>) new BookGateway().searchBooks(searchText.getText());
-		
-							ListBook.setItems(listData);
+							books = AppMain.bookGateway.searchBooks(searchText.getText());
+							logger.info("Book list clicked");
+							FXMLLoader loader = new FXMLLoader(getClass().getResource("/Book/BookListView.fxml"));
+							loader.setController(new BookListController(books));
+							Parent view = loader.load();
+							AppMain.rootPane.setCenter(view);
 						}
 						
 

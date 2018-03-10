@@ -78,30 +78,25 @@ public class BookGateway {
 		}
 	}
 	//update the book in the db
-	public void updateBook(Book book) throws GatewayException {
+	public void updateBook(Book updated) {
 		PreparedStatement st = null;
 		try {
-			st = conn.prepareStatement("update book set title = ?, "
-					+ "summary= ?, year_published=?, isbn = ?,"
-					+ "where id = ? ");
+			st = conn.prepareStatement("update book set title = '" + updated.getTitle() + "'," 
+				+ "summary = '"+ updated.getSummary() + "'," 
+				+ "year_published = '" + updated.getYearPublished() + "',"
+				+ "publisher_id = '" + updated.getPublisherId() 
+				+ "'," + "isbn = '" + updated.getIsbn() + "'"
+				+ "where id = '" + updated.getId() + "'");
 
-			st.setString(1, book.getTitle());
-			st.setString(2, book.getSummary());
-			st.setInt(3,book.getYearPublished());
-			st.setString(4, book.getIsbn());
-			st.setInt(5, book.getId());
-			
 			st.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new GatewayException(e);
 		} finally {
 			try {
-				if(st != null)
+				if (st != null)
 					st.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
-				throw new GatewayException(e);
 			}
 		}
 	}
