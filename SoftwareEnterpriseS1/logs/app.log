@@ -1334,6 +1334,7 @@
 15:18:36.336 INFO  controllers.BookListController$2 : double-clicked sdF
 15:18:36.336 INFO  controllers.BookListController$2 : Add book called
 15:19:00.945 ERROR views.AppMain : stop called
+<<<<<<< HEAD
 19:00:27.956 INFO  views.AppMain : AppMain init called
 19:00:29.638 INFO  controllers.MenuController : Controller init has been called
 19:02:32.947 INFO  controllers.BookListController$1 : searching
@@ -1352,3 +1353,44 @@
 19:06:53.065 INFO  controllers.BookListController$1 : searching
 19:06:53.343 INFO  model.BookGateway : try/catch SQLException in searchBooks(
 19:30:50.396 ERROR views.AppMain : stop called
+=======
+15:34:36.964 INFO  views.AppMain : AppMain init called
+15:34:38.050 INFO  controllers.MenuController : Controller init has been called
+15:34:41.261 INFO  controllers.BookListController$2 : double-clicked sdF
+15:34:41.261 INFO  controllers.BookListController$2 : Add book called
+15:34:43.887 INFO  controllers.MenuController : Add book called
+15:34:51.392 INFO  controllers.BookListController$1 : deleting
+15:34:51.433 INFO  model.BookGateway : Book with id = 3 deleted from database.
+15:34:53.723 ERROR views.AppMain : stop called
+16:27:44.857 INFO  views.AppMain : AppMain init called
+16:27:46.443 INFO  controllers.MenuController : Controller init has been called
+16:27:52.451 INFO  controllers.BookListController$2 : double-clicked Book Title
+16:27:52.452 INFO  controllers.BookListController$2 : Add book called
+16:27:57.825 INFO  controllers.MenuController : Add book called
+16:28:01.355 INFO  controllers.BookListController$2 : double-clicked Test Publisher
+16:28:01.356 INFO  controllers.BookListController$2 : Add book called
+16:28:08.558 INFO  controllers.BookListController$2 : double-clicked Book Title
+16:28:08.558 INFO  controllers.BookListController$2 : Add book called
+16:28:13.932 ERROR views.AppMain : stop called
+19:10:55.348 INFO  views.AppMain : AppMain init called
+19:10:56.496 INFO  controllers.MenuController : Controller init has been called
+19:11:06.234 INFO  model.BookGateway : try/catch SQLException in searchBooks(
+19:11:06.235 INFO  controllers.BookListController$1 : Book list clicked
+19:11:53.544 ERROR views.AppMain : stop called
+19:15:14.053 INFO  views.AppMain : AppMain init called
+19:15:15.282 INFO  controllers.MenuController : Controller init has been called
+19:15:19.697 INFO  controllers.BookListController$2 : double-clicked sdF
+19:15:19.697 INFO  controllers.BookListController$2 : Add book called
+19:15:20.848 ERROR controllers.BookDetailController : Save button was clicked!
+19:15:32.629 ERROR controllers.BookDetailController : Save button was clicked!
+19:15:35.875 INFO  controllers.BookListController$2 : double-clicked sdF
+19:15:35.875 INFO  controllers.BookListController$2 : Add book called
+19:15:58.997 ERROR controllers.BookDetailController : Save button was clicked!
+19:16:50.014 INFO  views.AppMain : AppMain init called
+19:16:50.455 ERROR views.AppMain : stop called
+19:16:51.012 INFO  controllers.MenuController : Controller init has been called
+19:16:54.109 INFO  controllers.BookListController$2 : double-clicked sdF
+19:16:54.110 INFO  controllers.BookListController$2 : Add book called
+19:16:57.387 ERROR controllers.BookDetailController : Save button was clicked!
+19:17:03.608 ERROR views.AppMain : stop called
+>>>>>>> branch 'master' of https://github.com/jtrejo2/SoftwareEnterprise1.git
