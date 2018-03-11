@@ -78,8 +78,11 @@ public class BookGateway {
 		}
 	}
 	//update the book in the db
-	public void updateBook(Book updated) {
+	public void updateBook(Book updated) throws GatewayException {
 		PreparedStatement st = null;
+		PreparedStatement st1 = null;
+		PreparedStatement st2 = null;
+		Book book = null;
 		try {
 			st = conn.prepareStatement("update book set title = '" + updated.getTitle() + "'," 
 				+ "summary = '"+ updated.getSummary() + "'," 
@@ -87,12 +90,88 @@ public class BookGateway {
 				+ "publisher_id = '" + updated.getPublisherId() 
 				+ "'," + "isbn = '" + updated.getIsbn() + "'"
 				+ "where id = '" + updated.getId() + "'");
+			st1 = conn.prepareStatement("Select * from book where id = '" + updated.getId() + "'",PreparedStatement.RETURN_GENERATED_KEYS);
+			ResultSet rs = st1.executeQuery();
+			System.out.println(st1);
+			System.out.println("here we are" + rs);
+			
+			//ResultSet rs = testing ;//st1.getGeneratedKeys();
+			rs.beforeFirst();
+			
+			while (rs.next()) {
+				// create a book object from the record
+				System.out.println("in the while");
+			    book = new Book(
+						rs.getInt("id"),
+						rs.getString("title"),
+						rs.getString("summary"),
+						rs.getInt("year_published"),
+						rs.getString("isbn"),
+						rs.getDate("date_added").toLocalDate(),
+						new PublisherGateway().getPublisherById(rs.getInt("publisher_id")));
+				       System.out.println("duh duh" + book.getTitle());
+			   }
+			if( book.getTitle() != updated.getTitle()){
+				
+				st2 = conn.prepareStatement("insert into book_audit_trail( entry_msg, book_id ) values(?,?) ");
+				//st2.setInt(1, 1);
+				st2.setString(1, "Book Title changed from " + book.getTitle() + " to " + updated.getTitle() + "");
+				st2.setInt(2,updated.getId());
+				st2.executeUpdate();
+				st2.close();
+				
+			}
+			if( book.getSummary() != updated.getSummary()){
+				
+				st2 = conn.prepareStatement("insert into book_audit_trail( entry_msg, book_id ) values(?,?) ");
+				//st2.setInt(1, 1);
+				st2.setString(1, "Summary changed from " + book.getSummary() + " to " + updated.getSummary() + "");
+				st2.setInt(2,updated.getId());
+				st2.executeUpdate();
+				st2.close();
+			}
+			if( book.getYearPublished() != updated.getYearPublished()){
+				
+				st2 = conn.prepareStatement("insert into book_audit_trail( entry_msg, book_id ) values(?,?) ");
+				//st2.setInt(1, 1);
+				st2.setString(1, "Year Published changed from " + book.getYearPublished() + " to " + updated.getYearPublished() + "");
+				st2.setInt(2,updated.getId());
+				st2.executeUpdate();
+				st2.close();
+			}
+			if( book.getIsbn() != updated.getIsbn()){
+				
+				st2 = conn.prepareStatement("insert into book_audit_trail( entry_msg, book_id ) values(?,?) ");
+				//st2.setInt(1, 1);
+				st2.setString(1, "ISBN changed from " + book.getIsbn() + " to " + updated.getIsbn() + "");
+				st2.setInt(2,updated.getId());
+				st2.executeUpdate();
+				st2.close();
+			}
+			if( book.getPublisher() != updated.getPublisher()){
+				
+				st2 = conn.prepareStatement("insert into book_audit_trail( entry_msg, book_id ) values(?,?) ");
+				//st2.setInt(1, 1);
+				st2.setString(1, "Publisher changed from " + book.getPublisher() + " to " + updated.getPublisher()+ "");
+				st2.setInt(2,updated.getId());
+				st2.executeUpdate();
+				st2.close();
+			}
+			//System.out.println(rs.getInt(1));
+			//System.out.println(book);
 
-			st.executeUpdate();
+			//st.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			try {
+				if(st1 != null) {
+					st1.close();
+					
+				}
+				if(st2 != null) {
+					st2.close();
+				}
 				if (st != null)
 					st.close();
 			} catch (SQLException e) {
@@ -104,20 +183,40 @@ public class BookGateway {
 	//insert an book in the db
 	public void insertBook (Book book) throws GatewayException {
 		PreparedStatement st = null;
+		PreparedStatement st2 = null;
+		ResultSet rs = null;
 		try {
-			st = conn.prepareStatement("insert into book( title, summary, year_published, isbn, publisher_id ) values( ?, ?, ?, ?, ? )");
+			st = conn.prepareStatement("insert into book( title, summary, year_published, isbn, publisher_id ) values( ?, ?, ?, ?, ? )", PreparedStatement.RETURN_GENERATED_KEYS);
 			st.setString(1, book.getTitle());
 			st.setString(2, book.getSummary());
 			st.setInt(3, book.getYearPublished());
 			st.setString(4, book.getIsbn());
 			st.setInt(5, book.getPublisherId());
 			
+			
+			
+			
+			
+			st2 = conn.prepareStatement("insert into book_audit_trail( entry_msg, book_id ) values(?,?) ");
+			//st2.setInt(1, 1);
+			st2.setString(1, "Book Added");
+			System.out.println(st2);
+			//st2.executeUpdate();
+			
 			st.executeUpdate();
+			rs = st.getGeneratedKeys();
+			rs.first();
+			System.out.println("this is the int" + rs.getInt(1));
+			System.out.println(rs.first());
+			st2.setInt(2, rs.getInt(1));
+			st2.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new GatewayException(e);
 		} finally {
 			try {
+				if(rs != null)
+					rs.close();
 				if(st != null)
 					st.close();
 			} catch (SQLException e) {
@@ -190,6 +289,68 @@ public class BookGateway {
 
 		return books;
 	}
+	public List<AuditTrail> GetBookAuditTrail(Book book){
+		List<AuditTrail> AuditTrails = new ArrayList<AuditTrail>();
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		
+		
+		 try{
+			st = conn.prepareStatement("Select * from book_audit_trail where book_id = '" + book.getId() + "'");
+			rs = st.executeQuery();
+			System.out.println("this is rs" + rs);
+			
+			while(rs.next()){
+				
+				
+					// create a book object from the record
+					System.out.println("in the while23");
+				    AuditTrail AuditTrail = new AuditTrail();
+				    AuditTrail.setId(rs.getInt("id"));
+				    //rs.next();
+				    AuditTrail.setBookId(rs.getInt("book_id"));
+				    AuditTrail.setDateAdded(rs.getTimestamp("date_added"));
+				    //System.out.println("this is the time stamp" + rs.getTimestamp("date_added"));
+				    AuditTrail.setMessage(rs.getString("entry_msg"));
+				    AuditTrails.add(AuditTrail);
+				    //System.out.println("duh duh" + book.getTitle() + book.getId() + book.getDateAdded() + book.getSummary());
+				    //System.out.println("this is the time stamp" + rs.getTimestamp("date_added"));
+				    //System.out.println("this is the Audit" + AuditTrail.getDateAdded());
+				    
+			}	    //System.out.println("this is the Audit");
+					//System.out.println("duh duh" + book.getTitle() + book.getId() +book.getBookId() + book.getDateAdded() + book.getSummary());
+				 /*Book book = new Book(
+						rs.getInt("id"),
+						rs.getString("title"),
+						rs.getString("summary"),
+						rs.getInt("year_published"),
+						rs.getString("isbn"), 
+						rs.getDate("date_added").toLocalDate(),
+						new PublisherGateway().getPublisherById(rs.getInt("publisher_id")));
+				books.add(book);*/
+				
+			//}
+			//for(AuditTrail a: AuditTrails)
+				
+			//	System.out.println("duh duh" + a);
+		} catch (SQLException e){
+			e.printStackTrace();
+		} finally {
+			try{
+				if(rs != null)
+					rs.close();
+				if(st != null)
+					st.close();
+			} catch (SQLException e){
+				e.printStackTrace();
+			}
+		}
+		
+		//System.out.println("Audit Trails" + AuditTrails);
+		//AuditTrails =  new ArrayList<AuditTrail>();
+		return AuditTrails;
+	}
+		
 	
 	
 	//close the conenction to the db
@@ -203,4 +364,3 @@ public class BookGateway {
 		}
 	}
 }
-

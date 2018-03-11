@@ -2,6 +2,7 @@ package model;
 
 import java.time.LocalDate;
 import java.util.Calendar;
+import java.util.List;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -178,5 +179,15 @@ public class Book{
 		return this.title;
 	}
 
+	public List<AuditTrail> GetBookAuditTrail() {
+		// TODO Auto-generated method stub
+		 List<AuditTrail> AuditTrails = AppMain.bookGateway.GetBookAuditTrail(this);
+		 for(AuditTrail a: AuditTrails) {
+			 System.out.println("this is a" + a);
+			 
+		 }
+	
+	return AuditTrails;
+	}
 
 }
