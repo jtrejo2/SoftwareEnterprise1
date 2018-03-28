@@ -70,8 +70,7 @@ public class BookDetailController {
 			System.out.println("here we are");
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AuthorBookView.fxml"));
 			//List<AuditTrail> books = book.GetBookAuditTrail();
-			//loader.setController(new AuditTrailController(books,book));//set controller
-			
+			loader.setController(new AuthorBookController(book));//set Detail Controller
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view);//display
 			return;

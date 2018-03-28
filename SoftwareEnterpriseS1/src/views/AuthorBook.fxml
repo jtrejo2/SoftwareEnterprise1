@@ -12,6 +12,6 @@
       <TextField fx:id="royalty" layoutX="280.0" layoutY="195.0" prefHeight="27.0" prefWidth="150.0" />
       <Label layoutX="171.0" layoutY="155.0" prefHeight="17.0" prefWidth="71.0" text="Author" />
       <Label layoutX="171.0" layoutY="200.0" text="Royalty" />
-      <Button fx:id="save" layoutX="276.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleSaveButton" text="Save" />
+      <Button layoutX="276.0" layoutY="300.0" mnemonicParsing="false" text="Save" />
    </children>
 </AnchorPane>
