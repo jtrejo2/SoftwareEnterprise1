@@ -27,6 +27,7 @@ public class BookDetailController {
 	@FXML private TextField title, summary, yearPublished, isbn;
 	@FXML private Button Save;
 	@FXML private Button Audit;
+	@FXML private Button AddAuthor;
 	@FXML ComboBox<Publisher> cbPublishers;
 	private List<Publisher> publishers;
 	
@@ -65,6 +66,18 @@ public class BookDetailController {
 			return;
 			
 		}
+		if(source == AddAuthor) {
+			System.out.println("here we are");
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AuthorBookView.fxml"));
+			//List<AuditTrail> books = book.GetBookAuditTrail();
+			//loader.setController(new AuditTrailController(books,book));//set controller
+			
+			Parent view = loader.load();
+			AppMain.rootPane.setCenter(view);//display
+			return;
+			
+		}
+		
 	}
 
 	public void initialize() {

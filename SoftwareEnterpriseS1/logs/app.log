@@ -2370,3 +2370,29 @@
 18:21:55.482 INFO  controllers.BookListController$2 : double-clicked Book Title
 18:21:55.484 INFO  controllers.BookListController$2 : Add book called
 18:23:02.066 ERROR views.AppMain : stop called
+13:47:54.405 INFO  views.AppMain : AppMain init called
+13:47:55.660 INFO  controllers.MenuController : Controller init has been called
+13:48:09.096 INFO  controllers.BookListController$2 : double-clicked Book Title
+13:48:09.097 INFO  controllers.BookListController$2 : Add book called
+13:48:15.880 ERROR views.AppMain : stop called
+13:52:02.260 INFO  views.AppMain : AppMain init called
+13:52:03.783 INFO  controllers.MenuController : Controller init has been called
+13:52:15.590 INFO  controllers.BookListController$2 : double-clicked Book Title
+13:52:15.590 INFO  controllers.BookListController$2 : Add book called
+13:53:27.738 INFO  controllers.MenuController : Add author called
+13:53:27.747 INFO  controllers.AuthorDetailController : Detail View init called
+13:53:29.875 INFO  controllers.AuthorListController$2 : double-clicked 20 : Hey There : 1992-12-12 : F : blah.net
+13:53:29.881 INFO  controllers.AuthorDetailController : Detail View init called
+13:53:41.278 INFO  controllers.BookListController$2 : double-clicked blah blah
+13:53:41.279 INFO  controllers.BookListController$2 : Add book called
+13:54:32.201 ERROR views.AppMain : stop called
+14:08:04.302 INFO  views.AppMain : AppMain init called
+14:08:05.554 INFO  controllers.MenuController : Controller init has been called
+14:08:16.599 INFO  controllers.BookListController$2 : double-clicked blah blah
+14:08:16.601 INFO  controllers.BookListController$2 : Add book called
+14:08:34.495 ERROR views.AppMain : stop called
+14:09:34.595 INFO  views.AppMain : AppMain init called
+14:09:35.739 INFO  controllers.MenuController : Controller init has been called
+14:09:46.729 INFO  controllers.BookListController$2 : double-clicked Test Publisher
+14:09:46.729 INFO  controllers.BookListController$2 : Add book called
+14:09:53.561 ERROR views.AppMain : stop called

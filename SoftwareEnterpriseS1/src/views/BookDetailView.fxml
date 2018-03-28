@@ -22,7 +22,7 @@
       <TextField fx:id="summary" layoutX="217.0" layoutY="76.0" prefHeight="31.0" prefWidth="234.0" />
       <Button fx:id="Audit" layoutX="500.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Audit" />
       <ListView fx:id="ListAuthor" layoutX="67.0" layoutY="249.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="126.0" prefWidth="325.0" />
-      <Button layoutX="407.0" layoutY="249.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="103.0" text="Add Author" />
+      <Button fx:id="AddAuthor" layoutX="407.0" layoutY="249.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="103.0" text="Add Author" />
       <Button layoutX="407.0" layoutY="285.0" mnemonicParsing="false" text="Delete Author" />
    </children>
 </AnchorPane>

@@ -7,6 +7,8 @@ import java.util.List;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import views.AppMain;
 
 public class Book{
@@ -18,6 +20,7 @@ public class Book{
 	private String isbn;
 	private Publisher publisher;
 	private LocalDate dateAdded;
+
 	
 	public Book() {
 		this.id = 0;
@@ -47,6 +50,7 @@ public class Book{
 		this.isbnValidate();
 		
 		this.publisher = publisher;
+		
 	
 	}
 	

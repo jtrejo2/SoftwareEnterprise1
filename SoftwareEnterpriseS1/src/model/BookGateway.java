@@ -356,6 +356,35 @@ public class BookGateway {
 		return AuditTrails;
 	}
 	
+	public ObservableList<AuthorBook> getAuthorsForBook(Book book) throws GatewayException {
+		ObservableList<AuthorBook> authorBooks = FXCollections.observableArrayList();
+
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("select * from author_book where book_id = ?");
+			st.setInt(1, book.getId());
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				Author author = new Gateway().getAuthorById(rs.getInt("author_id"));
+				
+				AuthorBook authorBook = new AuthorBook(author, book
+						, rs.getBigDecimal("royalty"));
+				authorBooks.add(authorBook);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new GatewayException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new GatewayException(e);
+			}
+		}
+		return authorBooks;
+	}
 	
 	//close the conenction to the db
 	public void close(){
