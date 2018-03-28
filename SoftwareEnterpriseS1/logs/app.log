@@ -2428,3 +2428,45 @@
 16:43:09.562 INFO  controllers.BookListController$2 : double-clicked sdFAsFD14
 16:43:09.562 INFO  controllers.BookListController$2 : Add book called
 16:43:35.843 ERROR views.AppMain : stop called
+16:49:18.921 INFO  views.AppMain : AppMain init called
+16:49:20.112 INFO  controllers.MenuController : Controller init has been called
+16:49:31.274 INFO  controllers.BookListController$2 : double-clicked Book Title
+16:49:31.275 INFO  controllers.BookListController$2 : Add book called
+16:51:11.237 INFO  controllers.BookListController : searching
+16:51:19.074 ERROR views.AppMain : stop called
+17:55:26.551 INFO  views.AppMain : AppMain init called
+17:55:27.444 INFO  controllers.MenuController : Controller init has been called
+17:55:34.228 INFO  controllers.BookListController$2 : double-clicked testing
+17:55:34.230 INFO  controllers.BookListController$2 : Add book called
+17:56:10.884 ERROR controllers.BookDetailController : Save button was clicked!
+17:56:13.057 INFO  controllers.BookListController$2 : double-clicked testing
+17:56:13.058 INFO  controllers.BookListController$2 : Add book called
+17:56:17.478 ERROR controllers.BookDetailController : Save button was clicked!
+17:56:31.877 INFO  controllers.BookListController$1 : deleting
+17:56:31.903 INFO  model.BookGateway : Book with id = 15 deleted from database.
+17:56:33.889 INFO  controllers.BookListController$1 : deleting
+17:56:42.935 INFO  controllers.BookListController$2 : double-clicked Test Publisher
+17:56:42.935 INFO  controllers.BookListController$2 : Add book called
+17:58:41.889 ERROR controllers.BookDetailController : Save button was clicked!
+17:58:53.454 ERROR views.AppMain : stop called
+18:20:44.634 INFO  views.AppMain : AppMain init called
+18:20:45.628 INFO  controllers.MenuController : Controller init has been called
+18:20:55.404 INFO  controllers.BookListController$2 : double-clicked blah blah
+18:20:55.404 INFO  controllers.BookListController$2 : Add book called
+18:24:07.370 ERROR views.AppMain : stop called
+18:25:54.905 INFO  views.AppMain : AppMain init called
+18:25:55.581 INFO  controllers.MenuController : Controller init has been called
+18:25:58.579 INFO  controllers.BookListController$2 : double-clicked Test Publisher
+18:25:58.580 INFO  controllers.BookListController$2 : Add book called
+18:30:06.687 ERROR views.AppMain : stop called
+18:44:30.166 INFO  views.AppMain : AppMain init called
+18:44:31.235 INFO  controllers.MenuController : Controller init has been called
+18:44:34.724 INFO  controllers.BookListController$2 : double-clicked Test Publisher
+18:44:34.724 INFO  controllers.BookListController$2 : Add book called
+18:45:59.892 ERROR views.AppMain : stop called
+18:46:08.722 INFO  views.AppMain : AppMain init called
+18:46:09.479 INFO  controllers.MenuController : Controller init has been called
+18:46:27.474 INFO  controllers.BookListController$2 : double-clicked Test Publisher
+18:46:27.475 INFO  controllers.BookListController$2 : Add book called
+18:47:04.782 ERROR controllers.BookDetailController : Save button was clicked!
+18:47:23.374 ERROR views.AppMain : stop called

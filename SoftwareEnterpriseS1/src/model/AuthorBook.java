@@ -3,6 +3,8 @@ package model;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import views.AppMain;
+
 public class AuthorBook {
 
 	private Author author;
@@ -35,6 +37,7 @@ public class AuthorBook {
 		this.royaltyPercent = this.royalty+"%";
 	}
 	
+	
 	public BigDecimal getRoyalty() {
 		return royalty;
 	}
@@ -42,4 +45,5 @@ public class AuthorBook {
 	public String getRoyaltyPercent() {
 		return this.royaltyPercent;
 	}
+	
 }

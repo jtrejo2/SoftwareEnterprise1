@@ -20,6 +20,7 @@ public class Book{
 	private String isbn;
 	private Publisher publisher;
 	private LocalDate dateAdded;
+	private ObservableList<AuthorBook> authorBooks;
 
 	
 	public Book() {
@@ -30,6 +31,7 @@ public class Book{
 		this.isbn = null;
 		this.dateAdded = null;
 		this.publisher = null;
+		this.authorBooks = FXCollections.observableArrayList();
 	}	
 	
 	public Book(int id, String title, String summary, int yearPublished, String isbn, LocalDate dateAdded, Publisher publisher) {
@@ -41,7 +43,6 @@ public class Book{
 		this.titleValidate(title);
 		
 		this.summary = summary;
-		//this.summaryValidate();
 		
 		this.yearPublished = yearPublished; 
 		this.yearValidate();
@@ -50,6 +51,8 @@ public class Book{
 		this.isbnValidate();
 		
 		this.publisher = publisher;
+		
+		this.authorBooks = FXCollections.observableArrayList();
 		
 	
 	}
@@ -178,6 +181,18 @@ public class Book{
 	    
 	}
 	
+	public void saveAuthor(AuthorBook authorBook) throws Exception {
+		/*
+		if(authorBook.newRecord == false){
+			AppMain.bookGateway.updateAuthorBook(authorBook);
+		}
+		else
+			AppMain.bookGateway.insertAuthorBook(authorBook);
+		}
+		*/
+		AppMain.bookGateway.insertAuthorBook(authorBook);
+	}
+		
 	@Override
 	public String toString() {
 		return this.title;

@@ -1,6 +1,5 @@
 package controllers;
 
-
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URL;
@@ -39,12 +38,13 @@ public class AuthorBookController implements Initializable{
 	}
 	
 	@FXML
-    void handleSaveButton(ActionEvent event) {
-		/*AuthorBook authorBook = new AuthorBook(cbAuthors.getSelectionModel().getSelectedItem(),
+    void handleSaveButton(ActionEvent event) throws Exception {
+		AuthorBook authorBook = new AuthorBook(cbAuthors.getSelectionModel().getSelectedItem(),
 				book, BigDecimal.valueOf(Double.valueOf(royalty.getText())));
 		
+		book.saveAuthor(authorBook);
 		
-		try{
+		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookDetailView.fxml"));
 			publishers = AppMain.publisherGateway.getPublishers();
 			loader.setController(new BookDetailController(book));//set Detail Controller
@@ -54,7 +54,7 @@ public class AuthorBookController implements Initializable{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		*/
+		
     }
 
 	@Override
@@ -68,18 +68,8 @@ public class AuthorBookController implements Initializable{
 		}
 		
 		if (this.book.getId() == 0) {
-			cbAuthors.getSelectionModel().select(0);
-				
+			cbAuthors.getSelectionModel().select(0);		
 		} 
-		/*
-		else {
-			Author author = AppMain.authorGateway.getAuthorById(this.book.getId());
-			if (author == null)
-				cbAuthors.getSelectionModel().select(0);
-			else
-				cbAuthors.getSelectionModel().select(author);
-		}
-		*/
 		
 	}
 }

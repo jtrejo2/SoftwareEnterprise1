@@ -356,6 +356,76 @@ public class BookGateway {
 		return AuditTrails;
 	}
 	
+	public void insertAuthorBook(AuthorBook authorBook) throws GatewayException {
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("insert into author_book (author_id, book_id, royalty)"
+					+ " values (?, ?, ?)");
+			st.setInt(1, authorBook.getAuthor().getId());
+			st.setInt(2, authorBook.getBook().getId());
+			st.setBigDecimal(3, authorBook.getRoyalty());
+			st.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new GatewayException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new GatewayException(e);
+			}
+		}
+	}
+	
+	public void updateAuthorBook(AuthorBook authorBook) throws GatewayException {
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("update author_book set author_id = ?, royalty = ? "
+					+ "where book_id = ? and author_id = ?");
+			st.setInt(1, authorBook.getAuthor().getId());
+			st.setBigDecimal(2, authorBook.getRoyalty());
+			st.setInt(3, authorBook.getBook().getId());
+			st.setInt(4, authorBook.getAuthor().getId());
+			st.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new GatewayException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new GatewayException(e);
+			}
+		}
+	}
+	
+	public void deleteAuthorBook(AuthorBook authorBook) throws GatewayException {
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("delete from author_book where book_id = ? and author_id = ?");
+			st.setInt(1, authorBook.getBook().getId());
+			st.setInt(2, authorBook.getAuthor().getId());
+			st.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new GatewayException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new GatewayException(e);
+			}
+		}
+	}
+	
 	public ObservableList<AuthorBook> getAuthorsForBook(Book book) throws GatewayException {
 		ObservableList<AuthorBook> authorBooks = FXCollections.observableArrayList();
 
