@@ -2396,3 +2396,10 @@
 14:09:46.729 INFO  controllers.BookListController$2 : double-clicked Test Publisher
 14:09:46.729 INFO  controllers.BookListController$2 : Add book called
 14:09:53.561 ERROR views.AppMain : stop called
+14:37:09.762 INFO  views.AppMain : AppMain init called
+14:37:11.023 INFO  controllers.MenuController : Controller init has been called
+14:37:15.057 INFO  controllers.MenuController : Add author called
+14:37:15.081 INFO  controllers.AuthorDetailController : Detail View init called
+14:37:24.850 INFO  controllers.BookListController$2 : double-clicked Test Publisher
+14:37:24.851 INFO  controllers.BookListController$2 : Add book called
+14:37:41.757 ERROR views.AppMain : stop called
