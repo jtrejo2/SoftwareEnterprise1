@@ -183,14 +183,20 @@ public class Book{
 	
 	public void saveAuthor(AuthorBook authorBook) throws Exception {
 		/*
-		if(authorBook.newRecord == false){
+		if(authorBook.getNewRecord() == false){
 			AppMain.bookGateway.updateAuthorBook(authorBook);
 		}
-		else
+		else {
 			AppMain.bookGateway.insertAuthorBook(authorBook);
 		}
 		*/
 		AppMain.bookGateway.insertAuthorBook(authorBook);
+	}
+
+	
+	public ObservableList<AuthorBook> getAuthors() throws GatewayException {
+		return AppMain.bookGateway.getAuthorsForBook(this);
+		
 	}
 		
 	@Override

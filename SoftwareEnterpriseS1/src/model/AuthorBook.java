@@ -31,9 +31,12 @@ public class AuthorBook {
 		return book;
 	}
 	
+	public boolean getNewRecord() {
+		return newRecord;
+	}
+	
 	public void setRoyalty(BigDecimal royalty) {
 		this.royalty = royalty;
-		BigDecimal rounded = royalty.multiply(new BigDecimal(100)).setScale(2, RoundingMode.FLOOR);
 		this.royaltyPercent = this.royalty+"%";
 	}
 	
@@ -44,6 +47,11 @@ public class AuthorBook {
 	
 	public String getRoyaltyPercent() {
 		return this.royaltyPercent;
+	}
+	
+	@Override
+	public String toString() {
+		return " " + author.getFirst_name() + "                         " + royaltyPercent ;
 	}
 	
 }

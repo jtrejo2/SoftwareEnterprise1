@@ -6,10 +6,12 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="Save" layoutX="407.0" layoutY="324.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="103.0" text="Save" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="143.0" layoutX="58.0" layoutY="240.0" stroke="BLACK" strokeType="INSIDE" width="529.0" />
+      <Button fx:id="Save" layoutX="500.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="155.0" prefWidth="66.0" text="Save" />
       <TextField fx:id="title" layoutX="217.0" layoutY="32.0" prefHeight="31.0" prefWidth="234.0" />
       <TextField fx:id="yearPublished" layoutX="218.0" layoutY="115.0" prefHeight="31.0" prefWidth="234.0" />
       <TextField fx:id="isbn" layoutX="218.0" layoutY="156.0" prefHeight="31.0" prefWidth="234.0" />
@@ -20,9 +22,9 @@
       <ComboBox fx:id="cbPublishers" layoutX="217.0" layoutY="202.0" prefHeight="27.0" prefWidth="234.0" />
       <Label layoutX="69.0" layoutY="83.0" text="Summary" />
       <TextField fx:id="summary" layoutX="217.0" layoutY="76.0" prefHeight="31.0" prefWidth="234.0" />
-      <Button fx:id="Audit" layoutX="500.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Audit" />
-      <ListView fx:id="ListAuthor" layoutX="67.0" layoutY="249.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="126.0" prefWidth="325.0" />
-      <Button fx:id="AddAuthor" layoutX="407.0" layoutY="249.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="103.0" text="Add Author" />
-      <Button layoutX="407.0" layoutY="285.0" mnemonicParsing="false" text="Delete Author" />
+      <Button fx:id="Audit" layoutX="500.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="66.0" text="Audit" />
+      <ListView fx:id="listAuthorBooks" layoutX="67.0" layoutY="249.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="126.0" prefWidth="384.0" />
+      <Button fx:id="AddAuthor" layoutX="474.0" layoutY="287.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="103.0" text="Add Author" />
+      <Button fx:id="Delete" layoutX="474.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleButtonAction1" text="Delete Author" />
    </children>
 </AnchorPane>
