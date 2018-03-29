@@ -2323,3 +2323,21 @@
 00:31:35.121 INFO  controllers.BookListController$2 : Add book called
 00:32:18.398 INFO  controllers.AuditTrailController : Add book called
 00:32:20.281 ERROR views.AppMain : stop called
+02:35:06.226 INFO  views.AppMain : AppMain init called
+02:35:07.903 INFO  controllers.MenuController : Controller init has been called
+02:35:46.444 INFO  controllers.BookListController : searching
+02:36:00.512 INFO  controllers.BookListController : searching
+02:36:26.951 INFO  controllers.BookListController$2 : double-clicked sdFAsFD14
+02:36:26.952 INFO  controllers.BookListController$2 : Add book called
+02:36:31.225 INFO  controllers.AuditTrailController : Add book called
+02:36:37.686 INFO  controllers.AuditTrailController : Add book called
+02:36:50.971 INFO  controllers.AuditTrailController : Add book called
+02:36:53.720 INFO  controllers.AuditTrailController : Add book called
+02:38:33.955 ERROR views.AppMain : stop called
+14:46:27.884 INFO  views.AppMain : AppMain init called
+14:46:28.634 INFO  controllers.MenuController : Controller init has been called
+14:46:56.112 INFO  controllers.BookListController : searching
+14:47:16.322 INFO  controllers.BookListController : searching
+14:47:21.484 INFO  controllers.BookListController : searching
+14:47:28.825 INFO  controllers.BookListController : searching
+14:47:47.799 ERROR views.AppMain : stop called
