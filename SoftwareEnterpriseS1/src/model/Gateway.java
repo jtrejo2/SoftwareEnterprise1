@@ -47,6 +47,35 @@ public class Gateway {
 		return authors;
 	}
 	
+	public Author getAuthorById(int id) throws GatewayException {
+		PreparedStatement st = null;
+		Author author = null;
+		
+		try {
+			st = conn.prepareStatement("select * from author where id = ?");
+			st.setInt(1, id);
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				author = new Author(rs.getInt("id"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("dob"), rs.getString("gender"), rs.getString("web_site"));
+				//author.setGateway(this);
+				author.setId(rs.getInt("id"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new GatewayException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new GatewayException(e);
+			}
+		}
+		return author;
+	}
+	
 	public Gateway() throws GatewayException{
 		conn = null;
 		

@@ -25,8 +25,8 @@ public class BookListController {
 	private static Logger logger = LogManager.getLogger();
 	@FXML private Button Delete, Search;
 	@FXML private TextField searchText;
+	
 	@FXML private ListView<Book> ListBook;
-	private ObservableList<Book> listData;
 	
 	private Book book;
 	private List<Book> books;

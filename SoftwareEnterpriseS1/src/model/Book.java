@@ -7,6 +7,8 @@ import java.util.List;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import views.AppMain;
 
 public class Book{
@@ -18,6 +20,8 @@ public class Book{
 	private String isbn;
 	private Publisher publisher;
 	private LocalDate dateAdded;
+	private ObservableList<AuthorBook> authorBooks;
+
 	
 	public Book() {
 		this.id = 0;
@@ -27,6 +31,7 @@ public class Book{
 		this.isbn = null;
 		this.dateAdded = null;
 		this.publisher = null;
+		this.authorBooks = FXCollections.observableArrayList();
 	}	
 	
 	public Book(int id, String title, String summary, int yearPublished, String isbn, LocalDate dateAdded, Publisher publisher) {
@@ -38,7 +43,6 @@ public class Book{
 		this.titleValidate(title);
 		
 		this.summary = summary;
-		//this.summaryValidate();
 		
 		this.yearPublished = yearPublished; 
 		this.yearValidate();
@@ -47,6 +51,9 @@ public class Book{
 		this.isbnValidate();
 		
 		this.publisher = publisher;
+		
+		this.authorBooks = FXCollections.observableArrayList();
+		
 	
 	}
 	
@@ -174,6 +181,24 @@ public class Book{
 	    
 	}
 	
+	public void saveAuthor(AuthorBook authorBook) throws Exception {
+		/*
+		if(authorBook.getNewRecord() == false){
+			AppMain.bookGateway.updateAuthorBook(authorBook);
+		}
+		else {
+			AppMain.bookGateway.insertAuthorBook(authorBook);
+		}
+		*/
+		AppMain.bookGateway.insertAuthorBook(authorBook);
+	}
+
+	
+	public ObservableList<AuthorBook> getAuthors() throws GatewayException {
+		return AppMain.bookGateway.getAuthorsForBook(this);
+		
+	}
+		
 	@Override
 	public String toString() {
 		return this.title;

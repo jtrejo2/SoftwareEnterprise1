@@ -6,13 +6,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class BookGateway {
 	private Connection conn;
@@ -350,8 +355,106 @@ public class BookGateway {
 		//AuditTrails =  new ArrayList<AuditTrail>();
 		return AuditTrails;
 	}
-		
 	
+	public void insertAuthorBook(AuthorBook authorBook) throws GatewayException {
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("insert into author_book (author_id, book_id, royalty)"
+					+ " values (?, ?, ?)");
+			st.setInt(1, authorBook.getAuthor().getId());
+			st.setInt(2, authorBook.getBook().getId());
+			st.setBigDecimal(3, authorBook.getRoyalty());
+			st.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new GatewayException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new GatewayException(e);
+			}
+		}
+	}
+	
+	public void updateAuthorBook(AuthorBook authorBook) throws GatewayException {
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("update author_book set author_id = ?, royalty = ? "
+					+ "where book_id = ? and author_id = ?");
+			st.setInt(1, authorBook.getAuthor().getId());
+			st.setBigDecimal(2, authorBook.getRoyalty());
+			st.setInt(3, authorBook.getBook().getId());
+			st.setInt(4, authorBook.getAuthor().getId());
+			st.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new GatewayException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new GatewayException(e);
+			}
+		}
+	}
+	
+	public void deleteAuthorBook(AuthorBook authorBook) throws GatewayException {
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("delete from author_book where book_id = ? and author_id = ?");
+			st.setInt(1, authorBook.getBook().getId());
+			st.setInt(2, authorBook.getAuthor().getId());
+			st.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new GatewayException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new GatewayException(e);
+			}
+		}
+	}
+	
+	public ObservableList<AuthorBook> getAuthorsForBook(Book book) throws GatewayException {
+		ObservableList<AuthorBook> authorBooks = FXCollections.observableArrayList();
+
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("select * from author_book where book_id = ?");
+			st.setInt(1, book.getId());
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				Author author = new Gateway().getAuthorById(rs.getInt("author_id"));
+				
+				AuthorBook authorBook = new AuthorBook(author, book
+						, rs.getBigDecimal("royalty"));
+				authorBooks.add(authorBook);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new GatewayException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new GatewayException(e);
+			}
+		}
+		return authorBooks;
+	}
 	
 	//close the conenction to the db
 	public void close(){
