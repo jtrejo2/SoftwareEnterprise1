@@ -2592,3 +2592,106 @@
 13:33:04.901 INFO  controllers.AuthorAuditTrailController : Add book called
 13:33:04.906 INFO  controllers.AuthorDetailController : Detail View init called
 13:33:06.584 ERROR views.AppMain : stop called
+14:58:40.647 INFO  views.AppMain : AppMain init called
+14:58:41.401 INFO  controllers.MenuController : Controller init has been called
+14:58:51.680 INFO  controllers.BookListController$2 : double-clicked Book Title
+14:58:51.683 INFO  controllers.BookListController$2 : Add book called
+14:59:19.550 ERROR controllers.BookDetailController : Save button was clicked!
+15:00:48.011 INFO  controllers.BookDetailController$1 : deleting
+15:00:49.795 ERROR controllers.BookDetailController : Save button was clicked!
+15:00:52.072 ERROR controllers.BookDetailController : Save button was clicked!
+15:24:42.053 INFO  views.AppMain : AppMain init called
+15:24:42.750 INFO  controllers.MenuController : Controller init has been called
+15:24:44.188 ERROR views.AppMain : stop called
+15:24:55.794 INFO  controllers.MenuController : Add author called
+15:24:55.814 INFO  controllers.AuthorDetailController : Detail View init called
+15:25:34.153 ERROR model.Gateway : 1955/01/01
+15:25:34.223 ERROR controllers.AuthorDetailController : Save button was clicked!
+15:25:44.715 INFO  controllers.AuthorAuditTrailController : Add book called
+15:25:44.725 INFO  controllers.AuthorDetailController : Detail View init called
+15:26:35.874 INFO  views.AppMain : AppMain init called
+15:26:36.437 INFO  controllers.MenuController : Controller init has been called
+15:26:41.146 INFO  controllers.MenuController : Add author called
+15:26:41.162 INFO  controllers.AuthorDetailController : Detail View init called
+15:27:10.842 ERROR model.Gateway : 1955/01/10
+15:27:10.950 ERROR controllers.AuthorDetailController : Save button was clicked!
+15:27:19.720 INFO  controllers.AuthorAuditTrailController : Add book called
+15:27:19.731 INFO  controllers.AuthorDetailController : Detail View init called
+15:28:01.003 INFO  controllers.AuthorAuditTrailController : Add book called
+15:28:01.014 INFO  controllers.AuthorDetailController : Detail View init called
+15:35:51.067 INFO  controllers.BookListController : searching
+15:35:53.616 INFO  controllers.BookListController$2 : double-clicked Book Title
+15:35:53.619 INFO  controllers.BookListController$2 : Add book called
+15:48:35.025 INFO  views.AppMain : AppMain init called
+15:48:35.704 INFO  controllers.MenuController : Controller init has been called
+15:48:44.113 INFO  controllers.BookListController$2 : double-clicked Book Title
+15:48:44.113 INFO  controllers.BookListController$2 : Add book called
+15:49:27.808 INFO  controllers.BookDetailController$1 : deleting
+15:49:41.101 ERROR controllers.BookDetailController : Save button was clicked!
+15:51:13.507 INFO  controllers.BookDetailController$1 : deleting
+15:51:20.261 ERROR controllers.BookDetailController : Save button was clicked!
+15:52:48.188 INFO  controllers.BookListController$2 : double-clicked Book Title
+15:52:48.189 INFO  controllers.BookListController$2 : Add book called
+15:52:50.819 INFO  controllers.MenuController : Add book called
+15:52:57.478 INFO  controllers.BookListController$2 : double-clicked Book Title
+15:52:57.481 INFO  controllers.BookListController$2 : Add book called
+16:16:18.145 INFO  controllers.BookDetailController$2 : double-clicked  Hey                         1.20000%
+16:26:03.017 ERROR views.AppMain : stop called
+16:26:05.974 INFO  views.AppMain : AppMain init called
+16:26:06.529 INFO  controllers.MenuController : Controller init has been called
+16:26:12.379 INFO  controllers.BookListController$2 : double-clicked Test Publisher
+16:26:12.380 INFO  controllers.BookListController$2 : Add book called
+16:26:20.921 ERROR controllers.BookDetailController : Save button was clicked!
+16:26:54.684 ERROR controllers.BookDetailController : Save button was clicked!
+16:26:58.035 INFO  controllers.BookDetailController$1 : deleting
+16:29:31.525 INFO  views.AppMain : AppMain init called
+16:29:32.125 INFO  controllers.MenuController : Controller init has been called
+16:29:34.948 ERROR views.AppMain : stop called
+16:29:39.631 INFO  controllers.BookListController$2 : double-clicked Book Title
+16:29:39.631 INFO  controllers.BookListController$2 : Add book called
+16:31:08.734 ERROR views.AppMain : stop called
+16:31:11.274 INFO  views.AppMain : AppMain init called
+16:31:11.850 INFO  controllers.MenuController : Controller init has been called
+16:31:16.835 INFO  controllers.BookListController$2 : double-clicked Book Title
+16:31:16.836 INFO  controllers.BookListController$2 : Add book called
+16:32:36.176 ERROR views.AppMain : stop called
+16:32:39.247 INFO  views.AppMain : AppMain init called
+16:32:39.805 INFO  controllers.MenuController : Controller init has been called
+16:32:43.668 INFO  controllers.BookListController$2 : double-clicked Book Title
+16:32:43.669 INFO  controllers.BookListController$2 : Add book called
+16:40:59.265 INFO  views.AppMain : AppMain init called
+16:40:59.877 INFO  controllers.MenuController : Controller init has been called
+16:41:05.721 INFO  controllers.BookListController$2 : double-clicked Book Title
+16:41:05.722 INFO  controllers.BookListController$2 : Add book called
+16:41:09.683 INFO  controllers.BookDetailController$1 : deleting
+16:42:33.353 INFO  controllers.MenuController : Add book called
+16:43:57.882 INFO  controllers.BookListController$2 : double-clicked blah blah
+16:43:57.883 INFO  controllers.BookListController$2 : Add book called
+16:44:02.281 INFO  controllers.BookDetailController$2 : double-clicked  Noahzzzz                         0.00000%
+16:44:18.488 ERROR controllers.AuthorBookController : Save button was clicked!
+16:44:27.205 ERROR controllers.BookDetailController : Save button was clicked!
+16:44:30.596 INFO  controllers.AuditTrailController : Add book called
+16:44:32.850 INFO  controllers.BookDetailController$2 : double-clicked  Noahzzzz                         0.20000%
+16:46:22.202 ERROR views.AppMain : stop called
+16:46:24.696 INFO  views.AppMain : AppMain init called
+16:46:25.257 INFO  controllers.MenuController : Controller init has been called
+16:46:29.350 INFO  controllers.BookListController$2 : double-clicked Book Title
+16:46:29.351 INFO  controllers.BookListController$2 : Add book called
+16:46:35.546 ERROR controllers.AuthorBookController : Save button was clicked!
+16:47:13.563 INFO  controllers.BookDetailController$2 : double-clicked  bob                         1.00000%
+16:51:28.324 ERROR views.AppMain : stop called
+16:51:31.040 INFO  views.AppMain : AppMain init called
+16:51:31.593 INFO  controllers.MenuController : Controller init has been called
+16:51:36.448 INFO  controllers.BookListController$2 : double-clicked Book Title
+16:51:36.448 INFO  controllers.BookListController$2 : Add book called
+16:51:46.722 ERROR controllers.AuthorBookController : Save button was clicked!
+16:52:03.351 ERROR views.AppMain : stop called
+16:52:05.914 INFO  views.AppMain : AppMain init called
+16:52:06.484 INFO  controllers.MenuController : Controller init has been called
+16:52:10.503 INFO  controllers.BookListController$2 : double-clicked Book Title
+16:52:10.503 INFO  controllers.BookListController$2 : Add book called
+16:52:21.392 INFO  controllers.BookDetailController$2 : double-clicked  Noahzzzz                         0.20000%
+16:52:25.211 ERROR controllers.AuthorBookController : Save button was clicked!
+16:57:28.299 INFO  controllers.BookDetailController$1 : deleting
+16:57:31.582 INFO  controllers.BookDetailController$1 : deleting
+16:57:37.393 ERROR views.AppMain : stop called

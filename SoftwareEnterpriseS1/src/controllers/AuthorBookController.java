@@ -5,6 +5,11 @@ import java.math.BigDecimal;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+//import com.oracle.tools.packager.Log.Logger;
+
 import model.Gateway;
 import model.Publisher;
 import views.AppMain;
@@ -14,9 +19,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import model.Author;
 import model.AuthorBook;
 import model.Book;
@@ -28,7 +35,7 @@ public class AuthorBookController implements Initializable{
     @FXML private Button save;
     
     private List<Author> authors;
-
+    private Logger logger = LogManager.getLogger() ;
 	private Book book;
 	private Gateway authorGateway;
 	List<Publisher> publishers;
@@ -41,9 +48,18 @@ public class AuthorBookController implements Initializable{
     void handleSaveButton(ActionEvent event) throws Exception {
 		AuthorBook authorBook = new AuthorBook(cbAuthors.getSelectionModel().getSelectedItem(),
 				book, BigDecimal.valueOf(Double.valueOf(royalty.getText())));
-		
-		book.saveAuthor(authorBook);
-		
+		Object source = event.getSource();
+		if(source == save) {
+			book.saveAuthor(authorBook);
+
+				try {
+					book.saveAuthor(authorBook);
+					logger.error("Save button was clicked!");
+				} catch (Exception e) {
+					Alert alert = new Alert (AlertType.WARNING, "Error saving Royalty please try again");
+					alert.showAndWait();
+				}
+			}
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookDetailView.fxml"));
 			publishers = AppMain.publisherGateway.getPublishers();

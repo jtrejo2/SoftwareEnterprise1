@@ -1,5 +1,6 @@
 package model;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.List;
@@ -190,7 +191,29 @@ public class Book{
 			AppMain.bookGateway.insertAuthorBook(authorBook);
 		}
 		*/
+		System.out.println("here is the royalty" + authorBook.getRoyalty());
+		System.out.println(authorBook.getRoyalty().compareTo(BigDecimal.ONE));
+		if(ValidateRoyalty(authorBook.getRoyalty()) == true){
 		AppMain.bookGateway.insertAuthorBook(authorBook);
+		}
+		else {
+			throw new Exception("Validate Royalty failed, Author could not be saved to the book");
+			
+		}
+	}
+	private Boolean ValidateRoyalty(BigDecimal royalty) {
+		// TODO Auto-generated method stub
+		boolean result;
+		
+		if(royalty.compareTo(BigDecimal.ZERO) > 0 && royalty.compareTo(BigDecimal.ONE) < 1 ) {
+			result = true;
+		}
+		else {
+			result = false;
+		}
+		return result;
+		
+		
 	}
 
 	

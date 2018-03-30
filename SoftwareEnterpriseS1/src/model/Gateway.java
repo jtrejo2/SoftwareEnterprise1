@@ -266,9 +266,10 @@ public class Gateway {
 		//AuditTrails =  new ArrayList<AuditTrail>();
 		return AuditTrails;
 	}
-	//insert an author in the db
+	//insert an author in the db and add audit trail to author audit trail
 	public void insertAuthor(Author newguy) throws SQLException{
 		PreparedStatement st = null;
+		PreparedStatement st2 = null;
 		ResultSet rs = null;
 		
 		try{
@@ -282,8 +283,13 @@ public class Gateway {
 			st.executeUpdate();
 			rs = st.getGeneratedKeys();
 			if(rs != null && rs.next()){
+				st2 = conn.prepareStatement("insert into author_audit_trail( entry_msg, author_id ) values(?,?) ");
 				newguy.setId(rs.getInt(1));
+				st2.setInt(2, rs.getInt(1));
+				st2.setString(1, "Author Added");
+				st2.executeUpdate();
 			}
+			
 		}catch(SQLException e){
 			logger.error("The insert has failed");
 			e.printStackTrace();
@@ -294,7 +300,10 @@ public class Gateway {
 			if(st != null){
 				st.close();
 			}
-		}
+			if(st2 != null) {
+				st2.close();
+			}
+			}
 	}
 	//delete an author from the db
 	public void authorDelete(Author badauthor){
