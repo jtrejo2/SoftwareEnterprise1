@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 import views.AppMain;
 
 public class Author {
@@ -152,8 +154,17 @@ public class Author {
 	public String toString() {
 		return id + " : " + firstName + " " + lastName + " : " + dob + " : " + gender + " : " + webSite; 
 	}
+	//public static List<AuthorAuditTrail> GetBookAuditTrail() {
+		// TODO Auto-generated method stub
+	//	return null;
+	//}
+	public List<AuthorAuditTrail> GetAuthorAuditTrail() {
+		// TODO Auto-generated method stub
+		 List<AuthorAuditTrail> AuditTrails = AppMain.authorGateway.GetAuthorAuditTrail(this);
+		 for(AuthorAuditTrail a: AuditTrails) {
+			 //System.out.println("this is a" + a);
+		 }
+		 return AuditTrails;
+	}
 
-	
-	
-	
 }

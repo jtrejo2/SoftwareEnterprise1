@@ -142,9 +142,9 @@ public class Book{
 	public int getPublisherId() {
 		return publisher.getId();
 	}
-	
-	public Publisher getPublisher() {
-		return publisher;
+	//changed from publisher return type to string
+	public String getPublisher() {
+		return publisher.toString();
 	}
 	
 
@@ -208,7 +208,7 @@ public class Book{
 		// TODO Auto-generated method stub
 		 List<AuditTrail> AuditTrails = AppMain.bookGateway.GetBookAuditTrail(this);
 		 for(AuditTrail a: AuditTrails) {
-			 System.out.println("this is a" + a);
+			 //System.out.println("this is a" + a);
 			 
 		 }
 	

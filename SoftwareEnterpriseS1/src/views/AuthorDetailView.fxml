@@ -18,5 +18,6 @@
       <Label layoutX="67.0" layoutY="146.0" text="DOB (YYYY/MM/DD)" />
       <Label layoutX="66.0" layoutY="201.0" text="Gender" />
       <Label layoutX="63.0" layoutY="256.0" text="Website" />
+      <Button fx:id="Audit" layoutX="334.0" layoutY="329.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Audit" />
    </children>
 </AnchorPane>

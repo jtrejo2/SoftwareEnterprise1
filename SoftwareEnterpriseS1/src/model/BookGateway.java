@@ -105,7 +105,7 @@ public class BookGateway {
 			
 			while (rs.next()) {
 				// create a book object from the record
-				System.out.println("in the while");
+				//System.out.println("in the while");
 			    book = new Book(
 						rs.getInt("id"),
 						rs.getString("title"),
@@ -115,18 +115,28 @@ public class BookGateway {
 						rs.getDate("date_added").toLocalDate(),
 						new PublisherGateway().getPublisherById(rs.getInt("publisher_id")));
 				       System.out.println("duh duh" + book.getTitle());
+				       System.out.println("duh duh2 " + updated.getTitle());
 			   }
-			if( book.getTitle() != updated.getTitle()){
+		    //String publisher1 = book.getPublisher()
+			//System.out.println("Attention");
+			//System.out.println("here we are 2424 " + book.getTitle() != updated.getTitle() + "line");
+			//System.out.println(  book.getPublisher() == updated.getPublisher());
+			//System.out.println(book.getPublisher().equals(updated.getPublisher()));
+			//System.out.println("the strings publisher" + book.getPublisher()  + " " + updated.getPublisher());
+			//System.out.println("here we are titles should be different " + book.getYearPublished());
+			if( !book.getTitle().equals(updated.getTitle())){
+				System.out.println("here we are titles should be different " + book.getYearPublished() + " " + updated.getTitle() );
 				
 				st2 = conn.prepareStatement("insert into book_audit_trail( entry_msg, book_id ) values(?,?) ");
 				//st2.setInt(1, 1);
+				System.out.println("duh duh2 " + updated.getTitle());
 				st2.setString(1, "Book Title changed from " + book.getTitle() + " to " + updated.getTitle() + "");
 				st2.setInt(2,updated.getId());
 				st2.executeUpdate();
 				st2.close();
 				
 			}
-			if( book.getSummary() != updated.getSummary()){
+			if(!book.getSummary().equals(updated.getSummary())){
 				
 				st2 = conn.prepareStatement("insert into book_audit_trail( entry_msg, book_id ) values(?,?) ");
 				//st2.setInt(1, 1);
@@ -144,7 +154,7 @@ public class BookGateway {
 				st2.executeUpdate();
 				st2.close();
 			}
-			if( book.getIsbn() != updated.getIsbn()){
+			if( !book.getIsbn().equals(updated.getIsbn())){
 				
 				st2 = conn.prepareStatement("insert into book_audit_trail( entry_msg, book_id ) values(?,?) ");
 				//st2.setInt(1, 1);
@@ -153,7 +163,7 @@ public class BookGateway {
 				st2.executeUpdate();
 				st2.close();
 			}
-			if( book.getPublisher() != updated.getPublisher()){
+			if( !book.getPublisher().equals(updated.getPublisher())){
 				
 				st2 = conn.prepareStatement("insert into book_audit_trail( entry_msg, book_id ) values(?,?) ");
 				//st2.setInt(1, 1);
@@ -165,7 +175,7 @@ public class BookGateway {
 			//System.out.println(rs.getInt(1));
 			//System.out.println(book);
 
-			//st.executeUpdate();
+			st.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -309,7 +319,7 @@ public class BookGateway {
 				
 				
 					// create a book object from the record
-					System.out.println("in the while23");
+					//System.out.println("in the while23");
 				    AuditTrail AuditTrail = new AuditTrail();
 				    AuditTrail.setId(rs.getInt("id"));
 				    //rs.next();

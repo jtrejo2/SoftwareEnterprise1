@@ -100,6 +100,9 @@ public class Gateway {
 	//update the author in the db
 	public void updateAuthor(Author modelauthor){
 		PreparedStatement st = null;
+		PreparedStatement st1 = null;
+		PreparedStatement st2 = null;
+		Author author = null;
 		
 		try{
 			st = conn.prepareStatement("update author set first_name = '" + modelauthor.getFirst_name() + "',"
@@ -108,19 +111,160 @@ public class Gateway {
 					+ "gender = '" + modelauthor.getGender() + "',"
 					+ "web_site = '" + modelauthor.getWeb_site() + "'"
 					+ "where id = '" + modelauthor.getId() + "'");
+			st1 = conn.prepareStatement("Select * from author where id = '" + modelauthor.getId() + "'",PreparedStatement.RETURN_GENERATED_KEYS);
+			ResultSet rs = st1.executeQuery();
+			rs.beforeFirst();
 			
+			while (rs.next()) {
+				// create a book object from the record
+				//System.out.println("in the while");
+			    author = new Author(
+						rs.getInt("id"),
+						rs.getString("first_name"),
+						rs.getString("last_name"),
+						rs.getString("dob"),
+						rs.getString("gender"),
+						rs.getString("web_site"));
+						//new PublisherGateway().getPublisherById(rs.getInt("publisher_id")));
+				       System.out.println("duh duh" + author.getFirst_name());
+				       System.out.println("duh duh2 " + modelauthor.getFirst_name());
+			   }
+			if(! author.getFirst_name().equals(modelauthor.getFirst_name())) {
+			System.out.println("here we are titles should be different " + author.getFirst_name() + " " + modelauthor.getFirst_name() );
+			
+			st2 = conn.prepareStatement("insert into author_audit_trail(entry_msg, author_id ) values(?,?) ");
+			//st2.setInt(1, 1);
+			System.out.println("duh duh2 " + modelauthor.getFirst_name());
+			st2.setString(1, "Author first name changed from " + author.getFirst_name() + " to " + modelauthor.getFirst_name() + "");
+			st2.setInt(2,modelauthor.getId());
+			st2.executeUpdate();
+			st2.close();
+			}
+			if(! author.getLast_name().equals(modelauthor.getLast_name())) {
+				System.out.println("here we are titles should be different " + author.getLast_name() + " " + modelauthor.getLast_name() );
+				
+				st2 = conn.prepareStatement("insert into author_audit_trail(entry_msg, author_id ) values(?,?) ");
+				//st2.setInt(1, 1);
+				System.out.println("duh duh2 " + modelauthor.getLast_name());
+				st2.setString(1, "Author first name changed from " + author.getLast_name() + " to " + modelauthor.getLast_name() + "");
+				st2.setInt(2,modelauthor.getId());
+				st2.executeUpdate();
+				st2.close();
+				}
+			if(! author.getDob().equals(modelauthor.getDob())) {
+				System.out.println("here we are titles should be different " + author.getDob() + " " + modelauthor.getDob());
+				
+				st2 = conn.prepareStatement("insert into author_audit_trail(entry_msg, author_id ) values(?,?) ");
+				//st2.setInt(1, 1);
+				System.out.println("duh duh2 " + modelauthor.getDob());
+				st2.setString(1, "Author last name changed from " + author.getDob()+ " to " + modelauthor.getDob()+ "");
+				st2.setInt(2,modelauthor.getId());
+				st2.executeUpdate();
+				st2.close();
+				}
+			if(! author.getGender().equals(modelauthor.getGender())) {
+				System.out.println("here we are titles should be different " + author.getGender()+ " " + modelauthor.getGender() );
+				
+				st2 = conn.prepareStatement("insert into author_audit_trail(entry_msg, author_id ) values(?,?) ");
+				//st2.setInt(1, 1);
+				System.out.println("duh duh2 " + modelauthor.getGender());
+				st2.setString(1, "Author gender changed from " + author.getGender()+ " to " + modelauthor.getGender()+ "");
+				st2.setInt(2,modelauthor.getId());
+				st2.executeUpdate();
+				st2.close();
+				}
+			if(! author.getWeb_site().equals(modelauthor.getWeb_site())) {
+				System.out.println("here we are titles should be different " + author.getWeb_site() + " " + modelauthor.getWeb_site() );
+				
+				st2 = conn.prepareStatement("insert into author_audit_trail(entry_msg, author_id ) values(?,?) ");
+				//st2.setInt(1, 1);
+				System.out.println("duh duh2 " + modelauthor.getWeb_site());
+				st2.setString(1, "Author website changed from " + author.getWeb_site()+ " to " + modelauthor.getWeb_site() + "");
+				st2.setInt(2,modelauthor.getId());
+				st2.executeUpdate();
+				st2.close();
+				}
 			st.executeUpdate();
-			
 		} catch (SQLException e){
 			e.printStackTrace();
 		} finally {
 			try{
+				if(st != null) {
+					st.close(); 
+				}
+				if(st2 != null) {
+					st2.close();
+				}
+				if (st != null) {
+					st.close();
+				}
+			}
+				catch (SQLException e){
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public List<AuthorAuditTrail> GetAuthorAuditTrail(Author author){
+		List<AuthorAuditTrail> AuditTrails = new ArrayList<AuthorAuditTrail>();
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		
+		
+		 try{
+			st = conn.prepareStatement("Select * from author_audit_trail where author_id = '" + author.getId() + "'");
+			rs = st.executeQuery();
+			System.out.println("this is rs" + rs);
+			
+			while(rs.next()){
+				
+				
+					// create a book object from the record
+					//System.out.println("in the while23");
+				    AuthorAuditTrail AuditTrail = new AuthorAuditTrail();
+				    AuditTrail.setId(rs.getInt("id"));
+				    //rs.next();
+				    AuditTrail.setAuthorID(rs.getInt("author_id"));
+				    AuditTrail.setDateAdded(rs.getTimestamp("date_added"));
+				    //System.out.println("this is the time stamp" + rs.getTimestamp("date_added"));
+				    AuditTrail.setMessage(rs.getString("entry_msg"));
+				    AuditTrails.add(AuditTrail);
+				    //System.out.println("duh duh" + book.getTitle() + book.getId() + book.getDateAdded() + book.getSummary());
+				    //System.out.println("this is the time stamp" + rs.getTimestamp("date_added"));
+				    //System.out.println("this is the Audit" + AuditTrail.getDateAdded());
+				    
+			}	    //System.out.println("this is the Audit");
+					//System.out.println("duh duh" + book.getTitle() + book.getId() +book.getBookId() + book.getDateAdded() + book.getSummary());
+				 /*Book book = new Book(
+						rs.getInt("id"),
+						rs.getString("title"),
+						rs.getString("summary"),
+						rs.getInt("year_published"),
+						rs.getString("isbn"), 
+						rs.getDate("date_added").toLocalDate(),
+						new PublisherGateway().getPublisherById(rs.getInt("publisher_id")));
+				books.add(book);*/
+				
+			//}
+			//for(AuditTrail a: AuditTrails)
+				
+			//	System.out.println("duh duh" + a);
+		} catch (SQLException e){
+			e.printStackTrace();
+		} finally {
+			try{
+				if(rs != null)
+					rs.close();
 				if(st != null)
 					st.close();
 			} catch (SQLException e){
 				e.printStackTrace();
 			}
 		}
+		
+		//System.out.println("Audit Trails" + AuditTrails);
+		//AuditTrails =  new ArrayList<AuditTrail>();
+		return AuditTrails;
 	}
 	//insert an author in the db
 	public void insertAuthor(Author newguy) throws SQLException{

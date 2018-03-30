@@ -1,12 +1,17 @@
 package controllers;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import model.*;
+import views.AppMain;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
@@ -16,6 +21,7 @@ public class AuthorDetailController {
 	
 	@FXML private TextField first_name, last_name, dob, gender, web_site;
 	@FXML private Button Save;
+	@FXML private Button Audit;
 	
 	private Author author;
 	//assign author to this.author
@@ -41,6 +47,17 @@ public class AuthorDetailController {
 				Alert alert = new Alert (AlertType.WARNING, "Error saving please try again");
 				alert.showAndWait();
 			}
+		}
+		if(source == Audit) {
+			System.out.println("here we are");
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AuthorAuditTrailView.fxml"));
+			List<AuthorAuditTrail> Authors = author.GetAuthorAuditTrail();
+			loader.setController(new AuthorAuditTrailController(Authors,author));//set controller
+			
+			Parent view = loader.load();
+			AppMain.rootPane.setCenter(view);//display
+			return;
+			
 		}
 	}
 	//initialize

@@ -28,6 +28,6 @@ public class Publisher {
 	}
 	
 	public String toString() {
-		return id + " " + publisherName;
+		return id + " " + publisherName.getValue();
 	}
 }
