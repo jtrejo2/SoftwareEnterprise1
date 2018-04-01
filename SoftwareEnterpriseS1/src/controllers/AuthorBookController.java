@@ -55,7 +55,7 @@ public class AuthorBookController implements Initializable{
 					book.saveAuthor(authorBook);
 					logger.error("Save button was clicked!");
 				} catch (Exception e) {
-					Alert alert = new Alert (AlertType.WARNING, "Error saving Royalty please try again");
+					Alert alert = new Alert (AlertType.WARNING, "Error saving author, please try again");
 					alert.showAndWait();
 				}
 			}
