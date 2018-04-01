@@ -2695,3 +2695,36 @@
 16:57:28.299 INFO  controllers.BookDetailController$1 : deleting
 16:57:31.582 INFO  controllers.BookDetailController$1 : deleting
 16:57:37.393 ERROR views.AppMain : stop called
+17:10:16.149 INFO  views.AppMain : AppMain init called
+17:10:18.242 INFO  controllers.MenuController : Controller init has been called
+17:10:36.900 INFO  controllers.BookListController$2 : double-clicked testing
+17:10:36.900 INFO  controllers.BookListController$2 : Add book called
+17:10:51.580 INFO  controllers.AuditTrailController : Add book called
+17:11:28.811 INFO  controllers.BookListController$2 : double-clicked Book Title
+17:11:28.811 INFO  controllers.BookListController$2 : Add book called
+17:11:34.516 INFO  controllers.BookDetailController$2 : double-clicked  Hey                         1.20000%
+17:11:43.698 INFO  controllers.BookListController$2 : double-clicked Book Title
+17:11:43.699 INFO  controllers.BookListController$2 : Add book called
+17:12:18.188 INFO  controllers.BookDetailController$1 : deleting
+17:13:14.046 ERROR controllers.BookDetailController : Save button was clicked!
+17:13:20.785 INFO  controllers.BookListController$2 : double-clicked Book Title
+17:13:20.786 INFO  controllers.BookListController$2 : Add book called
+17:13:26.669 ERROR controllers.BookDetailController : Save button was clicked!
+17:13:51.844 ERROR views.AppMain : stop called
+17:20:17.797 INFO  views.AppMain : AppMain init called
+17:20:19.440 INFO  controllers.MenuController : Controller init has been called
+17:20:26.263 INFO  controllers.BookListController$2 : double-clicked Book Title
+17:20:26.264 INFO  controllers.BookListController$2 : Add book called
+17:20:34.122 INFO  controllers.BookDetailController$1 : deleting
+17:20:42.061 INFO  controllers.BookDetailController$2 : double-clicked  Noah                         1.00000%
+17:21:13.083 INFO  controllers.BookListController$2 : double-clicked blah blah
+17:21:13.083 INFO  controllers.BookListController$2 : Add book called
+17:22:25.957 INFO  views.AppMain : AppMain init called
+17:22:28.851 INFO  controllers.MenuController : Controller init has been called
+17:22:35.482 ERROR views.AppMain : stop called
+17:22:44.775 INFO  controllers.BookListController$2 : double-clicked sdf
+17:22:44.776 INFO  controllers.BookListController$2 : Add book called
+17:23:35.365 INFO  views.AppMain : AppMain init called
+17:23:37.173 INFO  controllers.MenuController : Controller init has been called
+17:23:43.749 INFO  controllers.BookListController$2 : double-clicked Book Title
+17:23:43.750 INFO  controllers.BookListController$2 : Add book called

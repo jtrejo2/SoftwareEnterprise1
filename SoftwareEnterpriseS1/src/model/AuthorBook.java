@@ -36,6 +36,7 @@ public class AuthorBook {
 	}
 	
 	public void setRoyalty(BigDecimal royalty) {
+
 		this.royalty = royalty;
 		this.royaltyPercent = this.royalty+"%";
 	}

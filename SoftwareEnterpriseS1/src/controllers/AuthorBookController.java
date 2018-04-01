@@ -50,7 +50,6 @@ public class AuthorBookController implements Initializable{
 				book, BigDecimal.valueOf(Double.valueOf(royalty.getText())));
 		Object source = event.getSource();
 		if(source == save) {
-			book.saveAuthor(authorBook);
 
 				try {
 					book.saveAuthor(authorBook);
