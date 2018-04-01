@@ -2728,3 +2728,29 @@
 17:23:37.173 INFO  controllers.MenuController : Controller init has been called
 17:23:43.749 INFO  controllers.BookListController$2 : double-clicked Book Title
 17:23:43.750 INFO  controllers.BookListController$2 : Add book called
+17:28:58.418 INFO  views.AppMain : AppMain init called
+17:28:59.940 INFO  controllers.MenuController : Controller init has been called
+17:29:11.231 INFO  controllers.BookListController$2 : double-clicked Test Publisher
+17:29:11.232 INFO  controllers.BookListController$2 : Add book called
+17:29:19.869 ERROR controllers.AuthorBookController : Save button was clicked!
+17:29:47.313 INFO  controllers.BookDetailController$1 : deleting
+17:29:53.159 ERROR controllers.BookDetailController : Save button was clicked!
+17:30:00.993 INFO  controllers.BookListController$2 : double-clicked Test Publisher
+17:30:00.993 INFO  controllers.BookListController$2 : Add book called
+17:30:05.468 ERROR controllers.BookDetailController : Save button was clicked!
+17:30:14.635 INFO  controllers.BookListController$2 : double-clicked Test Publisher
+17:30:14.635 INFO  controllers.BookListController$2 : Add book called
+17:30:18.296 ERROR controllers.BookDetailController : Save button was clicked!
+17:30:24.572 INFO  controllers.BookListController$2 : double-clicked Test Publisher
+17:30:24.573 INFO  controllers.BookListController$2 : Add book called
+17:30:27.356 ERROR views.AppMain : stop called
+17:35:39.538 INFO  views.AppMain : AppMain init called
+17:35:41.945 INFO  controllers.MenuController : Controller init has been called
+17:35:43.981 ERROR views.AppMain : stop called
+17:39:31.928 INFO  views.AppMain : AppMain init called
+17:39:33.568 INFO  controllers.MenuController : Controller init has been called
+17:39:40.824 INFO  controllers.BookListController$2 : double-clicked Book Title
+17:39:40.824 INFO  controllers.BookListController$2 : Add book called
+17:39:49.451 ERROR controllers.AuthorBookController : Save button was clicked!
+17:39:57.680 INFO  controllers.BookDetailController$1 : deleting
+17:40:00.679 ERROR views.AppMain : stop called
