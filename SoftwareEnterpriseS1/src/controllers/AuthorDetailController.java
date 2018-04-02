@@ -25,7 +25,7 @@ public class AuthorDetailController {
 	@FXML private Button Audit;
 	
 	private Author author;
-	private LocalDateTime original;
+
 	
 	//assign author to this.author
 	public AuthorDetailController(Author author){
@@ -41,6 +41,7 @@ public class AuthorDetailController {
 		author.setDob(dob.getText());
 		author.setGender(gender.getText());
 		author.setWeb_site(web_site.getText());
+		
 		if(source == Save){
 			if (author.getId() == 0) {
 				try {
@@ -55,14 +56,15 @@ public class AuthorDetailController {
 			else {
 				try {
 					logger.error("Save button was clicked!");
-		    			LocalDateTime current = AppMain.authorGateway.getTimeStamp(author);
-		    			System.out.println("Original Timestamp = " + original + " \nCurrent Timestamp = " + current);
-		    			if(!current.equals(original)) {
+		    			LocalDateTime original = AppMain.authorGateway.getTimeStamp(author);
+		    			System.out.println("Original Timestamp = " + original);
+		    			System.out.println("Last Modified = " + author.getLastModified());
+		    			
+		    			if(!original.equals(author.getLastModified())) {
 		    				logger.error("Cannot Save! Please reload and try again.");
 		    				return;
 		    			}
 		    			author.Save(author);
-		    			original = AppMain.authorGateway.getTimeStamp(author);
 		    			
 				} catch (Exception e) {
 					Alert alert = new Alert (AlertType.WARNING, "Error saving please try again");

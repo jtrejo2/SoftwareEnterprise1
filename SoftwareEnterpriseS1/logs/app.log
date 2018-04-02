@@ -2977,3 +2977,46 @@
 19:54:31.113 ERROR controllers.AuthorDetailController : Save button was clicked!
 19:54:31.179 ERROR controllers.AuthorDetailController : Cannot Save! Please reload and try again.
 19:54:34.604 ERROR views.AppMain : stop called
+20:00:18.533 INFO  views.AppMain : AppMain init called
+20:00:20.063 INFO  controllers.MenuController : Controller init has been called
+20:00:34.260 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zook : 1996-06-12 : F : facebook.com
+20:00:34.282 INFO  controllers.AuthorDetailController : Detail View init called
+20:00:36.455 ERROR controllers.AuthorDetailController : Save button was clicked!
+20:00:45.654 ERROR views.AppMain : stop called
+20:01:12.171 INFO  views.AppMain : AppMain init called
+20:01:13.670 INFO  controllers.MenuController : Controller init has been called
+20:01:17.118 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zook : 1996-06-12 : F : facebook.com
+20:01:17.137 INFO  controllers.AuthorDetailController : Detail View init called
+20:01:19.216 ERROR controllers.AuthorDetailController : Save button was clicked!
+20:01:27.334 ERROR views.AppMain : stop called
+20:01:52.813 INFO  views.AppMain : AppMain init called
+20:01:54.342 INFO  controllers.MenuController : Controller init has been called
+20:01:57.370 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zook : 1996-06-12 : F : facebook.com
+20:01:57.388 INFO  controllers.AuthorDetailController : Detail View init called
+20:01:59.772 ERROR controllers.AuthorDetailController : Save button was clicked!
+20:02:09.802 ERROR views.AppMain : stop called
+20:02:56.073 INFO  views.AppMain : AppMain init called
+20:02:57.526 INFO  controllers.MenuController : Controller init has been called
+20:03:01.353 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zook : 1996-06-12 : F : facebook.com
+20:03:01.374 INFO  controllers.AuthorDetailController : Detail View init called
+20:03:03.553 ERROR controllers.AuthorDetailController : Save button was clicked!
+20:04:03.934 ERROR controllers.AuthorDetailController : Save button was clicked!
+20:04:42.067 INFO  views.AppMain : AppMain init called
+20:04:42.683 ERROR views.AppMain : stop called
+20:04:43.564 INFO  controllers.MenuController : Controller init has been called
+20:04:47.001 INFO  controllers.AuthorListController$2 : double-clicked 20 : Hey There : 1992-12-12 : F : blah.net
+20:04:47.018 INFO  controllers.AuthorDetailController : Detail View init called
+20:04:50.010 ERROR controllers.AuthorDetailController : Save button was clicked!
+20:04:54.275 ERROR views.AppMain : stop called
+20:06:33.004 INFO  views.AppMain : AppMain init called
+20:06:34.443 INFO  controllers.MenuController : Controller init has been called
+20:06:37.726 INFO  controllers.AuthorListController$2 : double-clicked 20 : Hey There : 1992-12-12 : F : blah.net
+20:06:37.748 INFO  controllers.AuthorDetailController : Detail View init called
+20:06:39.880 ERROR controllers.AuthorDetailController : Save button was clicked!
+20:10:40.192 ERROR views.AppMain : stop called
+20:14:03.843 INFO  views.AppMain : AppMain init called
+20:14:05.513 INFO  controllers.MenuController : Controller init has been called
+20:14:18.852 INFO  controllers.AuthorListController$2 : double-clicked 29 : New  new : 1998-07-07 : M : gh.com
+20:14:18.871 INFO  controllers.AuthorDetailController : Detail View init called
+20:14:21.739 ERROR controllers.AuthorDetailController : Save button was clicked!
+20:14:25.461 ERROR views.AppMain : stop called
