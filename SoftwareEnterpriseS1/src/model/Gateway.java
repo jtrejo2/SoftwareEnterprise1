@@ -308,31 +308,27 @@ public class Gateway {
 			}
 	}
 	
-	public LocalDateTime getAuthorLastModifiedById(int id) throws GatewayException {
-		LocalDateTime date = null;
+	public LocalDateTime getTimeStamp(Author author) {
+		LocalDateTime time = null;
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement("select * from author where id = ?");
-			st.setInt(1, id);
+			st.setInt(1, author.getId());
 			ResultSet rs = st.executeQuery();
-			if(rs.next()) {
-				Timestamp ts = rs.getTimestamp("last_modified");
-				date = ts.toLocalDateTime();
+			while (rs.next()) {
+				time = rs.getTimestamp("last_modified").toLocalDateTime();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new GatewayException(e);
 		} finally {
 			try {
-				if(st != null)
+				if (st != null)
 					st.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
-				throw new GatewayException(e);
 			}
 		}
-
-		return date;
+		return time;
 	}
 	
 	//delete an author from the db

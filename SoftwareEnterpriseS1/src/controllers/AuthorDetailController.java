@@ -41,21 +41,33 @@ public class AuthorDetailController {
 		author.setDob(dob.getText());
 		author.setGender(gender.getText());
 		author.setWeb_site(web_site.getText());
-		
 		if(source == Save){
-			try {
-				logger.error("Save button was clicked!");
-		    		LocalDateTime current = AppMain.authorGateway.getAuthorLastModifiedById(author.getId());
-		    		if(!current.equals(original)) {
-		    			logger.error("Cannot Save! Record has changed. Please try again.");
-		    			return;
-		    		}
-		    		author.Save(author);
-		    		original = AppMain.authorGateway.getAuthorLastModifiedById(author.getId());
+			if (author.getId() == 0) {
+				try {
+					logger.error("Save button was clicked!");
+			    		author.Save(author);
 
-			} catch (Exception e) {
-				Alert alert = new Alert (AlertType.WARNING, "Error saving please try again");
-				alert.showAndWait();
+				} catch (Exception e) {
+					Alert alert = new Alert (AlertType.WARNING, "Error saving please try again");
+					alert.showAndWait();
+				}
+			}
+			else {
+				try {
+					logger.error("Save button was clicked!");
+		    			LocalDateTime current = AppMain.authorGateway.getTimeStamp(author);
+		    			System.out.println("Original Timestamp = " + original + " \nCurrent Timestamp = " + current);
+		    			if(!current.equals(original)) {
+		    				logger.error("Cannot Save! Please reload and try again.");
+		    				return;
+		    			}
+		    			author.Save(author);
+		    			original = AppMain.authorGateway.getTimeStamp(author);
+		    			
+				} catch (Exception e) {
+					Alert alert = new Alert (AlertType.WARNING, "Error saving please try again");
+					alert.showAndWait();
+				}
 			}
 
 			
