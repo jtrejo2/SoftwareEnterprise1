@@ -16,7 +16,7 @@ public class Author {
 	private String gender;
 	private String webSite;
 	private String firstName;
-	private SimpleObjectProperty<LocalDateTime> lastModified;
+	private LocalDateTime lastModified;
 	
 	//assign initial values
 	public Author(){
@@ -26,7 +26,7 @@ public class Author {
 		this.dob = "";
 		this.gender = "";
 		this.webSite = "";
-		lastModified = new SimpleObjectProperty<LocalDateTime>();
+		lastModified = null;
 	}
 	//assign Author values
 	public Author(int id, String first_name, String last_name, String dob, String gender, String web_site){
@@ -46,6 +46,7 @@ public class Author {
 		
 		this.webSite = web_site;
 		this.webValidate(web_site);
+		
 		
 	}
 
@@ -136,11 +137,11 @@ public class Author {
 	}
 	
 	public LocalDateTime getLastModified() {
-		return lastModified.get();
+		return lastModified;
 	}
-	
-	public void setLastModified(LocalDateTime lastModified) {
-		this.lastModified.set(lastModified);
+
+	public void setLast_modified(LocalDateTime last_modified) {
+		this.lastModified = lastModified;
 	}
 	
 	//save author information after it is validated
