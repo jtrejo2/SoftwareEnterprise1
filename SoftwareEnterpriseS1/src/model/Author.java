@@ -140,7 +140,7 @@ public class Author {
 		return lastModified;
 	}
 
-	public void setLast_modified(LocalDateTime last_modified) {
+	public void setLastModified(LocalDateTime lastModified) {
 		this.lastModified = lastModified;
 	}
 	

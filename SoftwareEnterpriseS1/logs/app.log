@@ -3106,3 +3106,100 @@
 20:22:07.566 INFO  controllers.AuthorDetailController : Detail View init called
 20:22:08.817 ERROR views.AppMain : stop called
 >>>>>>> branch 'master' of https://github.com/jtrejo2/SoftwareEnterprise1.git
+21:47:03.920 INFO  views.AppMain : AppMain init called
+21:47:07.867 INFO  controllers.MenuController : Controller init has been called
+21:47:24.196 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zook : 1996-06-12 : F : facebook.com
+21:47:24.219 INFO  controllers.AuthorDetailController : Detail View init called
+21:47:26.631 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:47:26.671 ERROR controllers.AuthorDetailController : Cannot Save! Please reload and try again.
+21:47:31.949 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zook : 1996-06-12 : F : facebook.com
+21:47:31.962 INFO  controllers.AuthorDetailController : Detail View init called
+21:47:34.279 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:47:34.293 ERROR controllers.AuthorDetailController : Cannot Save! Please reload and try again.
+21:47:37.609 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zook : 1996-06-12 : F : facebook.com
+21:47:37.617 INFO  controllers.AuthorDetailController : Detail View init called
+21:47:54.582 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:47:54.621 ERROR controllers.AuthorDetailController : Cannot Save! Please reload and try again.
+21:47:58.469 ERROR views.AppMain : stop called
+21:48:56.848 INFO  views.AppMain : AppMain init called
+21:48:59.248 INFO  controllers.MenuController : Controller init has been called
+21:49:02.315 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zook : 1996-06-12 : F : facebook.com
+21:49:02.332 INFO  controllers.AuthorDetailController : Detail View init called
+21:49:04.656 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:49:04.677 ERROR controllers.AuthorDetailController : Cannot Save! Please reload and try again.
+21:49:09.808 ERROR views.AppMain : stop called
+21:51:15.678 INFO  views.AppMain : AppMain init called
+21:51:17.628 INFO  controllers.MenuController : Controller init has been called
+21:51:20.363 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zook : 1996-06-12 : F : facebook.com
+21:51:20.381 INFO  controllers.AuthorDetailController : Detail View init called
+21:51:22.729 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:51:22.941 ERROR controllers.AuthorDetailController : Cannot Save! Please reload and try again.
+21:51:28.349 ERROR views.AppMain : stop called
+21:52:47.564 INFO  views.AppMain : AppMain init called
+21:52:53.046 INFO  controllers.MenuController : Controller init has been called
+21:52:56.413 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zook : 1996-06-12 : F : facebook.com
+21:52:56.431 INFO  controllers.AuthorDetailController : Detail View init called
+21:52:58.694 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:53:10.373 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zook : 1996-06-12 : M : facebook.com
+21:53:10.385 INFO  controllers.AuthorDetailController : Detail View init called
+21:53:12.370 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:53:28.251 INFO  views.AppMain : AppMain init called
+21:53:30.598 INFO  controllers.MenuController : Controller init has been called
+21:53:36.467 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zook : 1996-06-12 : F : facebook.com
+21:53:36.485 INFO  controllers.AuthorDetailController : Detail View init called
+21:53:41.202 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:53:41.415 ERROR controllers.AuthorDetailController : Cannot Save! Please reload and try again.
+21:53:44.852 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:53:56.475 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:53:56.496 ERROR controllers.AuthorDetailController : Cannot Save! Please reload and try again.
+21:54:08.045 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zoo : 1996-06-12 : F : facebook.com
+21:54:08.054 INFO  controllers.AuthorDetailController : Detail View init called
+21:54:15.054 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zoo : 1996-06-12 : F : facebook.com
+21:54:15.064 INFO  controllers.AuthorDetailController : Detail View init called
+21:54:17.647 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:54:26.992 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:54:27.011 ERROR controllers.AuthorDetailController : Cannot Save! Please reload and try again.
+21:54:33.898 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:54:33.918 ERROR controllers.AuthorDetailController : Cannot Save! Please reload and try again.
+21:54:45.882 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zoo : 1996-06-12 : M : facebook.com
+21:54:45.890 INFO  controllers.AuthorDetailController : Detail View init called
+21:54:47.778 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zoo : 1996-06-12 : M : facebook.com
+21:54:47.786 INFO  controllers.AuthorDetailController : Detail View init called
+21:54:53.700 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:54:55.547 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:54:55.594 ERROR controllers.AuthorDetailController : Cannot Save! Please reload and try again.
+21:55:06.967 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zookk : 1996-06-12 : M : facebook.com
+21:55:06.976 INFO  controllers.AuthorDetailController : Detail View init called
+21:55:08.280 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zookk : 1996-06-12 : M : facebook.com
+21:55:08.288 INFO  controllers.AuthorDetailController : Detail View init called
+21:55:16.470 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:55:18.804 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:55:18.819 ERROR controllers.AuthorDetailController : Cannot Save! Please reload and try again.
+21:55:25.019 ERROR views.AppMain : stop called
+21:55:26.804 ERROR views.AppMain : stop called
+21:56:40.596 INFO  views.AppMain : AppMain init called
+21:56:43.154 INFO  controllers.MenuController : Controller init has been called
+21:56:47.996 INFO  views.AppMain : AppMain init called
+21:56:51.131 INFO  controllers.MenuController : Controller init has been called
+21:56:51.335 INFO  controllers.AuthorListController$2 : double-clicked 20 : Hey There : 1992-12-12 : F : blah.net
+21:56:51.364 INFO  controllers.AuthorDetailController : Detail View init called
+21:57:03.722 INFO  controllers.AuthorListController$2 : double-clicked 20 : Hey There : 1992-12-12 : F : blah.net
+21:57:03.740 INFO  controllers.AuthorDetailController : Detail View init called
+21:57:07.380 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:57:10.370 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:57:10.408 ERROR controllers.AuthorDetailController : Cannot Save! Please reload and try again.
+21:57:21.849 ERROR views.AppMain : stop called
+21:57:22.833 ERROR views.AppMain : stop called
+21:58:00.176 INFO  views.AppMain : AppMain init called
+21:58:01.976 INFO  controllers.MenuController : Controller init has been called
+21:58:06.574 INFO  views.AppMain : AppMain init called
+21:58:09.272 INFO  controllers.MenuController : Controller init has been called
+21:58:12.915 INFO  controllers.AuthorListController$2 : double-clicked 20 : Hey The : 1992-12-12 : F : blah.net
+21:58:12.931 INFO  controllers.AuthorDetailController : Detail View init called
+21:58:15.431 INFO  controllers.AuthorListController$2 : double-clicked 20 : Hey The : 1992-12-12 : F : blah.net
+21:58:15.448 INFO  controllers.AuthorDetailController : Detail View init called
+21:58:19.941 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:58:22.445 ERROR controllers.AuthorDetailController : Save button was clicked!
+21:58:22.466 ERROR controllers.AuthorDetailController : Cannot Save! Please reload and try again.
+21:58:25.176 ERROR views.AppMain : stop called
+21:58:26.244 ERROR views.AppMain : stop called
