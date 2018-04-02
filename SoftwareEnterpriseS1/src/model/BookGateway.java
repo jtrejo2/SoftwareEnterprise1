@@ -449,6 +449,7 @@ public class BookGateway {
 				
 				AuthorBook authorBook = new AuthorBook(author, book
 						, rs.getBigDecimal("royalty"));
+				authorBook.setNewRecord("false");
 				authorBooks.add(authorBook);
 			}
 		} catch (SQLException e) {

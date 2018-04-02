@@ -18,7 +18,7 @@ public class AuthorBook {
 		this.book = book;
 		setRoyalty(royalty);
 		
-		newRecord = false;
+		this.newRecord = true;
 	}
 	
 	public AuthorBook() {
@@ -33,6 +33,18 @@ public class AuthorBook {
 	
 	public boolean getNewRecord() {
 		return newRecord;
+	}
+	
+	public void setNewRecord(String update) {
+		if(update.equals("true")) {
+			this.newRecord = true;
+		}
+		else {
+			this.newRecord = false;
+			
+		}
+		
+		
 	}
 	
 	public void setRoyalty(BigDecimal royalty) {

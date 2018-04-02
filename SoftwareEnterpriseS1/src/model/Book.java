@@ -194,9 +194,10 @@ public class Book{
 		System.out.println("here is the royalty" + authorBook.getRoyalty());
 		System.out.println(authorBook.getRoyalty().compareTo(BigDecimal.ONE));
 		if(ValidateRoyalty(authorBook.getRoyalty()) == true){
-			if(authorBook.getNewRecord() == false){
+			if(authorBook.getNewRecord() == true){
 				AppMain.bookGateway.insertAuthorBook(authorBook);
 			} else {
+				System.out.println("we are in the else in book.java");
 				AppMain.bookGateway.updateAuthorBook(authorBook);
 			}
 		}

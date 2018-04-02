@@ -38,24 +38,33 @@ public class AuthorBookController implements Initializable{
     private List<Author> authors;
     private Logger logger = LogManager.getLogger() ;
 	private Book book;
+	private AuthorBook Authorbook;
 	private Gateway authorGateway;
 	List<Publisher> publishers;
 
-	public AuthorBookController(Book book) {
+	public AuthorBookController(Book book, AuthorBook Authorbook) {
 		this.book = book;
+		this.Authorbook = Authorbook;
 	}
 	
 	@FXML
     void handleSaveButton(ActionEvent event) throws Exception {
-		AuthorBook authorBook = new AuthorBook(cbAuthors.getSelectionModel().getSelectedItem(),
+		if(this.Authorbook == null) {
+			 this.Authorbook = new AuthorBook(cbAuthors.getSelectionModel().getSelectedItem(),
 				book, BigDecimal.valueOf(Double.valueOf(royalty.getText())));
+		}
+		else {
+			this.Authorbook.setRoyalty(BigDecimal.valueOf(Double.valueOf(royalty.getText())));
+			
+		}
 		Object source = event.getSource();
 		if(source == save) {
 			//book.saveAuthor(authorBook);
 
 
 				try {
-					book.saveAuthor(authorBook);
+					System.out.println("here we areeeeee " + Authorbook.getNewRecord());
+					book.saveAuthor(Authorbook);
 					logger.error("Save button was clicked!");
 					//AlertHelper.showWarningMessage("Warning", "Warning2", "Error saving book");
 					//Alert alert = new Alert (AlertType.WARNING, "Error saving Royalty please try again");
@@ -91,7 +100,13 @@ public class AuthorBookController implements Initializable{
 		
 		if (this.book.getId() == 0) {
 			cbAuthors.getSelectionModel().select(0);		
-		} 
+		}
+		//set default values for combobox and textbox
+		if(this.Authorbook != null) {
+			cbAuthors.getSelectionModel().select(0);
+			royalty.setText(Authorbook.getRoyaltyPercent().toString());
+			
+		}
 		
 	}
 }
