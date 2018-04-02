@@ -3104,4 +3104,22 @@
 20:22:02.561 ERROR controllers.AuthorDetailController : Cannot Save! Please reload and try again.
 20:22:07.556 INFO  controllers.AuthorListController$2 : double-clicked 19 : Noahzzzz Zook : 1996-06-12 : F : facebook.com
 20:22:07.566 INFO  controllers.AuthorDetailController : Detail View init called
-20:22:08.817 ERROR views.AppMain : stop called
+20:22:08.817 ERROR views.AppMain : stop called23:01:40.290 INFO  views.AppMain : AppMain init called
+23:01:41.669 INFO  controllers.MenuController : Controller init has been called
+23:01:51.939 INFO  controllers.BookListController$2 : double-clicked Book Title
+23:01:51.940 INFO  controllers.BookListController$2 : Add book called
+23:01:58.900 INFO  controllers.BookDetailController$1 : deleting
+23:02:04.980 INFO  controllers.BookDetailController$1 : deleting
+23:02:08.497 INFO  controllers.BookDetailController$1 : deleting
+23:02:11.153 INFO  controllers.BookDetailController$1 : deleting
+23:02:13.223 INFO  controllers.BookDetailController$1 : deleting
+23:24:43.476 INFO  views.AppMain : AppMain init called
+23:24:44.771 INFO  controllers.MenuController : Controller init has been called
+23:24:51.507 INFO  controllers.BookListController$2 : double-clicked Book Title
+23:24:51.509 INFO  controllers.BookListController$2 : Add book called
+23:26:26.311 INFO  views.AppMain : AppMain init called
+23:26:27.558 INFO  controllers.MenuController : Controller init has been called
+23:26:33.279 INFO  controllers.BookListController$2 : double-clicked Book Title
+23:26:33.279 INFO  controllers.BookListController$2 : Add book called
+23:26:40.282 ERROR controllers.AuthorBookController : Save button was clicked!
+23:34:19.765 ERROR views.AppMain : stop called

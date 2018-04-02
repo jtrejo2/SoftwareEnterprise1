@@ -45,7 +45,7 @@ public class AuthorAuditTrailController {
     @FXML
     void handleButtonAction(ActionEvent event) {
     	Object source = event.getSource();
-    	System.out.println("this is the author" + this.Author);
+    	//System.out.println("this is the author" + this.Author);
     	if(source == BackButton) {
 			try{
 				logger.info("Add book called");

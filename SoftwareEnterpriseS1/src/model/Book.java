@@ -191,8 +191,8 @@ public class Book{
 			AppMain.bookGateway.insertAuthorBook(authorBook);
 		}
 		*/
-		System.out.println("here is the royalty" + authorBook.getRoyalty());
-		System.out.println(authorBook.getRoyalty().compareTo(BigDecimal.ONE));
+		//System.out.println("here is the royalty" + authorBook.getRoyalty());
+		//System.out.println(authorBook.getRoyalty().compareTo(BigDecimal.ONE));
 		if(ValidateRoyalty(authorBook.getRoyalty()) == true){
 			if(authorBook.getNewRecord() == true){
 				AppMain.bookGateway.insertAuthorBook(authorBook);

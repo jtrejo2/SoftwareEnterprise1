@@ -97,8 +97,8 @@ public class BookGateway {
 				+ "where id = '" + updated.getId() + "'");
 			st1 = conn.prepareStatement("Select * from book where id = '" + updated.getId() + "'",PreparedStatement.RETURN_GENERATED_KEYS);
 			ResultSet rs = st1.executeQuery();
-			System.out.println(st1);
-			System.out.println("here we are" + rs);
+			//System.out.println(st1);
+			//System.out.println("here we are" + rs);
 			
 			//ResultSet rs = testing ;//st1.getGeneratedKeys();
 			rs.beforeFirst();
@@ -114,8 +114,8 @@ public class BookGateway {
 						rs.getString("isbn"),
 						rs.getDate("date_added").toLocalDate(),
 						new PublisherGateway().getPublisherById(rs.getInt("publisher_id")));
-				       System.out.println("duh duh" + book.getTitle());
-				       System.out.println("duh duh2 " + updated.getTitle());
+				       //System.out.println("duh duh" + book.getTitle());
+				       //System.out.println("duh duh2 " + updated.getTitle());
 			   }
 		    //String publisher1 = book.getPublisher()
 			//System.out.println("Attention");
@@ -125,11 +125,11 @@ public class BookGateway {
 			//System.out.println("the strings publisher" + book.getPublisher()  + " " + updated.getPublisher());
 			//System.out.println("here we are titles should be different " + book.getYearPublished());
 			if( !book.getTitle().equals(updated.getTitle())){
-				System.out.println("here we are titles should be different " + book.getYearPublished() + " " + updated.getTitle() );
+				//System.out.println("here we are titles should be different " + book.getYearPublished() + " " + updated.getTitle() );
 				
 				st2 = conn.prepareStatement("insert into book_audit_trail( entry_msg, book_id ) values(?,?) ");
 				//st2.setInt(1, 1);
-				System.out.println("duh duh2 " + updated.getTitle());
+				//System.out.println("duh duh2 " + updated.getTitle());
 				st2.setString(1, "Book Title changed from " + book.getTitle() + " to " + updated.getTitle() + "");
 				st2.setInt(2,updated.getId());
 				st2.executeUpdate();
@@ -215,14 +215,14 @@ public class BookGateway {
 			st2 = conn.prepareStatement("insert into book_audit_trail( entry_msg, book_id ) values(?,?) ");
 			//st2.setInt(1, 1);
 			st2.setString(1, "Book Added");
-			System.out.println(st2);
+			//System.out.println(st2);
 			//st2.executeUpdate();
 			
 			st.executeUpdate();
 			rs = st.getGeneratedKeys();
 			rs.first();
-			System.out.println("this is the int" + rs.getInt(1));
-			System.out.println(rs.first());
+			//System.out.println("this is the int" + rs.getInt(1));
+			//System.out.println(rs.first());
 			st2.setInt(2, rs.getInt(1));
 			st2.executeUpdate();
 		} catch (SQLException e) {
@@ -313,7 +313,7 @@ public class BookGateway {
 		 try{
 			st = conn.prepareStatement("Select * from book_audit_trail where book_id = '" + book.getId() + "'");
 			rs = st.executeQuery();
-			System.out.println("this is rs" + rs);
+			//System.out.println("this is rs" + rs);
 			
 			while(rs.next()){
 				
@@ -368,6 +368,7 @@ public class BookGateway {
 	
 	public void insertAuthorBook(AuthorBook authorBook) throws GatewayException {
 		PreparedStatement st = null;
+		PreparedStatement st2 = null;
 		try {
 			st = conn.prepareStatement("insert into author_book (author_id, book_id, royalty)"
 					+ " values (?, ?, ?)");
@@ -375,6 +376,11 @@ public class BookGateway {
 			st.setInt(2, authorBook.getBook().getId());
 			st.setBigDecimal(3, authorBook.getRoyalty());
 			st.executeUpdate();
+			st2 = conn.prepareStatement("insert into book_audit_trail( entry_msg, book_id ) values(?,?) ");
+			//newguy.setId(rs.getInt(1));
+			st2.setInt(2, authorBook.getBook().getId());
+			st2.setString(1, "Author: " + authorBook.getAuthor()+ " Added");
+			st2.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -383,6 +389,8 @@ public class BookGateway {
 			try {
 				if(st != null)
 					st.close();
+				if(st != null)
+					st2.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 				throw new GatewayException(e);
@@ -392,6 +400,8 @@ public class BookGateway {
 	
 	public void updateAuthorBook(AuthorBook authorBook) throws GatewayException {
 		PreparedStatement st = null;
+		ResultSet rs = null;
+		PreparedStatement st2 = null;
 		try {
 			st = conn.prepareStatement("update author_book set author_id = ?, royalty = ? "
 					+ "where book_id = ? and author_id = ?");
@@ -400,6 +410,15 @@ public class BookGateway {
 			st.setInt(3, authorBook.getBook().getId());
 			st.setInt(4, authorBook.getAuthor().getId());
 			st.executeUpdate();
+			
+			//rs = st.getGeneratedKeys();
+			//if(rs != null && rs.next()){
+				st2 = conn.prepareStatement("insert into book_audit_trail( entry_msg, book_id ) values(?,?) ");
+				//newguy.setId(rs.getInt(1));
+				st2.setInt(2, authorBook.getBook().getId());
+				st2.setString(1, "Author: " + authorBook.getAuthor()+ "royalty changed to " + authorBook.getRoyalty());
+				st2.executeUpdate();
+			//}
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new GatewayException(e);
@@ -407,6 +426,8 @@ public class BookGateway {
 			try {
 				if(st != null)
 					st.close();
+				if(st2 != null)
+					st2.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 				throw new GatewayException(e);
@@ -416,11 +437,17 @@ public class BookGateway {
 	
 	public void deleteAuthorBook(AuthorBook authorBook) throws GatewayException {
 		PreparedStatement st = null;
+		PreparedStatement st2 = null;
 		try {
 			st = conn.prepareStatement("delete from author_book where book_id = ? and author_id = ?");
 			st.setInt(1, authorBook.getBook().getId());
 			st.setInt(2, authorBook.getAuthor().getId());
 			st.executeUpdate();
+			st2 = conn.prepareStatement("insert into book_audit_trail( entry_msg, book_id ) values(?,?) ");
+			//newguy.setId(rs.getInt(1));
+			st2.setInt(2, authorBook.getBook().getId());
+			st2.setString(1, "Author: " + authorBook.getAuthor()+ " removed from author book");
+			st2.executeUpdate();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
