@@ -2774,3 +2774,89 @@
 17:53:06.243 INFO  controllers.BookListController$2 : Add book called
 17:53:08.801 INFO  controllers.BookDetailController$2 : double-clicked  Noahzzzz                         50.00000%
 17:53:45.925 ERROR views.AppMain : stop called
+18:20:33.675 INFO  views.AppMain : AppMain init called
+18:20:35.437 INFO  controllers.MenuController : Controller init has been called
+18:20:42.576 INFO  controllers.BookListController$2 : double-clicked Book Title
+18:20:42.578 INFO  controllers.BookListController$2 : Add book called
+18:20:48.196 ERROR controllers.AuthorBookController : Save button was clicked!
+18:21:01.239 INFO  views.AppMain : AppMain init called
+18:21:02.852 INFO  controllers.MenuController : Controller init has been called
+18:21:28.656 INFO  controllers.MenuController : Add author called
+18:21:28.668 INFO  controllers.AuthorDetailController : Detail View init called
+18:22:36.865 ERROR views.AppMain : stop called
+18:22:41.749 ERROR views.AppMain : stop called
+18:22:51.833 INFO  views.AppMain : AppMain init called
+18:22:53.256 INFO  controllers.MenuController : Controller init has been called
+18:23:00.531 INFO  controllers.MenuController : Add author called
+18:23:00.544 INFO  controllers.AuthorDetailController : Detail View init called
+18:23:45.981 ERROR views.AppMain : stop called
+18:26:05.985 INFO  views.AppMain : AppMain init called
+18:26:07.374 INFO  controllers.MenuController : Controller init has been called
+18:26:16.595 INFO  controllers.MenuController : Add author called
+18:26:16.607 INFO  controllers.AuthorDetailController : Detail View init called
+18:26:30.894 ERROR controllers.AuthorDetailController : Save button was clicked!
+18:26:41.590 ERROR controllers.AuthorDetailController : Save button was clicked!
+18:26:59.531 ERROR controllers.AuthorDetailController : Save button was clicked!
+18:27:12.213 ERROR views.AppMain : stop called
+18:28:12.546 INFO  views.AppMain : AppMain init called
+18:28:14.078 INFO  controllers.MenuController : Controller init has been called
+18:28:17.278 INFO  controllers.MenuController : Add author called
+18:28:17.296 INFO  controllers.AuthorDetailController : Detail View init called
+18:28:39.319 ERROR controllers.AuthorDetailController : Save button was clicked!
+18:28:48.381 ERROR controllers.AuthorDetailController : Save button was clicked!
+18:28:55.903 ERROR views.AppMain : stop called
+18:32:35.338 INFO  views.AppMain : AppMain init called
+18:32:36.982 INFO  controllers.MenuController : Controller init has been called
+18:32:42.877 INFO  controllers.MenuController : Add author called
+18:32:42.890 INFO  controllers.AuthorDetailController : Detail View init called
+18:32:56.597 ERROR controllers.AuthorDetailController : Save button was clicked!
+18:33:01.545 ERROR views.AppMain : stop called
+18:36:46.501 INFO  views.AppMain : AppMain init called
+18:36:47.981 INFO  controllers.MenuController : Controller init has been called
+18:36:52.341 INFO  controllers.MenuController : Add author called
+18:36:52.362 INFO  controllers.AuthorDetailController : Detail View init called
+18:39:27.161 ERROR views.AppMain : stop called
+18:39:36.440 INFO  views.AppMain : AppMain init called
+18:39:37.903 INFO  controllers.MenuController : Controller init has been called
+18:39:39.905 INFO  controllers.MenuController : Add author called
+18:39:39.925 INFO  controllers.AuthorDetailController : Detail View init called
+18:39:51.297 ERROR controllers.AuthorDetailController : Save button was clicked!
+18:39:51.298 ERROR model.Gateway : 1995/02/02
+18:39:57.265 ERROR views.AppMain : stop called
+18:42:29.729 INFO  views.AppMain : AppMain init called
+18:42:31.381 INFO  controllers.MenuController : Controller init has been called
+18:42:47.598 INFO  controllers.MenuController : Add author called
+18:42:47.617 INFO  controllers.AuthorDetailController : Detail View init called
+18:43:32.510 ERROR views.AppMain : stop called
+18:46:12.358 INFO  views.AppMain : AppMain init called
+18:46:13.895 INFO  controllers.MenuController : Controller init has been called
+18:46:16.252 INFO  controllers.MenuController : Add author called
+18:46:16.272 INFO  controllers.AuthorDetailController : Detail View init called
+18:46:31.321 ERROR controllers.AuthorDetailController : Save button was clicked!
+18:46:36.365 ERROR views.AppMain : stop called
+18:48:46.762 INFO  views.AppMain : AppMain init called
+18:48:48.324 INFO  controllers.MenuController : Controller init has been called
+18:49:00.528 INFO  controllers.MenuController : Add author called
+18:49:00.545 INFO  controllers.AuthorDetailController : Detail View init called
+18:49:15.248 ERROR controllers.AuthorDetailController : Save button was clicked!
+18:49:18.635 ERROR views.AppMain : stop called
+18:53:17.654 INFO  views.AppMain : AppMain init called
+18:53:19.398 INFO  controllers.MenuController : Controller init has been called
+18:53:28.798 INFO  controllers.MenuController : Add author called
+18:53:28.809 INFO  controllers.AuthorDetailController : Detail View init called
+18:53:33.194 INFO  controllers.MenuController : Add author called
+18:53:33.205 INFO  controllers.AuthorDetailController : Detail View init called
+18:53:45.075 ERROR controllers.AuthorDetailController : Save button was clicked!
+18:53:50.553 ERROR views.AppMain : stop called
+18:55:38.642 INFO  views.AppMain : AppMain init called
+18:55:40.214 INFO  controllers.MenuController : Controller init has been called
+18:55:46.747 INFO  controllers.MenuController : Add author called
+18:55:46.760 INFO  controllers.AuthorDetailController : Detail View init called
+18:55:57.251 ERROR controllers.AuthorDetailController : Save button was clicked!
+18:56:01.000 ERROR views.AppMain : stop called
+19:08:33.606 INFO  views.AppMain : AppMain init called
+19:08:35.180 INFO  controllers.MenuController : Controller init has been called
+19:08:41.837 INFO  controllers.MenuController : Add author called
+19:08:41.852 INFO  controllers.AuthorDetailController : Detail View init called
+19:08:55.772 ERROR controllers.AuthorDetailController : Save button was clicked!
+19:08:59.565 ERROR views.AppMain : stop called

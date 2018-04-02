@@ -1,5 +1,6 @@
 package controllers;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -24,6 +25,8 @@ public class AuthorDetailController {
 	@FXML private Button Audit;
 	
 	private Author author;
+	private LocalDateTime original;
+	
 	//assign author to this.author
 	public AuthorDetailController(Author author){
 		this.author = author;
@@ -41,12 +44,21 @@ public class AuthorDetailController {
 		
 		if(source == Save){
 			try {
-				author.Save(author);
 				logger.error("Save button was clicked!");
+		    		LocalDateTime current = AppMain.authorGateway.getAuthorLastModifiedById(author.getId());
+		    		if(!current.equals(original)) {
+		    			logger.error("Cannot Save! Record has changed. Please try again.");
+		    			return;
+		    		}
+		    		author.Save(author);
+		    		original = AppMain.authorGateway.getAuthorLastModifiedById(author.getId());
+
 			} catch (Exception e) {
 				Alert alert = new Alert (AlertType.WARNING, "Error saving please try again");
 				alert.showAndWait();
 			}
+
+			
 		}
 		if(source == Audit) {
 			System.out.println("here we are");
@@ -60,6 +72,7 @@ public class AuthorDetailController {
 			
 		}
 	}
+	
 	//initialize
 	public void initialize(){
 		logger.info("Detail View init called");

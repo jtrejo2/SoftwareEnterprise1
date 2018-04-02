@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -305,13 +307,41 @@ public class Gateway {
 			}
 			}
 	}
+	
+	public LocalDateTime getAuthorLastModifiedById(int id) throws GatewayException {
+		LocalDateTime date = null;
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("select * from author where id = ?");
+			st.setInt(1, id);
+			ResultSet rs = st.executeQuery();
+			if(rs.next()) {
+				Timestamp ts = rs.getTimestamp("last_modified");
+				date = ts.toLocalDateTime();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new GatewayException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new GatewayException(e);
+			}
+		}
+
+		return date;
+	}
+	
 	//delete an author from the db
 	public void authorDelete(Author badauthor){
 		PreparedStatement st = null;
-		try{
-		st = conn.prepareStatement("delete from author where id = '" + badauthor.getId() + "'");
-		st.executeUpdate();
-		logger.error("delete button clicked");
+			try{
+				st = conn.prepareStatement("delete from author where id = '" + badauthor.getId() + "'");
+				st.executeUpdate();
+				logger.error("delete button clicked");
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
