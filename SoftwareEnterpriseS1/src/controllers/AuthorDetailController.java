@@ -1,5 +1,6 @@
 package controllers;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -24,6 +25,8 @@ public class AuthorDetailController {
 	@FXML private Button Audit;
 	
 	private Author author;
+
+	
 	//assign author to this.author
 	public AuthorDetailController(Author author){
 		this.author = author;
@@ -40,13 +43,36 @@ public class AuthorDetailController {
 		author.setWeb_site(web_site.getText());
 		
 		if(source == Save){
-			try {
-				author.Save(author);
-				logger.error("Save button was clicked!");
-			} catch (Exception e) {
-				Alert alert = new Alert (AlertType.WARNING, "Error saving please try again");
-				alert.showAndWait();
+			if (author.getId() == 0) {
+				try {
+					logger.error("Save button was clicked!");
+			    		author.Save(author);
+
+				} catch (Exception e) {
+					Alert alert = new Alert (AlertType.WARNING, "Error saving please try again");
+					alert.showAndWait();
+				}
 			}
+			else {
+				try {
+					logger.error("Save button was clicked!");
+		    			LocalDateTime original = AppMain.authorGateway.getTimeStamp(author);
+		    			System.out.println("Original Timestamp = " + original);
+		    			System.out.println("Last Modified = " + author.getLastModified());
+		    			
+		    			if(!original.equals(author.getLastModified())) {
+		    				logger.error("Cannot Save! Please reload and try again.");
+		    				return;
+		    			}
+		    			author.Save(author);
+		    			
+				} catch (Exception e) {
+					Alert alert = new Alert (AlertType.WARNING, "Error saving please try again");
+					alert.showAndWait();
+				}
+			}
+
+			
 		}
 		if(source == Audit) {
 			System.out.println("here we are");
@@ -60,6 +86,7 @@ public class AuthorDetailController {
 			
 		}
 	}
+	
 	//initialize
 	public void initialize(){
 		logger.info("Detail View init called");

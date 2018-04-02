@@ -53,6 +53,7 @@ public class AuthorBookController implements Initializable{
 		if(source == save) {
 			//book.saveAuthor(authorBook);
 
+
 				try {
 					book.saveAuthor(authorBook);
 					logger.error("Save button was clicked!");
@@ -63,7 +64,6 @@ public class AuthorBookController implements Initializable{
 					Alert alert = new Alert (AlertType.WARNING, "Error saving Royalty please try again");
 					//alert.showAndWait();
 					//AlertHelper.showWarningMessage("Warning", "Warning2", "Error saving book");
-				}
 			}
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookDetailView.fxml"));
@@ -76,7 +76,8 @@ public class AuthorBookController implements Initializable{
 			e.printStackTrace();
 		}
 		
-    }
+		}
+	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {

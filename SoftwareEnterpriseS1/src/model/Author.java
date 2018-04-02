@@ -2,6 +2,10 @@ package model;
 
 import java.util.List;
 
+import javafx.beans.property.SimpleObjectProperty;
+
+import java.time.LocalDateTime;
+
 import views.AppMain;
 
 public class Author {
@@ -12,6 +16,7 @@ public class Author {
 	private String gender;
 	private String webSite;
 	private String firstName;
+	private LocalDateTime lastModified;
 	
 	//assign initial values
 	public Author(){
@@ -21,6 +26,7 @@ public class Author {
 		this.dob = "";
 		this.gender = "";
 		this.webSite = "";
+		lastModified = null;
 	}
 	//assign Author values
 	public Author(int id, String first_name, String last_name, String dob, String gender, String web_site){
@@ -40,6 +46,7 @@ public class Author {
 		
 		this.webSite = web_site;
 		this.webValidate(web_site);
+		
 		
 	}
 
@@ -128,6 +135,15 @@ public class Author {
 		else
 			return true;
 	}
+	
+	public LocalDateTime getLastModified() {
+		return lastModified;
+	}
+
+	public void setLast_modified(LocalDateTime last_modified) {
+		this.lastModified = lastModified;
+	}
+	
 	//save author information after it is validated
 	public void Save(Author author) throws Exception {
 			

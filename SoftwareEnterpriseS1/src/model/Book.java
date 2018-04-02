@@ -194,7 +194,11 @@ public class Book{
 		System.out.println("here is the royalty" + authorBook.getRoyalty());
 		System.out.println(authorBook.getRoyalty().compareTo(BigDecimal.ONE));
 		if(ValidateRoyalty(authorBook.getRoyalty()) == true){
-		AppMain.bookGateway.insertAuthorBook(authorBook);
+			if(authorBook.getNewRecord() == false){
+				AppMain.bookGateway.insertAuthorBook(authorBook);
+			} else {
+				AppMain.bookGateway.updateAuthorBook(authorBook);
+			}
 		}
 		else {
 			throw new Exception("Validate Royalty failed, Author could not be saved to the book");
@@ -205,7 +209,7 @@ public class Book{
 		// TODO Auto-generated method stub
 		boolean result;
 		
-		if(royalty.compareTo(BigDecimal.ZERO) > 0 && royalty.compareTo(BigDecimal.ONE) < 1 ) {
+		if(royalty.compareTo(BigDecimal.ZERO) >= 0 && royalty.compareTo(BigDecimal.ONE) <= 1 ) {
 			result = true;
 		}
 		else {

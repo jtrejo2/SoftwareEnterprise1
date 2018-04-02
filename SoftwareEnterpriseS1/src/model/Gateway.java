@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -305,13 +307,37 @@ public class Gateway {
 			}
 			}
 	}
+	
+	public LocalDateTime getTimeStamp(Author author) {
+		LocalDateTime time = null;
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("select * from author where id = ?");
+			st.setInt(1, author.getId());
+			ResultSet rs = st.executeQuery();
+			while (rs.next()) {
+				time = rs.getTimestamp("last_modified").toLocalDateTime();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return time;
+	}
+	
 	//delete an author from the db
 	public void authorDelete(Author badauthor){
 		PreparedStatement st = null;
-		try{
-		st = conn.prepareStatement("delete from author where id = '" + badauthor.getId() + "'");
-		st.executeUpdate();
-		logger.error("delete button clicked");
+			try{
+				st = conn.prepareStatement("delete from author where id = '" + badauthor.getId() + "'");
+				st.executeUpdate();
+				logger.error("delete button clicked");
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
