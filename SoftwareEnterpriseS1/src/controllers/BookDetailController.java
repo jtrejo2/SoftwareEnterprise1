@@ -1,5 +1,7 @@
 package controllers;
 
+import model.AlertHelper;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -61,9 +63,12 @@ public class BookDetailController {
 			try {
 				book.Save(book);
 				logger.error("Save button was clicked!");
+				AlertHelper.showWarningMessage("Warning", "Warning2", "Error saving book");
+				
 			} catch (Exception e) {
-				Alert alert = new Alert (AlertType.WARNING, "Error saving book please try again");
-				alert.showAndWait();
+				//Alert alert = new Alert (AlertType.WARNING, "Error saving book please try again");
+				//alert.showAndWait();
+				//AlertHelper.showWarningMessage("Warning", "Warning2", "Error saving book");
 			}
 		}
 		if(source == Audit) {

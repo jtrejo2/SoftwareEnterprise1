@@ -24,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import model.AlertHelper;
 import model.Author;
 import model.AuthorBook;
 import model.Book;
@@ -50,14 +51,18 @@ public class AuthorBookController implements Initializable{
 				book, BigDecimal.valueOf(Double.valueOf(royalty.getText())));
 		Object source = event.getSource();
 		if(source == save) {
-			book.saveAuthor(authorBook);
+			//book.saveAuthor(authorBook);
 
 				try {
 					book.saveAuthor(authorBook);
 					logger.error("Save button was clicked!");
+					//AlertHelper.showWarningMessage("Warning", "Warning2", "Error saving book");
+					//Alert alert = new Alert (AlertType.WARNING, "Error saving Royalty please try again");
+
 				} catch (Exception e) {
 					Alert alert = new Alert (AlertType.WARNING, "Error saving Royalty please try again");
-					alert.showAndWait();
+					//alert.showAndWait();
+					//AlertHelper.showWarningMessage("Warning", "Warning2", "Error saving book");
 				}
 			}
 		try {
