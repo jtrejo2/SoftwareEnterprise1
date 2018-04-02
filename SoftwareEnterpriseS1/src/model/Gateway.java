@@ -32,6 +32,7 @@ public class Gateway {
 			while(rs.next()){
 				Author author = new Author(rs.getInt("id"), rs.getString("first_name"), rs.getString("last_name"), rs.getString("dob"), rs.getString("gender"), rs.getString("web_site"));
 				authors.add(author);
+				author.setLastModified(rs.getTimestamp("last_modified").toLocalDateTime());
 			}
 		} catch (SQLException e){
 			e.printStackTrace();
@@ -75,6 +76,7 @@ public class Gateway {
 				throw new GatewayException(e);
 			}
 		}
+		author.setLastModified(getTimeStamp(author));
 		return author;
 	}
 	
@@ -205,6 +207,7 @@ public class Gateway {
 				e.printStackTrace();
 			}
 		}
+		author.setLastModified(getTimeStamp(author));
 	}
 	
 	public List<AuthorAuditTrail> GetAuthorAuditTrail(Author author){

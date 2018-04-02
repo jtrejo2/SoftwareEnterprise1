@@ -20,7 +20,7 @@ import javafx.scene.control.Alert.AlertType;
 public class AuthorDetailController {
 	private static Logger logger = LogManager.getLogger();
 	
-	@FXML private TextField first_name, last_name, dob, gender, web_site;
+	@FXML private TextField first_name, last_name, dob, gender, web_site, last_modified;
 	@FXML private Button Save;
 	@FXML private Button Audit;
 	
@@ -62,6 +62,8 @@ public class AuthorDetailController {
 		    			
 		    			if(!original.equals(author.getLastModified())) {
 		    				logger.error("Cannot Save! Please reload and try again.");
+		    				Alert alert = new Alert (AlertType.WARNING, "Cannot Save! Please reload and try again.");
+						alert.showAndWait();
 		    				return;
 		    			}
 		    			author.Save(author);
