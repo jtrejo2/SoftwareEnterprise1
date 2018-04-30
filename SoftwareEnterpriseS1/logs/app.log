@@ -3233,3 +3233,59 @@
 19:50:48.237 INFO  controllers.MenuController : Controller init has been called
 19:51:08.144 INFO  controllers.BookListController : searching
 19:51:58.873 ERROR views.AppMain : stop called
+22:21:00.733 INFO  views.AppMain : AppMain init called
+22:21:03.688 INFO  controllers.MenuController : Controller init has been called
+22:21:21.613 INFO  controllers.MenuController : Add book called
+22:21:37.282 ERROR controllers.BookDetailController : Save button was clicked!
+22:22:44.352 INFO  controllers.BookListController$2 : double-clicked Last Book added
+22:22:44.355 INFO  controllers.BookListController$2 : Add book called
+22:22:50.040 ERROR controllers.AuthorBookController : Save button was clicked!
+22:22:56.490 INFO  controllers.BookDetailController$1 : deleting
+22:23:03.575 ERROR controllers.AuthorBookController : Save button was clicked!
+22:23:08.910 ERROR controllers.AuthorBookController : Save button was clicked!
+22:23:22.222 INFO  controllers.AuditTrailController : Add book called
+22:23:41.987 ERROR views.AppMain : stop called
+22:29:16.202 INFO  views.AppMain : AppMain init called
+22:29:17.450 INFO  controllers.MenuController : Controller init has been called
+22:29:40.025 ERROR views.AppMain : stop called
+22:30:33.160 INFO  views.AppMain : AppMain init called
+22:30:34.272 INFO  controllers.MenuController : Controller init has been called
+22:31:19.237 ERROR views.AppMain : stop called
+22:32:24.252 INFO  views.AppMain : AppMain init called
+22:32:25.312 INFO  controllers.MenuController : Controller init has been called
+22:33:21.009 ERROR views.AppMain : stop called
+22:35:32.034 INFO  views.AppMain : AppMain init called
+22:35:33.139 INFO  controllers.MenuController : Controller init has been called
+22:38:05.594 ERROR views.AppMain : stop called
+22:38:14.391 INFO  views.AppMain : AppMain init called
+22:38:15.397 INFO  controllers.MenuController : Controller init has been called
+22:39:26.458 ERROR views.AppMain : stop called
+22:40:20.325 INFO  views.AppMain : AppMain init called
+22:40:21.398 INFO  controllers.MenuController : Controller init has been called
+22:42:17.720 ERROR views.AppMain : stop called
+22:46:10.476 INFO  views.AppMain : AppMain init called
+22:55:03.608 INFO  controllers.MenuController : Controller init has been called
+22:55:53.958 ERROR views.AppMain : stop called
+22:56:04.097 INFO  views.AppMain : AppMain init called
+22:56:05.226 INFO  controllers.MenuController : Controller init has been called
+22:58:37.383 ERROR views.AppMain : stop called
+22:59:51.857 INFO  views.AppMain : AppMain init called
+22:59:52.899 INFO  controllers.MenuController : Controller init has been called
+23:01:14.879 ERROR views.AppMain : stop called
+23:01:34.440 INFO  views.AppMain : AppMain init called
+23:01:35.523 INFO  controllers.MenuController : Controller init has been called
+23:01:57.943 INFO  controllers.MenuController : Add book called
+23:02:11.028 ERROR controllers.BookDetailController : Save button was clicked!
+23:03:14.439 INFO  controllers.BookListController$1 : deleting
+23:03:14.512 INFO  model.BookGateway : Book with id = 27424 deleted from database.
+23:03:50.191 ERROR views.AppMain : stop called
+23:08:26.669 INFO  views.AppMain : AppMain init called
+23:08:27.973 INFO  controllers.MenuController : Controller init has been called
+23:08:30.099 INFO  controllers.MenuController : Add book called
+23:08:47.892 ERROR views.AppMain : stop called
+23:08:56.689 INFO  views.AppMain : AppMain init called
+23:08:57.796 INFO  controllers.MenuController : Controller init has been called
+23:09:13.115 ERROR views.AppMain : stop called
+23:10:49.611 INFO  views.AppMain : AppMain init called
+23:10:50.754 INFO  controllers.MenuController : Controller init has been called
+23:11:09.903 ERROR views.AppMain : stop called

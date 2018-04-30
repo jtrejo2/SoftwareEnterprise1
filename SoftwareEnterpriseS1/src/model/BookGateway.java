@@ -133,6 +133,7 @@ public class BookGateway {
 			st3.executeUpdate();
 		}
 		*/
+		
 	}
 	//update the book in the db
 	public void updateBook(Book updated) throws GatewayException {
@@ -245,6 +246,32 @@ public class BookGateway {
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	public int getTotalCount(String search) throws GatewayException {
+		int count = 0;
+		
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("select count(*) as count from book where title like ?");
+			st.setString(1, "%" + search + "%");
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				count = rs.getInt("count");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new GatewayException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new GatewayException(e);
+			}
+		}
+		return count;
 	}
 	
 	//insert an book in the db

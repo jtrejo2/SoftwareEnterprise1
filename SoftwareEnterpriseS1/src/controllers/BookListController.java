@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -26,18 +27,26 @@ public class BookListController {
 	@FXML private Button Delete, Search, First, Previous, Next, Last;
 	@FXML private TextField searchText;
 	@FXML private ListView<Book> ListBook;
-	
-	private int page, numPages;
+	@FXML private Label Fetched;
 
 	
-	private Book book;
+	private int page, numPages, total;
 	private List<Book> books;
 	List<Publisher> publishers;
+	
 	//assign book to this.book
-	public BookListController(List<Book> books, int page){
+	public BookListController(List<Book> books, int page) throws GatewayException{
 		this.books = books;
 		this.page = page;
 		this.numPages = AppMain.bookGateway.getNumBooks();
+		this.total = AppMain.bookGateway.getTotalCount(Search.getText());
+	}
+	
+	
+	void updateLabel() {
+
+		int numBooks = (50 * page) + books.size();
+		Fetched.setText("Fetched records " + (page * 50) + " to " + numBooks + " out of " + total);
 	}
 	//Handle when a button is clicked
 	@FXML private void handleButtonAction(ActionEvent action) throws Exception{
@@ -120,6 +129,7 @@ public class BookListController {
 	
 	//initialize
 	public void initialize(){
+		updateLabel();
 		ObservableList<Book> items = ListBook.getItems();
 		for(Book a : books){
 			items.add(a);
