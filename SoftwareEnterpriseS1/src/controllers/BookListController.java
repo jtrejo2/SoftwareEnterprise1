@@ -39,12 +39,11 @@ public class BookListController {
 		this.books = books;
 		this.page = page;
 		this.numPages = AppMain.bookGateway.getNumBooks();
-		this.total = AppMain.bookGateway.getTotalCount(Search.getText());
 	}
 	
 	
-	void updateLabel() {
-
+	void updateLabel() throws GatewayException {
+		total = (50 * (numPages));
 		int numBooks = (50 * page) + books.size();
 		Fetched.setText("Fetched records " + (page * 50) + " to " + numBooks + " out of " + total);
 	}
@@ -65,7 +64,7 @@ public class BookListController {
 							AppMain.bookGateway.bookDelete(selected);
 							List<Book> books = AppMain.bookGateway.getBook(page);
 							FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookListView.fxml"));
-							loader.setController(new BookListController(books, 0));//set controller
+							loader.setController(new BookListController(books, page));//set controller
 							Parent view = loader.load();
 							AppMain.rootPane.setCenter(view); //display
 							return;
@@ -131,7 +130,7 @@ public class BookListController {
 	}
 	
 	//initialize
-	public void initialize(){
+	public void initialize() throws GatewayException{
 		updateLabel();
 		ObservableList<Book> items = ListBook.getItems();
 		for(Book a : books){

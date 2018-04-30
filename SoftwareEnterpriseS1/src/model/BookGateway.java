@@ -60,7 +60,7 @@ public class BookGateway {
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		int lower = page * 50;
-		int upper = page * 50 + 50;
+		int upper = lower + 50;
 		try {
 			st = conn.prepareStatement("Select * from book LIMIT ?,?");
 			st.setInt(1, lower);
@@ -141,6 +141,7 @@ public class BookGateway {
 		PreparedStatement st1 = null;
 		PreparedStatement st2 = null;
 		Book book = null;
+		ResultSet rs = null;
 		try {
 			st = conn.prepareStatement("update book set title = '" + updated.getTitle() + "'," 
 				+ "summary = '"+ updated.getSummary() + "'," 
@@ -149,7 +150,7 @@ public class BookGateway {
 				+ "'," + "isbn = '" + updated.getIsbn() + "'"
 				+ "where id = '" + updated.getId() + "'");
 			st1 = conn.prepareStatement("Select * from book where id = '" + updated.getId() + "'",PreparedStatement.RETURN_GENERATED_KEYS);
-			ResultSet rs = st1.executeQuery();
+			rs = st1.executeQuery();
 			//System.out.println(st1);
 			//System.out.println("here we are" + rs);
 			
@@ -242,6 +243,8 @@ public class BookGateway {
 				}
 				if (st != null)
 					st.close();
+				if(rs != null)
+					rs.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -250,12 +253,12 @@ public class BookGateway {
 	
 	public int getTotalCount(String search) throws GatewayException {
 		int count = 0;
-		
+		ResultSet rs = null;
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement("select count(*) as count from book where title like ?");
 			st.setString(1, "%" + search + "%");
-			ResultSet rs = st.executeQuery();
+			rs = st.executeQuery();
 			while(rs.next()) {
 				count = rs.getInt("count");
 			}
@@ -266,6 +269,8 @@ public class BookGateway {
 			try {
 				if(st != null)
 					st.close();
+				if(rs != null)
+					rs.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 				throw new GatewayException(e);

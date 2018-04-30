@@ -3292,3 +3292,37 @@
 23:13:20.754 INFO  views.AppMain : AppMain init called
 23:13:21.767 INFO  controllers.MenuController : Controller init has been called
 23:13:38.860 ERROR views.AppMain : stop called
+11:44:25.877 INFO  views.AppMain : AppMain init called
+11:44:27.135 INFO  controllers.MenuController : Controller init has been called
+11:48:27.563 ERROR views.AppMain : stop called
+11:48:51.065 INFO  views.AppMain : AppMain init called
+11:48:52.113 INFO  controllers.MenuController : Controller init has been called
+11:49:39.928 INFO  controllers.MenuController : Add book called
+11:50:07.287 INFO  controllers.BookListController$1 : deleting
+11:50:07.337 INFO  model.BookGateway : Book with id = 17425 deleted from database.
+11:51:41.583 ERROR views.AppMain : stop called
+11:59:28.772 INFO  views.AppMain : AppMain init called
+11:59:29.974 INFO  controllers.MenuController : Controller init has been called
+12:00:21.548 ERROR views.AppMain : stop called
+12:04:57.649 INFO  views.AppMain : AppMain init called
+12:04:58.774 INFO  controllers.MenuController : Controller init has been called
+12:06:24.027 ERROR views.AppMain : stop called
+12:09:40.661 INFO  views.AppMain : AppMain init called
+12:09:41.694 INFO  controllers.MenuController : Controller init has been called
+12:11:09.273 INFO  controllers.BookListController$1 : deleting
+12:11:09.315 INFO  model.BookGateway : Book with id = 27423 deleted from database.
+12:12:28.781 ERROR views.AppMain : stop called
+12:13:15.674 INFO  views.AppMain : AppMain init called
+12:13:16.756 INFO  controllers.MenuController : Controller init has been called
+12:13:48.601 INFO  controllers.BookListController$1 : deleting
+12:13:48.652 INFO  model.BookGateway : Book with id = 27422 deleted from database.
+12:14:00.800 ERROR views.AppMain : stop called
+12:16:40.205 INFO  views.AppMain : AppMain init called
+12:16:41.295 INFO  controllers.MenuController : Controller init has been called
+12:18:01.447 ERROR views.AppMain : stop called
+12:18:59.544 INFO  views.AppMain : AppMain init called
+12:19:00.570 INFO  controllers.MenuController : Controller init has been called
+12:19:31.550 ERROR views.AppMain : stop called
+12:27:39.770 INFO  views.AppMain : AppMain init called
+12:27:40.951 INFO  controllers.MenuController : Controller init has been called
+12:28:47.763 ERROR views.AppMain : stop called
