@@ -43,7 +43,7 @@ public class BookListController {
 	
 	
 	void updateLabel() throws GatewayException {
-		total = (50 * (numPages));
+		total = AppMain.bookGateway.getNumRows();
 		int numBooks = (50 * page) + books.size();
 		Fetched.setText("Fetched records " + (page * 50) + " to " + numBooks + " out of " + total);
 	}

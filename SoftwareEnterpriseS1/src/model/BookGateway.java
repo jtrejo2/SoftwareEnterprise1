@@ -54,6 +54,32 @@ public class BookGateway {
 	    return pages;
 	}
 	
+	public int getNumRows() {
+	    ResultSet rs = null;
+	    PreparedStatement st = null;
+	    int numberOfRows = 0;
+	    try {
+	      st = conn.prepareStatement("select count(*) from book");
+	      rs = st.executeQuery();
+	      if (rs.next()) {
+	        numberOfRows = rs.getInt(1);
+	      } else {
+	        System.out.println("error: could not get the record counts");
+	      }
+	    } catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	    return numberOfRows;
+	}
 	
 	public List<Book> getBook(int page) throws GatewayException {
 		List<Book> books = new ArrayList<Book>();
