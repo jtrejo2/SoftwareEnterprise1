@@ -85,12 +85,10 @@ public class BookGateway {
 		List<Book> books = new ArrayList<Book>();
 		PreparedStatement st = null;
 		ResultSet rs = null;
-		int lower = page * 50;
-		int upper = lower + 50;
+
 		try {
-			st = conn.prepareStatement("Select * from book LIMIT ?,?");
-			st.setInt(1, lower);
-			st.setInt(2,  upper);
+			st = conn.prepareStatement("Select * from book LIMIT 50 OFFSET ?");
+			st.setInt(1, page);
 			rs = st.executeQuery();
 
 			while (rs.next()) {

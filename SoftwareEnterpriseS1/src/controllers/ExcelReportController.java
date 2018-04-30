@@ -43,9 +43,8 @@ public class ExcelReportController implements Initializable {
     		if(source == Save){
     				JFileChooser fileChooser = new JFileChooser(".xls"); 
     				fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-			
+	
     				int ret = fileChooser.showSaveDialog(null);
-			
     				if (ret == JFileChooser.CANCEL_OPTION)
     					return;
 			

@@ -62,7 +62,7 @@ public class MenuController {
 			
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookListView.fxml"));
 			List<Book> books = AppMain.bookGateway.getBook(0);
-			loader.setController(new BookListController(books, 0));//set controller
+			loader.setController(new BookListController(books, 0, 0));//set controller
 			
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view);//display

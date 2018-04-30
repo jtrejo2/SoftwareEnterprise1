@@ -35,15 +35,18 @@ public class BookListController {
 	List<Publisher> publishers;
 	
 	//assign book to this.book
-	public BookListController(List<Book> books, int page) throws GatewayException{
+	public BookListController(List<Book> books, int page, int total) throws GatewayException{
 		this.books = books;
 		this.page = page;
+		this.total = total;
 		this.numPages = AppMain.bookGateway.getNumBooks();
 	}
 	
 	
 	void updateLabel() throws GatewayException {
-		total = AppMain.bookGateway.getNumRows();
+		if (total == 0) 
+			total = AppMain.bookGateway.getNumRows();
+			System.out.println("Empty");
 		int numBooks = (50 * page) + books.size();
 		Fetched.setText("Fetched records " + (page * 50) + " to " + numBooks + " out of " + total);
 	}
@@ -64,7 +67,7 @@ public class BookListController {
 							AppMain.bookGateway.bookDelete(selected);
 							List<Book> books = AppMain.bookGateway.getBook(page);
 							FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookListView.fxml"));
-							loader.setController(new BookListController(books, page));//set controller
+							loader.setController(new BookListController(books, 0, 0));//set controller
 							Parent view = loader.load();
 							AppMain.rootPane.setCenter(view); //display
 							return;
@@ -84,7 +87,8 @@ public class BookListController {
 			logger.info("searching");
 			List<Book> books = AppMain.bookGateway.searchBooks(searchText.getText());
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
-			loader.setController(new BookListController(books, 0));
+			int totalFromSearch = AppMain.bookGateway.getTotalCount(searchText.getText());
+			loader.setController(new BookListController(books, 0, totalFromSearch));
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view);
 			return;
@@ -97,7 +101,7 @@ public class BookListController {
 			page++;
 			books = AppMain.bookGateway.getBook(page);
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
-			loader.setController(new BookListController(books, page));
+			loader.setController(new BookListController(books, page, 0));
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view);
 			
@@ -107,7 +111,7 @@ public class BookListController {
 			page--;
 			books = AppMain.bookGateway.getBook(page);
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
-			loader.setController(new BookListController(books, page));
+			loader.setController(new BookListController(books, page, 0));
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view);
 		} else if(source == First) {
@@ -115,7 +119,7 @@ public class BookListController {
 				return;
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
 			books = AppMain.bookGateway.getBook(0);
-			loader.setController(new BookListController(books, 0));
+			loader.setController(new BookListController(books, 0, 0));
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view);
 		} else if(source == Last) {
@@ -123,7 +127,7 @@ public class BookListController {
 				return;
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
 			books = AppMain.bookGateway.getBook(numPages);
-			loader.setController(new BookListController(books, numPages));
+			loader.setController(new BookListController(books, numPages, 0));
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view);
 		}
