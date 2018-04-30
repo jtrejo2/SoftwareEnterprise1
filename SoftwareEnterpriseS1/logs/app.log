@@ -3289,3 +3289,6 @@
 23:10:49.611 INFO  views.AppMain : AppMain init called
 23:10:50.754 INFO  controllers.MenuController : Controller init has been called
 23:11:09.903 ERROR views.AppMain : stop called
+23:13:20.754 INFO  views.AppMain : AppMain init called
+23:13:21.767 INFO  controllers.MenuController : Controller init has been called
+23:13:38.860 ERROR views.AppMain : stop called

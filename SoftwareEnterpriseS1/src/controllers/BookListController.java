@@ -79,6 +79,8 @@ public class BookListController {
 				}
 			}
 		});	
+		
+		
 		if(source == Search) {
 			logger.info("searching");
 			List<Book> books = AppMain.bookGateway.searchBooks(searchText.getText());
@@ -88,28 +90,27 @@ public class BookListController {
 			AppMain.rootPane.setCenter(view);
 			return;
 		}
+		
+		
 		if(source == Next) {
-			if(page == numPages) {
+			if(page == numPages)
 				return;
-			} else {
-				page++;
-				books = AppMain.bookGateway.getBook(page);
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
-				loader.setController(new BookListController(books, page));
-				Parent view = loader.load();
-				AppMain.rootPane.setCenter(view);
-			}
+			page++;
+			books = AppMain.bookGateway.getBook(page);
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
+			loader.setController(new BookListController(books, page));
+			Parent view = loader.load();
+			AppMain.rootPane.setCenter(view);
+			
 		} else if(source == Previous) {
-			if(page == 0) {
+			if(page == 0)
 				return;
-			} else {
-				page--;
-				books = AppMain.bookGateway.getBook(page);
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
-				loader.setController(new BookListController(books, page));
-				Parent view = loader.load();
-				AppMain.rootPane.setCenter(view);
-			}
+			page--;
+			books = AppMain.bookGateway.getBook(page);
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
+			loader.setController(new BookListController(books, page));
+			Parent view = loader.load();
+			AppMain.rootPane.setCenter(view);
 		} else if(source == First) {
 			if(page == 0)
 				return;
@@ -119,6 +120,8 @@ public class BookListController {
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view);
 		} else if(source == Last) {
+			if(page == numPages)
+				return;
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
 			books = AppMain.bookGateway.getBook(numPages);
 			loader.setController(new BookListController(books, numPages));
