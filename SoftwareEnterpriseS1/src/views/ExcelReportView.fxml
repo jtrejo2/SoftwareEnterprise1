@@ -8,16 +8,16 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="Generate" layoutX="253.0" layoutY="314.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="94.0" text="Generate" />
+      <Button fx:id="Generate" layoutX="253.0" layoutY="314.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="94.0" text="Generate" />
       <Label alignment="CENTER_RIGHT" layoutX="106.0" layoutY="175.0" prefHeight="25.0" prefWidth="67.0" text="Publisher">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
       <ComboBox fx:id="cbPublishers" layoutX="198.0" layoutY="174.0" prefHeight="27.0" prefWidth="273.0" />
-      <Button fx:id="Save" contentDisplay="RIGHT" layoutX="106.0" layoutY="222.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="368.0" text="Save to path:">
+      <Button fx:id="Save" contentDisplay="RIGHT" layoutX="106.0" layoutY="222.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="368.0" text="Save to path:">
          <graphic>
-            <Label fx:id="Path" prefHeight="27.0" prefWidth="260.0" />
+            <Label fx:id="Path" onDragDetected="#handleButtonAction" prefHeight="27.0" prefWidth="260.0" />
          </graphic></Button>
    </children>
 </Pane>
