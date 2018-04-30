@@ -3422,3 +3422,36 @@
 17:54:42.859 INFO  controllers.BookListController$1 : deleting
 17:54:42.926 INFO  model.BookGateway : Book with id = 27552 deleted from database.
 17:54:59.028 ERROR views.AppMain : stop called
+18:00:01.495 INFO  views.AppMain : AppMain init called
+18:00:02.639 INFO  controllers.MenuController : Controller init has been called
+18:00:23.355 INFO  controllers.BookListController : searching
+18:01:01.483 ERROR views.AppMain : stop called
+18:01:10.460 INFO  views.AppMain : AppMain init called
+18:01:11.554 INFO  controllers.MenuController : Controller init has been called
+18:01:33.629 INFO  controllers.BookListController : searching
+18:02:06.257 ERROR views.AppMain : stop called
+18:03:16.603 INFO  views.AppMain : AppMain init called
+18:03:17.683 INFO  controllers.MenuController : Controller init has been called
+18:03:46.971 INFO  controllers.BookListController : searching
+18:04:25.558 ERROR views.AppMain : stop called
+18:12:09.969 INFO  views.AppMain : AppMain init called
+18:12:11.097 INFO  controllers.MenuController : Controller init has been called
+18:12:39.588 INFO  controllers.BookListController : searching
+18:13:21.439 ERROR views.AppMain : stop called
+18:18:45.709 INFO  views.AppMain : AppMain init called
+18:18:47.151 INFO  controllers.MenuController : Controller init has been called
+18:18:51.630 INFO  controllers.MenuController : Add author called
+18:18:51.651 INFO  controllers.AuthorDetailController : Detail View init called
+18:19:12.385 INFO  controllers.BookListController : searching
+18:20:04.316 ERROR views.AppMain : stop called
+18:28:03.891 INFO  views.AppMain : AppMain init called
+18:28:05.304 INFO  controllers.MenuController : Controller init has been called
+18:28:22.486 INFO  controllers.BookListController : searching
+18:29:14.316 ERROR views.AppMain : stop called
+18:31:14.521 INFO  views.AppMain : AppMain init called
+18:31:15.564 INFO  controllers.MenuController : Controller init has been called
+18:32:21.093 INFO  controllers.BookListController : searching
+18:33:01.822 ERROR views.AppMain : stop called
+18:35:57.429 INFO  views.AppMain : AppMain init called
+18:35:58.497 INFO  controllers.MenuController : Controller init has been called
+18:36:59.785 ERROR views.AppMain : stop called

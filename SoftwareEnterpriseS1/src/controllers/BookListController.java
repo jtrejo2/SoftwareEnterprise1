@@ -44,10 +44,14 @@ public class BookListController {
 	
 	
 	void updateLabel() throws GatewayException {
-		if (total == 0) 
+		int numBooks;
+		if (total == 0)
 			total = AppMain.bookGateway.getNumRows();
 			System.out.println("Empty");
-		int numBooks = (50 * page) + books.size();
+		if (page == numPages)
+			numBooks = total;
+		else
+			numBooks = (50 * page) + books.size();
 		Fetched.setText("Fetched records " + (page * 50) + " to " + numBooks + " out of " + total);
 	}
 	//Handle when a button is clicked
@@ -86,6 +90,7 @@ public class BookListController {
 		if(source == Search) {
 			logger.info("searching");
 			List<Book> books = AppMain.bookGateway.searchBooks(searchText.getText());
+			books = AppMain.bookGateway.getBook(page);
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
 			int totalFromSearch = AppMain.bookGateway.getTotalCount(searchText.getText());
 			loader.setController(new BookListController(books, 0, totalFromSearch));
