@@ -3329,3 +3329,25 @@
 12:34:01.404 INFO  views.AppMain : AppMain init called
 12:34:03.475 INFO  controllers.MenuController : Controller init has been called
 12:34:43.363 ERROR views.AppMain : stop called
+13:50:32.232 INFO  views.AppMain : AppMain init called
+13:50:33.730 INFO  controllers.MenuController : Controller init has been called
+13:50:39.773 INFO  controllers.MenuController : Add book called
+13:50:56.331 ERROR views.AppMain : stop called
+13:52:03.089 INFO  views.AppMain : AppMain init called
+13:52:04.249 INFO  controllers.MenuController : Controller init has been called
+13:52:09.786 INFO  controllers.MenuController : Add book called
+13:52:48.220 ERROR views.AppMain : stop called
+13:53:49.165 INFO  views.AppMain : AppMain init called
+13:53:50.180 INFO  controllers.MenuController : Controller init has been called
+13:53:53.272 INFO  controllers.MenuController : Add book called
+13:53:57.114 INFO  controllers.MenuController : Add author called
+13:53:57.124 INFO  controllers.AuthorDetailController : Detail View init called
+13:53:58.494 INFO  controllers.MenuController : Add book called
+13:55:09.649 INFO  controllers.MenuController : Add book called
+13:56:27.891 INFO  controllers.MenuController : Add book called
+13:57:14.253 ERROR views.AppMain : stop called
+13:57:50.000 INFO  views.AppMain : AppMain init called
+13:57:51.244 INFO  controllers.MenuController : Controller init has been called
+13:57:53.243 INFO  controllers.MenuController : Add book called
+13:58:27.241 INFO  controllers.MenuController : Add book called
+13:58:32.756 ERROR views.AppMain : stop called

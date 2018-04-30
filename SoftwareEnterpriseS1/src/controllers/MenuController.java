@@ -22,6 +22,7 @@ public class MenuController {
 	@FXML private MenuItem addAuthor;
 	@FXML private MenuItem menuBookList;
 	@FXML private MenuItem addBook;
+	@FXML private MenuItem CreateReport;
 	
 	List<Publisher> publishers;
 
@@ -73,6 +74,15 @@ public class MenuController {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookDetailView.fxml"));
 			publishers = AppMain.publisherGateway.getPublishers();
 			loader.setController(new BookDetailController(new Book()));//set Detail Controller
+			Parent view = loader.load();
+			AppMain.rootPane.setCenter(view); //Display
+			
+		}
+		if(source == CreateReport){//load DetailView if addAuthor is selected
+			logger.info("Add book called");
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/ExcelReportView.fxml"));
+			publishers = AppMain.publisherGateway.getPublishers();
+			loader.setController(new ExcelReportController());//set Controller
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view); //Display
 			
