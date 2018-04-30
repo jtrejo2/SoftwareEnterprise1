@@ -7,9 +7,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ListView fx:id="ListBook" layoutY="41.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="279.0" prefWidth="600.0" />
+      <ListView fx:id="ListBook" layoutY="54.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="279.0" prefWidth="600.0" />
       <Button fx:id="Delete" layoutX="509.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Delete" />
-      <TextField fx:id="searchText" layoutX="37.0" layoutY="343.0" prefHeight="27.0" prefWidth="219.0" />
-      <Button fx:id="Search" layoutX="270.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Search" />
+      <TextField fx:id="searchText" layoutX="33.0" layoutY="20.0" prefHeight="27.0" prefWidth="219.0" />
+      <Button fx:id="Search" layoutX="270.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Search" />
+      <Button fx:id="First" layoutX="47.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleButtonAction" text="First" />
+      <Button fx:id="Next" layoutX="216.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Next" />
+      <Button fx:id="Previous" layoutX="130.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Prev" />
+      <Button fx:id="Last" layoutX="309.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Last" />
    </children>
 </AnchorPane>

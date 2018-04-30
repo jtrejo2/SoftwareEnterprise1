@@ -23,17 +23,21 @@ import views.*;
 public class BookListController {
 	
 	private static Logger logger = LogManager.getLogger();
-	@FXML private Button Delete, Search;
+	@FXML private Button Delete, Search, First, Previous, Next, Last;
 	@FXML private TextField searchText;
-	
 	@FXML private ListView<Book> ListBook;
+	
+	private int page, numPages;
+
 	
 	private Book book;
 	private List<Book> books;
 	List<Publisher> publishers;
 	//assign book to this.book
-	public BookListController(List<Book> books){
-		this.books = books;	
+	public BookListController(List<Book> books, int page){
+		this.books = books;
+		this.page = page;
+		this.numPages = AppMain.bookGateway.getNumBooks();
 	}
 	//Handle when a button is clicked
 	@FXML private void handleButtonAction(ActionEvent action) throws Exception{
@@ -50,9 +54,9 @@ public class BookListController {
 							
 							Book selected = ListBook.getSelectionModel().getSelectedItem();
 							AppMain.bookGateway.bookDelete(selected);
-							List<Book> books = AppMain.bookGateway.getBook();
+							List<Book> books = AppMain.bookGateway.getBook(page);
 							FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookListView.fxml"));
-							loader.setController(new BookListController(books));//set controller
+							loader.setController(new BookListController(books, 0));//set controller
 							Parent view = loader.load();
 							AppMain.rootPane.setCenter(view); //display
 							return;
@@ -70,12 +74,50 @@ public class BookListController {
 			logger.info("searching");
 			List<Book> books = AppMain.bookGateway.searchBooks(searchText.getText());
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
-			loader.setController(new BookListController(books));
+			loader.setController(new BookListController(books, 0));
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view);
 			return;
 		}
+		if(source == Next) {
+			if(page == numPages) {
+				return;
+			} else {
+				page++;
+				books = AppMain.bookGateway.getBook(page);
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
+				loader.setController(new BookListController(books, page));
+				Parent view = loader.load();
+				AppMain.rootPane.setCenter(view);
+			}
+		} else if(source == Previous) {
+			if(page == 0) {
+				return;
+			} else {
+				page--;
+				books = AppMain.bookGateway.getBook(page);
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
+				loader.setController(new BookListController(books, page));
+				Parent view = loader.load();
+				AppMain.rootPane.setCenter(view);
+			}
+		} else if(source == First) {
+			if(page == 0)
+				return;
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
+			books = AppMain.bookGateway.getBook(0);
+			loader.setController(new BookListController(books, 0));
+			Parent view = loader.load();
+			AppMain.rootPane.setCenter(view);
+		} else if(source == Last) {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
+			books = AppMain.bookGateway.getBook(numPages);
+			loader.setController(new BookListController(books, numPages));
+			Parent view = loader.load();
+			AppMain.rootPane.setCenter(view);
+		}
 	}
+	
 	//initialize
 	public void initialize(){
 		ObservableList<Book> items = ListBook.getItems();

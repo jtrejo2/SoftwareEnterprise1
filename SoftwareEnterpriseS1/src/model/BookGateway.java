@@ -1,5 +1,6 @@
 package model;
 import java.io.FileInputStream;
+import java.util.Random;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,18 +24,52 @@ public class BookGateway {
 	private Connection conn;
 	private static Logger logger = LogManager.getLogger();
 	
-	public List<Book> getBook() throws GatewayException{
+	
+	public int getNumBooks() {
+	    ResultSet rs = null;
+	    PreparedStatement st = null;
+	    int pages = 0;
+	    try {
+	      st = conn.prepareStatement("select count(*) from book");
+	      rs = st.executeQuery();
+	      if (rs.next()) {
+	        int numberOfRows = rs.getInt(1);
+	        pages = numberOfRows / 50;
+	        System.out.println("pages " + pages);
+	      } else {
+	        System.out.println("error: could not get the record counts");
+	      }
+	    } catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	    return pages;
+	}
+	
+	
+	public List<Book> getBook(int page) throws GatewayException {
 		List<Book> books = new ArrayList<Book>();
 		PreparedStatement st = null;
 		ResultSet rs = null;
-		
-		try{
-			st = conn.prepareStatement("Select * from book");
+		int lower = page * 50;
+		int upper = page * 50 + 50;
+		try {
+			st = conn.prepareStatement("Select * from book LIMIT ?,?");
+			st.setInt(1, lower);
+			st.setInt(2,  upper);
 			rs = st.executeQuery();
-			
-			while(rs.next()){
-				
-				 Book book = new Book(
+
+			while (rs.next()) {
+				// create an author object from the record
+				Book book = new Book(
 						rs.getInt("id"),
 						rs.getString("title"),
 						rs.getString("summary"),
@@ -43,25 +78,26 @@ public class BookGateway {
 						rs.getDate("date_added").toLocalDate(),
 						new PublisherGateway().getPublisherById(rs.getInt("publisher_id")));
 				books.add(book);
-				
 			}
-		} catch (SQLException e){
+		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			try{
-				if(rs != null)
+			try {
+				if (rs != null)
 					rs.close();
-				if(st != null)
+				if (st != null)
 					st.close();
-			} catch (SQLException e){
+			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
-		
+
 		return books;
 	}
+
 	
-	public BookGateway() throws GatewayException{
+	
+	public BookGateway() throws GatewayException, InterruptedException, SQLException{
 		conn = null;
 		
 		Properties props = new Properties();
@@ -81,6 +117,22 @@ public class BookGateway {
 			e.printStackTrace();
 			throw new GatewayException(e);
 		}
+		/*
+		int i;
+		for (i=0;i<10000;i++) {
+			PreparedStatement st3 = null;
+			Thread.sleep(5);
+			Random random = new Random();
+			int x = random.nextInt(2)+1;
+			st3 = conn.prepareStatement("insert into book( title, summary, year_published, isbn, publisher_id ) values( ?, ?, ?, ?, ? )", PreparedStatement.RETURN_GENERATED_KEYS);
+			st3.setString(1, "Book" + i);
+			st3.setString(2, "Summary");
+			st3.setInt(3, 2000);
+			st3.setString(4, "sampleISBN");
+			st3.setInt(5, x);
+			st3.executeUpdate();
+		}
+		*/
 	}
 	//update the book in the db
 	public void updateBook(Book updated) throws GatewayException {
@@ -196,7 +248,7 @@ public class BookGateway {
 	}
 	
 	//insert an book in the db
-	public void insertBook (Book book) throws GatewayException {
+	public void insertBook (Book book) throws GatewayException, InterruptedException {
 		PreparedStatement st = null;
 		PreparedStatement st2 = null;
 		ResultSet rs = null;
@@ -207,8 +259,6 @@ public class BookGateway {
 			st.setInt(3, book.getYearPublished());
 			st.setString(4, book.getIsbn());
 			st.setInt(5, book.getPublisherId());
-			
-			
 			
 			
 			
@@ -225,6 +275,7 @@ public class BookGateway {
 			//System.out.println(rs.first());
 			st2.setInt(2, rs.getInt(1));
 			st2.executeUpdate();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new GatewayException(e);
@@ -234,6 +285,8 @@ public class BookGateway {
 					rs.close();
 				if(st != null)
 					st.close();
+				if(st2 != null)
+					st2.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 				throw new GatewayException(e);
@@ -400,7 +453,6 @@ public class BookGateway {
 	
 	public void updateAuthorBook(AuthorBook authorBook) throws GatewayException {
 		PreparedStatement st = null;
-		ResultSet rs = null;
 		PreparedStatement st2 = null;
 		try {
 			st = conn.prepareStatement("update author_book set author_id = ?, royalty = ? "
@@ -456,6 +508,8 @@ public class BookGateway {
 			try {
 				if(st != null)
 					st.close();
+				if(st2 != null)
+					st2.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 				throw new GatewayException(e);

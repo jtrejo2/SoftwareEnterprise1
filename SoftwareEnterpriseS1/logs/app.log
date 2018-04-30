@@ -3123,3 +3123,113 @@
 23:26:33.279 INFO  controllers.BookListController$2 : Add book called
 23:26:40.282 ERROR controllers.AuthorBookController : Save button was clicked!
 23:34:19.765 ERROR views.AppMain : stop called
+22:54:59.357 INFO  views.AppMain : AppMain init called
+22:55:00.971 INFO  controllers.MenuController : Controller init has been called
+22:55:06.227 INFO  controllers.BookListController$2 : double-clicked Test Publisher
+22:55:06.229 INFO  controllers.BookListController$2 : Add book called
+22:55:10.796 INFO  controllers.MenuController : Add book called
+22:55:34.670 ERROR controllers.BookDetailController : Save button was clicked!
+22:55:48.078 ERROR views.AppMain : stop called
+18:15:15.379 INFO  views.AppMain : AppMain init called
+18:15:16.774 INFO  controllers.MenuController : Controller init has been called
+18:15:27.545 INFO  controllers.BookListController$2 : double-clicked null
+18:15:27.546 INFO  controllers.BookListController$2 : Add book called
+18:15:30.013 INFO  controllers.MenuController : Add book called
+18:15:48.681 ERROR controllers.BookDetailController : Save button was clicked!
+18:15:54.148 INFO  controllers.MenuController : Add book called
+18:16:09.142 ERROR views.AppMain : stop called
+18:16:23.453 INFO  views.AppMain : AppMain init called
+18:16:24.628 INFO  controllers.MenuController : Controller init has been called
+18:18:06.831 INFO  views.AppMain : AppMain init called
+18:18:07.814 INFO  controllers.MenuController : Controller init has been called
+18:18:12.924 ERROR views.AppMain : stop called
+18:18:13.540 ERROR views.AppMain : stop called
+18:18:24.256 INFO  views.AppMain : AppMain init called
+18:18:25.264 INFO  controllers.MenuController : Controller init has been called
+18:18:34.859 INFO  controllers.BookListController : searching
+18:18:37.280 INFO  controllers.BookListController : searching
+18:19:10.195 ERROR views.AppMain : stop called
+18:19:19.198 INFO  views.AppMain : AppMain init called
+18:19:20.337 INFO  controllers.MenuController : Controller init has been called
+18:19:28.333 INFO  controllers.BookListController$2 : double-clicked blah blah
+18:19:28.334 INFO  controllers.BookListController$2 : Add book called
+18:19:32.051 ERROR views.AppMain : stop called
+18:20:18.753 INFO  views.AppMain : AppMain init called
+18:20:19.990 INFO  controllers.MenuController : Controller init has been called
+18:20:40.867 INFO  controllers.BookListController$1 : deleting
+18:20:40.930 ERROR model.BookGateway : Error deleting from author table in database: Cannot delete or update a parent row: a foreign key constraint fails (`thg650`.`author_book`, CONSTRAINT `author_book_ibfk_2` FOREIGN KEY (`book_id`) REFERENCES `book` (`id`))
+18:20:46.135 INFO  controllers.BookListController$1 : deleting
+18:20:46.182 ERROR model.BookGateway : Error deleting from author table in database: Cannot delete or update a parent row: a foreign key constraint fails (`thg650`.`author_book`, CONSTRAINT `author_book_ibfk_2` FOREIGN KEY (`book_id`) REFERENCES `book` (`id`))
+18:21:14.045 INFO  controllers.BookListController$1 : deleting
+18:21:14.104 INFO  model.BookGateway : Book with id = 58 deleted from database.
+18:21:31.177 ERROR views.AppMain : stop called
+18:21:57.969 INFO  views.AppMain : AppMain init called
+18:22:00.256 INFO  controllers.MenuController : Controller init has been called
+18:22:17.550 INFO  controllers.BookListController$2 : double-clicked testing
+18:22:17.550 INFO  controllers.BookListController$2 : Add book called
+18:22:34.889 ERROR views.AppMain : stop called
+18:51:35.160 INFO  views.AppMain : AppMain init called
+18:51:36.725 INFO  controllers.MenuController : Controller init has been called
+18:51:42.783 INFO  controllers.MenuController : Add book called
+18:52:05.235 ERROR controllers.BookDetailController : Save button was clicked!
+18:52:18.620 INFO  controllers.BookListController$2 : double-clicked Book4
+18:52:18.620 INFO  controllers.BookListController$2 : Add book called
+18:52:28.176 INFO  controllers.BookListController$2 : double-clicked Book4
+18:52:28.177 INFO  controllers.BookListController$2 : Add book called
+18:53:00.418 ERROR views.AppMain : stop called
+18:53:26.240 INFO  views.AppMain : AppMain init called
+18:53:28.441 INFO  controllers.MenuController : Controller init has been called
+18:53:37.125 INFO  controllers.BookListController$1 : deleting
+18:53:37.170 INFO  model.BookGateway : Book with id = 60 deleted from database.
+18:53:44.293 INFO  controllers.MenuController : Add book called
+18:57:31.290 INFO  views.AppMain : AppMain init called
+18:57:32.507 INFO  controllers.MenuController : Controller init has been called
+18:58:35.006 INFO  views.AppMain : AppMain init called
+18:58:36.137 INFO  controllers.MenuController : Controller init has been called
+18:58:53.630 INFO  controllers.MenuController : Add book called
+19:04:12.774 INFO  views.AppMain : AppMain init called
+19:06:12.879 INFO  views.AppMain : AppMain init called
+19:06:14.635 INFO  controllers.MenuController : Controller init has been called
+19:10:59.601 ERROR views.AppMain : stop called
+19:12:52.317 INFO  controllers.MenuController : Controller init has been called
+19:13:48.751 INFO  views.AppMain : AppMain init called
+19:13:49.973 INFO  controllers.MenuController : Controller init has been called
+19:15:07.420 INFO  controllers.BookListController$1 : deleting
+19:15:07.469 ERROR model.BookGateway : Error deleting from author table in database: Cannot delete or update a parent row: a foreign key constraint fails (`thg650`.`author_book`, CONSTRAINT `author_book_ibfk_2` FOREIGN KEY (`book_id`) REFERENCES `book` (`id`))
+19:17:00.322 INFO  views.AppMain : AppMain init called
+19:17:01.495 INFO  controllers.MenuController : Controller init has been called
+19:17:06.344 ERROR views.AppMain : stop called
+19:17:45.371 INFO  controllers.BookListController$1 : deleting
+19:17:45.424 ERROR model.BookGateway : Error deleting from author table in database: Cannot delete or update a parent row: a foreign key constraint fails (`thg650`.`author_book`, CONSTRAINT `author_book_ibfk_2` FOREIGN KEY (`book_id`) REFERENCES `book` (`id`))
+19:18:00.854 INFO  controllers.BookListController$1 : deleting
+19:18:00.903 INFO  model.BookGateway : Book with id = 8 deleted from database.
+19:18:34.794 INFO  views.AppMain : AppMain init called
+19:18:36.025 INFO  controllers.MenuController : Controller init has been called
+19:19:51.018 ERROR views.AppMain : stop called
+19:20:00.476 INFO  views.AppMain : AppMain init called
+19:20:01.728 INFO  controllers.MenuController : Controller init has been called
+19:20:28.935 ERROR views.AppMain : stop called
+19:23:34.764 ERROR views.AppMain : stop called
+19:23:37.466 ERROR views.AppMain : stop called
+19:23:47.168 INFO  views.AppMain : AppMain init called
+19:23:48.620 INFO  controllers.MenuController : Controller init has been called
+19:24:59.935 ERROR views.AppMain : stop called
+19:27:40.491 INFO  views.AppMain : AppMain init called
+19:27:41.753 INFO  controllers.MenuController : Controller init has been called
+19:29:31.446 INFO  views.AppMain : AppMain init called
+19:29:32.588 INFO  controllers.MenuController : Controller init has been called
+19:29:32.991 ERROR views.AppMain : stop called
+19:29:47.157 INFO  controllers.BookListController$2 : double-clicked Test Publisher
+19:29:47.158 INFO  controllers.BookListController$2 : Add book called
+19:29:51.832 ERROR controllers.BookDetailController : Save button was clicked!
+19:30:50.349 ERROR views.AppMain : stop called
+19:37:13.343 INFO  views.AppMain : AppMain init called
+19:37:14.696 INFO  controllers.MenuController : Controller init has been called
+19:39:41.455 ERROR views.AppMain : stop called
+19:43:49.794 INFO  views.AppMain : AppMain init called
+19:43:51.072 INFO  controllers.MenuController : Controller init has been called
+19:47:33.822 ERROR views.AppMain : stop called
+19:50:46.962 INFO  views.AppMain : AppMain init called
+19:50:48.237 INFO  controllers.MenuController : Controller init has been called
+19:51:08.144 INFO  controllers.BookListController : searching
+19:51:58.873 ERROR views.AppMain : stop called
