@@ -29,25 +29,32 @@ public class BookListController {
 	@FXML private ListView<Book> ListBook;
 	@FXML private Label Fetched;
 
-	
+	private String storedSearch;
 	private int page, numPages, total;
 	private List<Book> books;
 	List<Publisher> publishers;
 	
 	//assign book to this.book
-	public BookListController(List<Book> books, int page, int total) throws GatewayException{
+	public BookListController(List<Book> books, int page, int total, String storedSearch) throws GatewayException{
 		this.books = books;
 		this.page = page;
 		this.total = total;
-		this.numPages = AppMain.bookGateway.getNumBooks();
+		this.storedSearch = storedSearch;
+		if (storedSearch == null)
+			this.numPages = AppMain.bookGateway.getNumBooks();
+		else
+			this.numPages = AppMain.bookGateway.getNumSearchBooks(storedSearch);
 	}
 	
 	
 	void updateLabel() throws GatewayException {
 		int numBooks;
-		if (total == 0)
-			total = AppMain.bookGateway.getNumRows();
-			System.out.println("Empty");
+		if (total == 0) {
+			if (storedSearch != null) 
+				total = AppMain.bookGateway.getTotalCount(storedSearch);
+			else
+				total = AppMain.bookGateway.getNumRows();
+		}
 		if (page == numPages)
 			numBooks = total;
 		else
@@ -69,9 +76,9 @@ public class BookListController {
 							
 							Book selected = ListBook.getSelectionModel().getSelectedItem();
 							AppMain.bookGateway.bookDelete(selected);
-							List<Book> books = AppMain.bookGateway.getBook(page);
+							books = AppMain.bookGateway.getBook(0);
 							FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BookListView.fxml"));
-							loader.setController(new BookListController(books, 0, 0));//set controller
+							loader.setController(new BookListController(books, 0, 0, null));//set controller
 							Parent view = loader.load();
 							AppMain.rootPane.setCenter(view); //display
 							return;
@@ -89,11 +96,15 @@ public class BookListController {
 		
 		if(source == Search) {
 			logger.info("searching");
-			List<Book> books = AppMain.bookGateway.getSearchBook(0, searchText.getText());
+			storedSearch = searchText.getText();
+			if (searchText.getText().isEmpty())
+				books = AppMain.bookGateway.getBook(0);
+			else
+				books = AppMain.bookGateway.getSearchBook(0, storedSearch);
 			//books = AppMain.bookGateway.getBook(page);
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
 			int totalFromSearch = AppMain.bookGateway.getTotalCount(searchText.getText());
-			loader.setController(new BookListController(books, 0, totalFromSearch));
+			loader.setController(new BookListController(books, 0, totalFromSearch, storedSearch));
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view);
 			return;
@@ -104,9 +115,15 @@ public class BookListController {
 			if(page == numPages)
 				return;
 			page++;
-			books = AppMain.bookGateway.getBook(page);
+			if (storedSearch == null) {
+				books = AppMain.bookGateway.getBook(page);
+				System.out.println("HERE");
+			}
+			else
+				books = AppMain.bookGateway.getSearchBook(page, storedSearch);
+			System.out.println(storedSearch);
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
-			loader.setController(new BookListController(books, page, 0));
+			loader.setController(new BookListController(books, page, 0, storedSearch));
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view);
 			
@@ -114,25 +131,34 @@ public class BookListController {
 			if(page == 0)
 				return;
 			page--;
-			books = AppMain.bookGateway.getBook(page);
+			if (storedSearch == null)
+				books = AppMain.bookGateway.getBook(page);
+			else
+				books = AppMain.bookGateway.getSearchBook(page, storedSearch);
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
-			loader.setController(new BookListController(books, page, 0));
+			loader.setController(new BookListController(books, page, 0, storedSearch));
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view);
 		} else if(source == First) {
 			if(page == 0)
 				return;
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
-			books = AppMain.bookGateway.getBook(0);
-			loader.setController(new BookListController(books, 0, 0));
+			if (storedSearch == null)
+				books = AppMain.bookGateway.getBook(0);
+			else
+				books = AppMain.bookGateway.getSearchBook(0, storedSearch);
+			loader.setController(new BookListController(books, 0, 0, storedSearch));
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view);
 		} else if(source == Last) {
 			if(page == numPages)
 				return;
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
-			books = AppMain.bookGateway.getBook(numPages);
-			loader.setController(new BookListController(books, numPages, 0));
+			if (storedSearch == null)
+				books = AppMain.bookGateway.getBook(numPages);
+			else
+				books = AppMain.bookGateway.getSearchBook(numPages, storedSearch);
+			loader.setController(new BookListController(books, numPages, 0, storedSearch));
 			Parent view = loader.load();
 			AppMain.rootPane.setCenter(view);
 		}

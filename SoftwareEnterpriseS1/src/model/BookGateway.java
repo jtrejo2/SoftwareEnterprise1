@@ -54,6 +54,36 @@ public class BookGateway {
 	    return pages;
 	}
 	
+	public int getNumSearchBooks(String search) {
+	    ResultSet rs = null;
+	    PreparedStatement st = null;
+	    int pages = 0;
+	    try {
+	      st = conn.prepareStatement("select count(*) from book where title like ?");
+	      st.setString(1, "%" + search + "%");
+	      rs = st.executeQuery();
+	      if (rs.next()) {
+	        int numberOfRows = rs.getInt(1);
+	        pages = numberOfRows / 50;
+	        System.out.println("pages " + pages);
+	      } else {
+	        System.out.println("error: could not get the record counts");
+	      }
+	    } catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	    return pages;
+	}
+	
 	public int getNumRows() {
 	    ResultSet rs = null;
 	    PreparedStatement st = null;
@@ -85,10 +115,10 @@ public class BookGateway {
 		List<Book> books = new ArrayList<Book>();
 		PreparedStatement st = null;
 		ResultSet rs = null;
-
+		int offset = page * 50;
 		try {
 			st = conn.prepareStatement("Select * from book LIMIT 50 OFFSET ?");
-			st.setInt(1, page);
+			st.setInt(1, offset);
 			rs = st.executeQuery();
 
 			while (rs.next()) {
@@ -123,11 +153,11 @@ public class BookGateway {
 		List<Book> books = new ArrayList<Book>();
 		PreparedStatement st = null;
 		ResultSet rs = null;
-
+		int offset = page * 50;
 		try {
-			st = conn.prepareStatement("Select * from book WHERE title LIKE ? LIMIT 50 OFFSET ?");
+			st = conn.prepareStatement("select * from book where title like ? LIMIT 50 OFFSET ?");
 			st.setString(1, "%" + search + "%");
-			st.setInt(2, page);
+			st.setInt(2,  offset);
 			
 			rs = st.executeQuery();
 
