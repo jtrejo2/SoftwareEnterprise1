@@ -121,12 +121,12 @@ public class BookGateway {
 
 	public ObservableList<Book> getBooksByPublisherId(int id) throws GatewayException {
 		ObservableList<Book> books = FXCollections.observableArrayList();
-		
+		ResultSet rs = null;
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement("select * from book where publisher_id = ? order by title");
 			st.setInt(1, id);
-			ResultSet rs = st.executeQuery();
+			rs = st.executeQuery();
 			while(rs.next()) {
 				Book book = new Book(
 						rs.getInt("id"),
@@ -145,6 +145,8 @@ public class BookGateway {
 			try {
 				if(st != null)
 					st.close();
+				if (rs != null)
+					rs.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 				throw new GatewayException(e);
@@ -607,12 +609,12 @@ public class BookGateway {
 	
 	public ObservableList<AuthorBook> getAuthorsForBook(Book book) throws GatewayException {
 		ObservableList<AuthorBook> authorBooks = FXCollections.observableArrayList();
-
+		ResultSet rs = null;
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement("select * from author_book where book_id = ?");
 			st.setInt(1, book.getId());
-			ResultSet rs = st.executeQuery();
+			rs = st.executeQuery();
 			while(rs.next()) {
 				Author author = new Gateway().getAuthorById(rs.getInt("author_id"));
 				
@@ -626,8 +628,10 @@ public class BookGateway {
 			throw new GatewayException(e);
 		} finally {
 			try {
-				if(st != null)
+				if (st != null)
 					st.close();
+				if (rs != null)
+					rs.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 				throw new GatewayException(e);
