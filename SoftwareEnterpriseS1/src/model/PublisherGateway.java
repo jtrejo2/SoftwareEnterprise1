@@ -21,6 +21,8 @@ import java.sql.PreparedStatement;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 
 
@@ -110,6 +112,42 @@ public class PublisherGateway {
 		}
 		
 		return publisher;
+	}
+	
+	public ObservableList<Book> getBooksByPublisherId(int id) throws GatewayException {
+		ObservableList<Book> books = FXCollections.observableArrayList();
+		ResultSet rs = null;
+		PreparedStatement st = null;
+		try {
+			st = conn.prepareStatement("select * from book where publisher_id = ? order by title");
+			st.setInt(1, id);
+			rs = st.executeQuery();
+			while(rs.next()) {
+				Book book = new Book(
+						rs.getInt("id"),
+						rs.getString("title"),
+						rs.getString("summary"),
+						rs.getInt("year_published"),
+						rs.getString("isbn"), 
+						rs.getDate("date_added").toLocalDate(),
+						new PublisherGateway().getPublisherById(rs.getInt("publisher_id")));
+				books.add(book);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new GatewayException(e);
+		} finally {
+			try {
+				if(st != null)
+					st.close();
+				if (rs != null)
+					rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new GatewayException(e);
+			}
+		}
+		return books;
 	}
 	
 	public void close(){

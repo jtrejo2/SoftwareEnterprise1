@@ -3584,3 +3584,107 @@
 11:16:48.992 INFO  controllers.BookListController$1 : deleting
 11:16:49.047 INFO  model.BookGateway : Book with id = 27531 deleted from database.
 11:17:03.225 ERROR views.AppMain : stop called
+12:41:33.067 INFO  views.AppMain : AppMain init called
+12:41:34.331 INFO  controllers.MenuController : Controller init has been called
+12:41:36.461 INFO  controllers.MenuController : Add book called
+12:49:08.657 INFO  views.AppMain : AppMain init called
+12:49:09.884 INFO  controllers.MenuController : Controller init has been called
+12:49:12.384 INFO  controllers.MenuController : Add book called
+12:48:40.488 INFO  views.AppMain : AppMain init called
+12:48:41.549 INFO  controllers.MenuController : Controller init has been called
+12:48:43.436 INFO  controllers.MenuController : Add book called
+12:49:40.104 ERROR views.AppMain : stop called
+12:49:51.768 INFO  views.AppMain : AppMain init called
+12:49:52.905 INFO  controllers.MenuController : Controller init has been called
+12:49:55.054 INFO  controllers.MenuController : Add book called
+12:50:50.791 ERROR views.AppMain : stop called
+12:53:05.130 INFO  views.AppMain : AppMain init called
+12:53:06.250 INFO  controllers.MenuController : Controller init has been called
+12:53:08.103 INFO  controllers.MenuController : Add book called
+12:53:09.209 ERROR controllers.ExcelReportController : No publisher selected
+12:53:11.956 ERROR controllers.ExcelReportController : No save path selected
+12:53:14.137 ERROR views.AppMain : stop called
+12:55:52.203 INFO  views.AppMain : AppMain init called
+12:55:53.460 INFO  controllers.MenuController : Controller init has been called
+12:55:55.920 INFO  controllers.MenuController : Add book called
+12:57:01.128 ERROR views.AppMain : stop called
+13:10:05.244 INFO  views.AppMain : AppMain init called
+13:10:06.525 INFO  controllers.MenuController : Controller init has been called
+13:10:09.466 INFO  controllers.MenuController : Add book called
+13:11:13.358 ERROR views.AppMain : stop called
+13:18:20.067 INFO  views.AppMain : AppMain init called
+13:18:21.443 INFO  controllers.MenuController : Controller init has been called
+13:18:24.246 INFO  controllers.MenuController : Add book called
+13:18:32.849 ERROR controllers.ExcelReportController : No publisher selected
+13:19:34.273 ERROR views.AppMain : stop called
+13:21:21.278 INFO  views.AppMain : AppMain init called
+13:21:22.363 INFO  controllers.MenuController : Controller init has been called
+13:21:24.095 INFO  controllers.MenuController : Add book called
+13:23:36.911 INFO  views.AppMain : AppMain init called
+13:23:45.081 ERROR views.AppMain : stop called
+13:23:58.897 INFO  views.AppMain : AppMain init called
+13:24:00.112 INFO  controllers.MenuController : Controller init has been called
+13:24:18.481 ERROR views.AppMain : stop called
+13:33:00.836 INFO  views.AppMain : AppMain init called
+13:33:02.176 INFO  controllers.MenuController : Controller init has been called
+13:33:11.490 INFO  controllers.MenuController : Add book called
+13:33:33.301 ERROR controllers.BookDetailController : Save button was clicked!
+13:33:57.288 INFO  controllers.BookListController$2 : double-clicked Book 1
+13:33:57.290 INFO  controllers.BookListController$2 : Add book called
+13:34:02.657 ERROR controllers.AuthorBookController : Save button was clicked!
+13:34:11.494 INFO  controllers.AuthorListController$1 : deleting
+13:34:19.947 INFO  controllers.BookListController$2 : double-clicked Book 1
+13:34:19.949 INFO  controllers.BookListController$2 : Add book called
+13:34:23.637 INFO  controllers.MenuController : Add book called
+13:34:38.283 ERROR controllers.BookDetailController : Save button was clicked!
+13:34:41.075 INFO  controllers.MenuController : Add book called
+13:34:45.248 INFO  controllers.MenuController : Add book called
+13:34:56.505 INFO  controllers.ExcelReportController : Report generated
+13:35:15.660 ERROR views.AppMain : stop called
+13:36:33.681 INFO  views.AppMain : AppMain init called
+13:36:34.761 INFO  controllers.MenuController : Controller init has been called
+13:36:36.825 INFO  controllers.MenuController : Add book called
+13:36:46.673 INFO  controllers.BookListController : searching
+13:36:51.600 INFO  controllers.BookListController : searching
+13:36:54.610 INFO  controllers.MenuController : Add book called
+13:37:03.445 INFO  controllers.ExcelReportController : Report generated
+13:38:14.555 ERROR views.AppMain : stop called
+13:39:06.664 INFO  views.AppMain : AppMain init called
+13:39:07.895 INFO  controllers.MenuController : Controller init has been called
+13:39:14.028 INFO  controllers.MenuController : Add book called
+13:39:24.094 INFO  controllers.ExcelReportController : Report generated
+13:39:51.648 ERROR views.AppMain : stop called
+13:52:34.092 INFO  views.AppMain : AppMain init called
+13:52:35.488 INFO  controllers.MenuController : Controller init has been called
+13:52:37.903 INFO  controllers.MenuController : Add book called
+13:52:56.211 INFO  controllers.ExcelReportController : Report generated
+13:53:10.884 INFO  controllers.ExcelReportController : Report generated
+13:53:17.649 ERROR views.AppMain : stop called
+13:53:31.814 INFO  views.AppMain : AppMain init called
+13:53:32.978 INFO  controllers.MenuController : Controller init has been called
+13:53:36.330 INFO  controllers.MenuController : Add book called
+13:53:50.831 INFO  controllers.ExcelReportController : Report generated
+13:56:04.138 ERROR views.AppMain : stop called
+13:56:41.403 INFO  views.AppMain : AppMain init called
+13:56:42.522 INFO  controllers.MenuController : Controller init has been called
+13:56:48.108 INFO  controllers.MenuController : Add book called
+13:57:03.128 INFO  controllers.ExcelReportController : Report generated
+13:57:12.592 INFO  controllers.ExcelReportController : Report generated
+13:59:28.349 INFO  views.AppMain : AppMain init called
+13:59:29.546 INFO  controllers.MenuController : Controller init has been called
+13:59:45.352 ERROR views.AppMain : stop called
+14:00:06.933 INFO  views.AppMain : AppMain init called
+14:00:09.021 INFO  controllers.MenuController : Controller init has been called
+14:00:12.056 INFO  controllers.MenuController : Add book called
+14:00:21.774 INFO  controllers.ExcelReportController : Report generated
+14:00:32.210 ERROR views.AppMain : stop called
+14:01:58.178 INFO  views.AppMain : AppMain init called
+14:01:59.301 INFO  controllers.MenuController : Controller init has been called
+14:02:01.209 INFO  controllers.MenuController : Add book called
+14:02:09.653 ERROR controllers.ExcelReportController : No publisher selected
+14:02:15.418 INFO  controllers.ExcelReportController : Report generated
+14:02:30.942 ERROR views.AppMain : stop called
+14:03:28.726 INFO  views.AppMain : AppMain init called
+14:03:36.967 INFO  controllers.MenuController : Controller init has been called
+14:04:08.185 ERROR views.AppMain : stop called
+14:04:24.053 INFO  views.AppMain : AppMain init called

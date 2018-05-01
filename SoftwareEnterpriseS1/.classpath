@@ -10,5 +10,11 @@
 	<classpathentry kind="lib" path="log4j-core-2.7.jar"/>
 	<classpathentry kind="lib" path="mysql-connector-java-5.1.40-bin.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/noahzook/Downloads/poi-3.17 2/poi-3.17.jar"/>
+	<classpathentry kind="lib" path="/Users/noahzook/Downloads/poi-3.17 2/poi-examples-3.17.jar"/>
+	<classpathentry kind="lib" path="/Users/noahzook/Downloads/poi-3.17 2/poi-excelant-3.17.jar"/>
+	<classpathentry kind="lib" path="/Users/noahzook/Downloads/poi-3.17 2/poi-ooxml-3.17.jar"/>
+	<classpathentry kind="lib" path="/Users/noahzook/Downloads/poi-3.17 2/poi-ooxml-schemas-3.17.jar"/>
+	<classpathentry kind="lib" path="/Users/noahzook/Downloads/poi-3.17 2/poi-scratchpad-3.17.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

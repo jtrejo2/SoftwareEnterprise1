@@ -22,7 +22,6 @@ public class AppMain extends Application{
 	public static PublisherGateway publisherGateway;
 	
 	
-	
 	@Override
 	public void init() throws Exception{
 		super.init();
