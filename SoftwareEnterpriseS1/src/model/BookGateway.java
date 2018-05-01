@@ -118,7 +118,47 @@ public class BookGateway {
 
 		return books;
 	}
+	
+	public List<Book> getSearchBook(int page, String search) throws GatewayException {
+		List<Book> books = new ArrayList<Book>();
+		PreparedStatement st = null;
+		ResultSet rs = null;
 
+		try {
+			st = conn.prepareStatement("Select * from book WHERE title LIKE ? LIMIT 50 OFFSET ?");
+			st.setString(1, "%" + search + "%");
+			st.setInt(2, page);
+			
+			rs = st.executeQuery();
+
+			while (rs.next()) {
+				// create an author object from the record
+				Book book = new Book(
+						rs.getInt("id"),
+						rs.getString("title"),
+						rs.getString("summary"),
+						rs.getInt("year_published"),
+						rs.getString("isbn"), 
+						rs.getDate("date_added").toLocalDate(),
+						new PublisherGateway().getPublisherById(rs.getInt("publisher_id")));
+				books.add(book);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (st != null)
+					st.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return books;
+	}
+	
 	public ObservableList<Book> getBooksByPublisherId(int id) throws GatewayException {
 		ObservableList<Book> books = FXCollections.observableArrayList();
 		ResultSet rs = null;

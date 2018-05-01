@@ -3481,3 +3481,18 @@
 21:38:39.084 INFO  controllers.MenuController : Controller init has been called
 21:38:56.156 INFO  controllers.BookListController : searching
 21:39:28.653 ERROR views.AppMain : stop called
+23:27:26.768 INFO  views.AppMain : AppMain init called
+23:27:28.227 INFO  controllers.MenuController : Controller init has been called
+23:27:45.880 INFO  controllers.BookListController : searching
+23:28:19.839 ERROR views.AppMain : stop called
+23:33:15.164 INFO  views.AppMain : AppMain init called
+23:33:16.366 INFO  controllers.MenuController : Controller init has been called
+23:33:40.141 INFO  controllers.BookListController : searching
+23:33:56.875 ERROR views.AppMain : stop called
+23:37:49.207 INFO  views.AppMain : AppMain init called
+23:37:50.529 INFO  controllers.MenuController : Controller init has been called
+23:38:06.899 INFO  controllers.BookListController : searching
+23:38:51.313 ERROR views.AppMain : stop called
+23:42:10.462 INFO  views.AppMain : AppMain init called
+23:42:11.628 INFO  controllers.MenuController : Controller init has been called
+23:43:02.327 ERROR views.AppMain : stop called

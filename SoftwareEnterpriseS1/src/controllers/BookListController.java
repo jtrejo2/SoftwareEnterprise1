@@ -89,8 +89,8 @@ public class BookListController {
 		
 		if(source == Search) {
 			logger.info("searching");
-			List<Book> books = AppMain.bookGateway.searchBooks(searchText.getText());
-			books = AppMain.bookGateway.getBook(page);
+			List<Book> books = AppMain.bookGateway.getSearchBook(0, searchText.getText());
+			//books = AppMain.bookGateway.getBook(page);
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/BookListView.fxml"));
 			int totalFromSearch = AppMain.bookGateway.getTotalCount(searchText.getText());
 			loader.setController(new BookListController(books, 0, totalFromSearch));
