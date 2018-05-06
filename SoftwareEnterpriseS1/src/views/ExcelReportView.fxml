@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="Generate" layoutX="253.0" layoutY="314.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="94.0" text="Generate" />
+      <Label alignment="CENTER_RIGHT" layoutX="106.0" layoutY="175.0" prefHeight="25.0" prefWidth="67.0" text="Publisher">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cbPublishers" layoutX="198.0" layoutY="174.0" prefHeight="27.0" prefWidth="273.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="106.0" layoutY="227.0" prefHeight="25.0" prefWidth="67.0" text="Path">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="Path" layoutX="198.0" layoutY="226.0" prefHeight="27.0" prefWidth="273.0" text="/Users/username/Desktop/output.xlsx" />
+      <Label alignment="CENTER_RIGHT" layoutX="246.0" layoutY="253.0" prefHeight="25.0" prefWidth="177.0" text="change 'username' to your username">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
