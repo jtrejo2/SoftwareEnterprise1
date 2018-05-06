@@ -49,8 +49,9 @@ public class AuthorDetailController {
 			    		author.Save(author);
 
 				} catch (Exception e) {
-					Alert alert = new Alert (AlertType.WARNING, "Error saving please try again");
-					alert.showAndWait();
+					//Alert alert = new Alert (AlertType.WARNING, "Error saving please try again");
+					//alert.showAndWait();
+					AlertHelper.showWarningMessage("Error", "Error saving", "Please try again");
 				}
 			}
 			else {
@@ -62,15 +63,17 @@ public class AuthorDetailController {
 		    			
 		    			if(!original.equals(author.getLastModified())) {
 		    				logger.error("Cannot Save! Please reload and try again.");
-		    				Alert alert = new Alert (AlertType.WARNING, "Cannot Save! Please reload and try again.");
-						alert.showAndWait();
+		    				//Alert alert = new Alert (AlertType.WARNING, "Cannot Save! Please reload and try again.");
+						//alert.showAndWait();
+		    				AlertHelper.showWarningMessage("Error", "Error saving", "Please try again");
 		    				return;
 		    			}
 		    			author.Save(author);
 		    			
 				} catch (Exception e) {
-					Alert alert = new Alert (AlertType.WARNING, "Error saving please try again");
-					alert.showAndWait();
+					//Alert alert = new Alert (AlertType.WARNING, "Error saving please try again");
+					//alert.showAndWait();
+					AlertHelper.showWarningMessage("Error", "Error saving", "Please try again");
 				}
 			}
 

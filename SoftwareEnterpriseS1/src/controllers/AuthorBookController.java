@@ -68,9 +68,12 @@ public class AuthorBookController implements Initializable{
 					logger.error("Save button was clicked!");
 					//AlertHelper.showWarningMessage("Warning", "Warning2", "Error saving book");
 					//Alert alert = new Alert (AlertType.WARNING, "Error saving Royalty please try again");
+					//alert.showAndWait();
 
 				} catch (Exception e) {
-					Alert alert = new Alert (AlertType.WARNING, "Error saving Royalty please try again");
+					e.printStackTrace();
+					AlertHelper.showWarningMessage("Error", "Error saving Royalty", "Please try again");
+					//Alert alert = new Alert (AlertType.WARNING, "Error saving Royalty please try again");
 					//alert.showAndWait();
 					//AlertHelper.showWarningMessage("Warning", "Warning2", "Error saving book");
 			}

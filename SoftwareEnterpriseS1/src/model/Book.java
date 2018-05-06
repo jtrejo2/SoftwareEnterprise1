@@ -191,8 +191,9 @@ public class Book{
 			AppMain.bookGateway.insertAuthorBook(authorBook);
 		}
 		*/
-		//System.out.println("here is the royalty" + authorBook.getRoyalty());
-		//System.out.println(authorBook.getRoyalty().compareTo(BigDecimal.ONE));
+		System.out.println("here is the royalty" + authorBook.getRoyalty());
+		System.out.println(authorBook.getRoyalty().compareTo(BigDecimal.ONE));
+		System.out.println("herer is the validate yoraylt " + ValidateRoyalty(authorBook.getRoyalty()));
 		if(ValidateRoyalty(authorBook.getRoyalty()) == true){
 			if(authorBook.getNewRecord() == true){
 				AppMain.bookGateway.insertAuthorBook(authorBook);
@@ -202,15 +203,17 @@ public class Book{
 			}
 		}
 		else {
+			System.out.println("herer is the validate yoraylt " + ValidateRoyalty(authorBook.getRoyalty()));
 			throw new Exception("Validate Royalty failed, Author could not be saved to the book");
 			
 		}
+		//System.out.println("herer is the validate yoraylt " + ValidateRoyalty(authorBook.getRoyalty()));
 	}
 	private Boolean ValidateRoyalty(BigDecimal royalty) {
 		// TODO Auto-generated method stub
 		boolean result;
 		
-		if(royalty.compareTo(BigDecimal.ZERO) >= 0 && royalty.compareTo(BigDecimal.ONE) <= 1 ) {
+		if(royalty.compareTo(BigDecimal.ZERO) >= 0 && royalty.compareTo(BigDecimal.ONE) < 1 ) {
 			result = true;
 		}
 		else {

@@ -63,9 +63,12 @@ public class BookDetailController {
 			try {
 				book.Save(book);
 				logger.error("Save button was clicked!");
-				AlertHelper.showWarningMessage("Warning", "Warning2", "Error saving book");
+				//AlertHelper.showWarningMessage("Error", "Error saving book", "Please try again");
 				
 			} catch (Exception e) {
+				//System.out.print("Error " + e);
+				e.printStackTrace();
+				AlertHelper.showWarningMessage("Error", "Error saving book", "Please try again");
 				//Alert alert = new Alert (AlertType.WARNING, "Error saving book please try again");
 				//alert.showAndWait();
 				//AlertHelper.showWarningMessage("Warning", "Warning2", "Error saving book");
