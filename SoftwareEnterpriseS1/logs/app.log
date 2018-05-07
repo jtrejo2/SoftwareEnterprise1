@@ -3122,4 +3122,12 @@
 23:26:33.279 INFO  controllers.BookListController$2 : double-clicked Book Title
 23:26:33.279 INFO  controllers.BookListController$2 : Add book called
 23:26:40.282 ERROR controllers.AuthorBookController : Save button was clicked!
-23:34:19.765 ERROR views.AppMain : stop called
+23:34:19.765 ERROR views.AppMain : stop called15:58:14.566 INFO  views.AppMain : AppMain init called
+15:58:16.236 INFO  controllers.MenuController : Controller init has been called
+15:58:18.618 ERROR views.AppMain : stop called
+16:09:11.994 INFO  views.AppMain : AppMain init called
+16:09:14.080 INFO  controllers.MenuController : Controller init has been called
+16:09:42.068 ERROR views.AppMain : stop called
+19:36:15.943 INFO  views.AppMain : AppMain init called
+19:36:17.442 INFO  controllers.MenuController : Controller init has been called
+19:38:16.955 ERROR views.AppMain : stop called
